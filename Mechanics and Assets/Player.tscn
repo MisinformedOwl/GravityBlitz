@@ -1,0 +1,79 @@
+[gd_scene load_steps=15 format=3 uid="uid://citts2xpwqa2h"]
+
+[ext_resource type="Script" path="res://Player.gd" id="1_mx110"]
+[ext_resource type="Texture2D" uid="uid://c4mtdao8fd4u7" path="res://ball.png" id="2_ybxki"]
+[ext_resource type="Texture2D" uid="uid://2nwji7vejf4m" path="res://TempFiles/eyes calm.png" id="3_so4l4"]
+[ext_resource type="Texture2D" uid="uid://dj5o7qp4ygm6v" path="res://TempFiles/Blink.png" id="4_17bf6"]
+[ext_resource type="Texture2D" uid="uid://dxf30md65kxgi" path="res://TempFiles/fast.png" id="5_4ne3u"]
+[ext_resource type="Texture2D" uid="uid://c001ckrhbljuq" path="res://TempFiles/Eyeballs.png" id="5_405te"]
+[ext_resource type="Script" path="res://Mechanics and Assets/EyeAnimations.gd" id="6_7cg6d"]
+[ext_resource type="Script" path="res://Mechanics and Assets/Eyeballs.gd" id="7_ry5qw"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6stir"]
+atlas = ExtResource("4_17bf6")
+region = Rect2(0, 0, 276, 204)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5uym3"]
+atlas = ExtResource("3_so4l4")
+region = Rect2(0, 0, 276, 204)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2cqof"]
+atlas = ExtResource("4_17bf6")
+region = Rect2(0, 0, 276, 204)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8mjnx"]
+atlas = ExtResource("5_4ne3u")
+region = Rect2(0, 0, 276, 204)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_anxgr"]
+animations = [{
+"frames": [{
+"duration": 0.4,
+"texture": SubResource("AtlasTexture_6stir")
+}, {
+"duration": 6.0,
+"texture": SubResource("AtlasTexture_5uym3")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 0.6,
+"texture": SubResource("AtlasTexture_2cqof")
+}, {
+"duration": 7.0,
+"texture": SubResource("AtlasTexture_8mjnx")
+}],
+"loop": true,
+"name": &"fast",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_bxhcm"]
+radius = 32.0156
+
+[node name="Player" type="CharacterBody2D"]
+texture_filter = 1
+script = ExtResource("1_mx110")
+
+[node name="Sprite" type="Sprite2D" parent="."]
+scale = Vector2(0.835, 0.835)
+texture = ExtResource("2_ybxki")
+
+[node name="Eyes" type="AnimatedSprite2D" parent="Sprite"]
+scale = Vector2(0.37, 0.37)
+sprite_frames = SubResource("SpriteFrames_anxgr")
+script = ExtResource("6_7cg6d")
+
+[node name="Eyeball" type="Sprite2D" parent="Sprite/Eyes"]
+visible = false
+texture = ExtResource("5_405te")
+script = ExtResource("7_ry5qw")
+
+[node name="Collision" type="CollisionShape2D" parent="."]
+scale = Vector2(1.634, 1.634)
+shape = SubResource("CircleShape2D_bxhcm")
+one_way_collision_margin = 0.0
+
+[connection signal="frame_changed" from="Sprite/Eyes" to="Sprite/Eyes/Eyeball" method="_on_animated_sprite_2d_frame_changed"]

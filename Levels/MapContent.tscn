@@ -1,0 +1,217 @@
+[gd_scene load_steps=23 format=3 uid="uid://bdx77watf0xjr"]
+
+[ext_resource type="Script" path="res://MapFunctionality.gd" id="1_b6gcc"]
+[ext_resource type="Shader" path="res://Shaders/Wallsop.gdshader" id="2_1c823"]
+[ext_resource type="Texture2D" uid="uid://w0iyv6rny0cm" path="res://tiles.png" id="2_2r5pm"]
+[ext_resource type="Shader" path="res://Shaders/InteractableMapShader.gdshader" id="3_c225m"]
+[ext_resource type="Texture2D" uid="uid://d2rxsbcua8y5y" path="res://tile.png" id="4_qfam2"]
+[ext_resource type="PackedScene" uid="uid://sg4dhjdag5ec" path="res://Mechanics and Assets/gravitation.tscn" id="5_jdh6f"]
+[ext_resource type="Shader" path="res://Shaders/Walls.gdshader" id="6_kgt4c"]
+[ext_resource type="Texture2D" uid="uid://c8dpnbvh1m4f7" path="res://walls.png" id="7_gxqib"]
+[ext_resource type="PackedScene" uid="uid://citts2xpwqa2h" path="res://Mechanics and Assets/Player.tscn" id="8_j4p1d"]
+[ext_resource type="PackedScene" uid="uid://8uqvnx8qycrk" path="res://Mechanics and Assets/Goal.tscn" id="9_grwwk"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_3ujt7"]
+shader = ExtResource("2_1c823")
+shader_parameter/time_scale = 0.4
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ofnqf"]
+texture = ExtResource("7_gxqib")
+texture_region_size = Vector2i(128, 128)
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, 64, -64, 64)
+1:0/0 = 0
+1:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+1:0/0/physics_layer_0/angular_velocity = 0.0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, 64, -64, 64)
+2:0/0 = 0
+2:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+2:0/0/physics_layer_0/angular_velocity = 0.0
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, 64, -64, 64)
+0:1/0 = 0
+0:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:1/0/physics_layer_0/angular_velocity = 0.0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, 64, -64, 64)
+1:1/0 = 0
+1:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+1:1/0/physics_layer_0/angular_velocity = 0.0
+2:1/0 = 0
+2:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+2:1/0/physics_layer_0/angular_velocity = 0.0
+2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, 64, -64, 64)
+0:2/0 = 0
+0:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:2/0/physics_layer_0/angular_velocity = 0.0
+0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, 64, -64, 64)
+1:2/0 = 0
+1:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+1:2/0/physics_layer_0/angular_velocity = 0.0
+1:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, 64, -64, 64)
+2:2/0 = 0
+2:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+2:2/0/physics_layer_0/angular_velocity = 0.0
+2:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, 64, -64, 64)
+
+[sub_resource type="TileSet" id="TileSet_t6d18"]
+tile_size = Vector2i(128, 128)
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_ofnqf")
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_a3s5y"]
+friction = 0.17
+bounce = 0.63
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_e27ik"]
+texture = ExtResource("2_2r5pm")
+texture_region_size = Vector2i(128, 128)
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+1:0/0 = 0
+1:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+1:0/0/physics_layer_0/angular_velocity = 0.0
+2:0/0 = 0
+2:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+2:0/0/physics_layer_0/angular_velocity = 0.0
+3:0/0 = 0
+3:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+3:0/0/physics_layer_0/angular_velocity = 0.0
+3:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, 45.7852, 64, 45.7852, 64, 64, -64, 64)
+4:0/0 = 0
+4:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+4:0/0/physics_layer_0/angular_velocity = 0.0
+0:1/0 = 0
+0:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:1/0/physics_layer_0/angular_velocity = 0.0
+1:1/0 = 0
+1:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+1:1/0/physics_layer_0/angular_velocity = 0.0
+2:1/0 = 0
+2:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+2:1/0/physics_layer_0/angular_velocity = 0.0
+2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(50.2046, -64, 64, -64, 64, 64, 48.4368, 64)
+3:1/0 = 0
+3:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+3:1/0/physics_layer_0/angular_velocity = 0.0
+4:1/0 = 0
+4:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+4:1/0/physics_layer_0/angular_velocity = 0.0
+4:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64.5, -64.5, -48.0833, -64, -48.0833, 64, -64.5, 64.5)
+2:2/0 = 0
+2:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+2:2/0/physics_layer_0/angular_velocity = 0.0
+3:2/0 = 0
+3:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+3:2/0/physics_layer_0/angular_velocity = 0.0
+3:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64.5, -64.5, 64, -64, 64, -48.6136, -64, -47.5529)
+4:2/0 = 0
+4:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+4:2/0/physics_layer_0/angular_velocity = 0.0
+
+[sub_resource type="TileSet" id="TileSet_bpgqd"]
+tile_size = Vector2i(128, 128)
+physics_layer_0/collision_layer = 1
+physics_layer_0/physics_material = SubResource("PhysicsMaterial_a3s5y")
+sources/2 = SubResource("TileSetAtlasSource_e27ik")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_k3f3e"]
+shader = ExtResource("3_c225m")
+shader_parameter/speed = 0.3
+shader_parameter/line_thickness = 0.02
+shader_parameter/diamond_size = 0.5
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_frkf1"]
+texture = ExtResource("4_qfam2")
+texture_region_size = Vector2i(128, 128)
+0:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_astal"]
+tile_size = Vector2i(128, 128)
+sources/0 = SubResource("TileSetAtlasSource_frkf1")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_mgg5p"]
+shader = ExtResource("6_kgt4c")
+shader_parameter/time_scale = 0.4
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_x4fyl"]
+texture = ExtResource("7_gxqib")
+texture_region_size = Vector2i(128, 128)
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, 64, -64, 64)
+1:0/0 = 0
+1:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+1:0/0/physics_layer_0/angular_velocity = 0.0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, 64, -64, 64)
+2:0/0 = 0
+2:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+2:0/0/physics_layer_0/angular_velocity = 0.0
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, 64, -64, 64)
+0:1/0 = 0
+0:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:1/0/physics_layer_0/angular_velocity = 0.0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, 64, -64, 64)
+1:1/0 = 0
+1:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+1:1/0/physics_layer_0/angular_velocity = 0.0
+2:1/0 = 0
+2:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+2:1/0/physics_layer_0/angular_velocity = 0.0
+2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, 64, -64, 64)
+0:2/0 = 0
+0:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:2/0/physics_layer_0/angular_velocity = 0.0
+0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, 64, -64, 64)
+1:2/0 = 0
+1:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+1:2/0/physics_layer_0/angular_velocity = 0.0
+1:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, 64, -64, 64)
+2:2/0 = 0
+2:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+2:2/0/physics_layer_0/angular_velocity = 0.0
+2:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, 64, -64, 64)
+
+[sub_resource type="TileSet" id="TileSet_ee6qa"]
+tile_size = Vector2i(128, 128)
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_x4fyl")
+
+[node name="MapContent" type="Node2D"]
+script = ExtResource("1_b6gcc")
+
+[node name="Wallsop" type="TileMap" parent="."]
+material = SubResource("ShaderMaterial_3ujt7")
+tile_set = SubResource("TileSet_t6d18")
+format = 2
+
+[node name="Floor" type="TileMap" parent="."]
+tile_set = SubResource("TileSet_bpgqd")
+format = 2
+layer_0/z_index = -1
+
+[node name="ShaderFloor" type="TileMap" parent="Floor"]
+material = SubResource("ShaderMaterial_k3f3e")
+tile_set = SubResource("TileSet_astal")
+format = 2
+
+[node name="Gravitation" parent="." instance=ExtResource("5_jdh6f")]
+visible = false
+
+[node name="Wall" type="TileMap" parent="."]
+material = SubResource("ShaderMaterial_mgg5p")
+tile_set = SubResource("TileSet_ee6qa")
+format = 2
+
+[node name="Player" parent="." instance=ExtResource("8_j4p1d")]
+z_index = 1
+position = Vector2(573, 1410)
+
+[node name="Goal" parent="." instance=ExtResource("9_grwwk")]
+position = Vector2(569, 353)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(583, 906)
+zoom = Vector2(0.665, 0.665)

@@ -1,0 +1,42 @@
+[gd_scene load_steps=7 format=3 uid="uid://sg4dhjdag5ec"]
+
+[ext_resource type="Script" path="res://gravitation.gd" id="1_6opox"]
+[ext_resource type="Texture2D" uid="uid://dgu81bmvub73w" path="res://Gravitation.png" id="1_bnkis"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h3cka"]
+atlas = ExtResource("1_bnkis")
+region = Rect2(0, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r40i3"]
+atlas = ExtResource("1_bnkis")
+region = Rect2(256, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ipjqv"]
+atlas = ExtResource("1_bnkis")
+region = Rect2(512, 0, 256, 256)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_p34sc"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h3cka")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r40i3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ipjqv")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[node name="Gravitation" type="Node2D"]
+script = ExtResource("1_6opox")
+
+[node name="GravityAnimation" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_p34sc")
+frame_progress = 0.106097
