@@ -2,10 +2,10 @@
 
 [ext_resource type="Script" path="res://Player.gd" id="1_mx110"]
 [ext_resource type="Texture2D" uid="uid://c4mtdao8fd4u7" path="res://ball.png" id="2_ybxki"]
-[ext_resource type="Texture2D" uid="uid://2nwji7vejf4m" path="res://TempFiles/eyes calm.png" id="3_so4l4"]
-[ext_resource type="Texture2D" uid="uid://dj5o7qp4ygm6v" path="res://TempFiles/Blink.png" id="4_17bf6"]
-[ext_resource type="Texture2D" uid="uid://dxf30md65kxgi" path="res://TempFiles/fast.png" id="5_4ne3u"]
-[ext_resource type="Texture2D" uid="uid://c001ckrhbljuq" path="res://TempFiles/Eyeballs.png" id="5_405te"]
+[ext_resource type="Texture2D" uid="uid://c0tqxk83eeboe" path="res://TempFiles/eyes calm.png" id="3_so4l4"]
+[ext_resource type="Texture2D" uid="uid://b86q4cdjvk6m6" path="res://TempFiles/Blink.png" id="4_17bf6"]
+[ext_resource type="Texture2D" uid="uid://b3f7aibcehw77" path="res://TempFiles/fast.png" id="5_4ne3u"]
+[ext_resource type="Texture2D" uid="uid://boqbr5lc6wahh" path="res://TempFiles/Eyeballs.png" id="5_405te"]
 [ext_resource type="Script" path="res://Mechanics and Assets/EyeAnimations.gd" id="6_7cg6d"]
 [ext_resource type="Script" path="res://Mechanics and Assets/Eyeballs.gd" id="7_ry5qw"]
 

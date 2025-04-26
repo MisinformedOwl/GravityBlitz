@@ -34,6 +34,10 @@ func _physics_process(delta):
 	velocity -= velocity/200
 	var collision = move_and_collide(velocity*delta)
 	if collision:
-		velocity = velocity.bounce(collision.get_normal())*0.6
-	
+		if abs(collision.get_normal().x) == 1:
+			velocity.x = velocity.bounce(Vector2(1,0)).x*0.6
+		elif abs(collision.get_normal().y) == 1:
+			velocity.y = velocity.bounce(Vector2(0,1)).y*0.6
+		else:
+			velocity = velocity.bounce(collision.get_normal())*0.6 # Further work required to ensure stable movement.
 	moveEyes()
