@@ -1,384 +1,96 @@
-[gd_scene load_steps=20 format=3 uid="uid://3lledqiq42iw"]
+[gd_scene load_steps=7 format=3 uid="uid://c7wgu3tqx8yyh"]
 
 [ext_resource type="PackedScene" uid="uid://bdx77watf0xjr" path="res://Levels/MapContent.tscn" id="1_o82x0"]
 [ext_resource type="Script" path="res://Mechanics and Assets/breakable.gd" id="2_fpxk2"]
-[ext_resource type="Texture2D" uid="uid://utvgrp0w2cuo" path="res://Shaders/Level 7 shapes.png" id="3_sxnmw"]
+[ext_resource type="Texture2D" uid="uid://cs551w6jo4ieu" path="res://Shaders/destructableTexture.png" id="3_88eim"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_eytra"]
-atlas = ExtResource("3_sxnmw")
-region = Rect2(1118.31, 33.1439, 282.571, 294.284)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_sqikq"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_17tb6"]
 resource_local_to_scene = true
-atlas = ExtResource("3_sxnmw")
-region = Rect2(1489.49, 30.6387, 260.093, 293.203)
+atlas = ExtResource("3_88eim")
+region = Rect2(124.963, 223.157, 676.646, 683.55)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_fjxvg"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_s1e5x"]
 resource_local_to_scene = true
-atlas = ExtResource("3_sxnmw")
-region = Rect2(2217.39, 39.6001, 232.414, 284.9)
+atlas = ExtResource("3_88eim")
+region = Rect2(291.054, 177.129, 680.098, 683.55)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_r7iam"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_cagfy"]
 resource_local_to_scene = true
-atlas = ExtResource("3_sxnmw")
-region = Rect2(1870.02, 37.9607, 218.73, 286.101)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_gg5a1"]
-resource_local_to_scene = true
-atlas = ExtResource("3_sxnmw")
-region = Rect2(2590.39, 57.8466, 219.132, 267.285)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_0lva4"]
-resource_local_to_scene = true
-atlas = ExtResource("3_sxnmw")
-region = Rect2(790.211, 38.4044, 219.661, 287.412)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_wcprl"]
-resource_local_to_scene = true
-atlas = ExtResource("3_sxnmw")
-region = Rect2(417.053, 37.7764, 232.461, 288.209)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_lis3j"]
-resource_local_to_scene = true
-atlas = ExtResource("3_sxnmw")
-region = Rect2(69.9006, 58.4731, 218.835, 266.76)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_fsb2h"]
-resource_local_to_scene = true
-atlas = ExtResource("3_sxnmw")
-region = Rect2(86.7323, 438.894, 186.834, 246.778)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_0bako"]
-resource_local_to_scene = true
-atlas = ExtResource("3_sxnmw")
-region = Rect2(447.01, 437.895, 186.439, 247.101)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ix1pw"]
-resource_local_to_scene = true
-atlas = ExtResource("3_sxnmw")
-region = Rect2(806.669, 439.036, 186.658, 246.599)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_4rij6"]
-resource_local_to_scene = true
-atlas = ExtResource("3_sxnmw")
-region = Rect2(1165.38, 436.942, 188.917, 249.276)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_s0cbs"]
-resource_local_to_scene = true
-atlas = ExtResource("3_sxnmw")
-region = Rect2(1525.77, 438.693, 187.971, 244.983)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_iwi5l"]
-resource_local_to_scene = true
-atlas = ExtResource("3_sxnmw")
-region = Rect2(1887.33, 437.892, 185.21, 247.85)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ejnxu"]
-resource_local_to_scene = true
-atlas = ExtResource("3_sxnmw")
-region = Rect2(2246.69, 438.221, 185.939, 246.817)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_s7a12"]
-resource_local_to_scene = true
-atlas = ExtResource("3_sxnmw")
-region = Rect2(2606.48, 437.001, 188.148, 248.43)
+atlas = ExtResource("3_88eim")
+region = Rect2(541.366, 21.7772, 440.143, 468.491)
 
 [node name="Level 7" instance=ExtResource("1_o82x0")]
 
 [node name="Wallsop" parent="." index="0"]
-layer_0/tile_data = PackedInt32Array(589829, 0, 0, 589827, 131072, 0, 6, 0, 2, 4, 131072, 2)
+layer_0/tile_data = PackedInt32Array(262149, 131072, 0, 327688, 0, 2, 327685, 131072, 2, 262152, 0, 0, 262147, 0, 0)
 
 [node name="Floor" parent="." index="1"]
-layer_0/tile_data = PackedInt32Array(65537, 2, 0, 131074, 2, 0, 196611, 2, 0, 262148, 2, 0, 327685, 2, 0, 393222, 2, 0, 458759, 2, 0, 524296, 2, 0, 65543, 2, 0, 131078, 2, 0, 196613, 2, 0, 327683, 2, 0, 393218, 2, 0, 458753, 2, 0, 65539, 2, 0, 196609, 2, 0, 262146, 2, 0, 327681, 2, 0, 131076, 2, 0, 65541, 2, 0, 262150, 2, 0, 196615, 2, 0, 131080, 2, 0, 262152, 2, 0, 393224, 2, 0, 327687, 2, 0, 524294, 2, 0, 524292, 2, 0, 524290, 2, 0, 458755, 2, 0, 393220, 2, 0, 458757, 2, 0, 524289, 65538, 0, 524291, 65538, 0, 524293, 65538, 0, 524295, 65538, 0, 458760, 65538, 0, 458758, 65538, 0, 393223, 65538, 0, 327688, 65538, 0, 458756, 65538, 0, 458754, 65538, 0, 393217, 65538, 0, 393219, 65538, 0, 327682, 65538, 0, 262145, 65538, 0, 393221, 65538, 0, 327686, 65538, 0, 327684, 65538, 0, 262149, 65538, 0, 262151, 65538, 0, 196616, 65538, 0, 131079, 65538, 0, 196614, 65538, 0, 196612, 65538, 0, 262147, 65538, 0, 196610, 65538, 0, 131073, 65538, 0, 65538, 65538, 0, 131075, 65538, 0, 65540, 65538, 0, 131077, 65538, 0, 65542, 65538, 0, 65544, 65538, 0, 589828, 65538, 0, 655364, 65538, 0, 720900, 65538, 0, 5, 2, 0, -65531, 2, 0, -131067, 2, 0)
+layer_0/tile_data = PackedInt32Array(393221, 2, 0, 458757, 2, 0, 524293, 2, 0, 589829, 2, 0, 655365, 2, 0, 720901, 2, 0, 786437, 2, 0, 851973, 2, 0, 393222, 2, 0, 458758, 2, 0, 524294, 2, 0, 589830, 2, 0, 655366, 2, 0, 720902, 2, 0, 786438, 2, 0, 851974, 2, 0, 393223, 2, 0, 458759, 2, 0, 524295, 2, 0, 589831, 2, 0, 655367, 2, 0, 720903, 2, 0, 786439, 2, 0, 851975, 2, 0, 393224, 2, 0, 458760, 2, 0, 524296, 2, 0, 589832, 2, 0, 655368, 2, 0, 720904, 2, 0, 786440, 2, 0, 851976, 2, 0, 393217, 2, 0, 458753, 2, 0, 524289, 2, 0, 589825, 2, 0, 393218, 2, 0, 458754, 2, 0, 524290, 2, 0, 589826, 2, 0, 131076, 2, 0, 196612, 2, 0, 131077, 2, 0, 196613, 2, 0, 131078, 2, 0, 196614, 2, 0, 131079, 2, 0, 196615, 2, 0, 131080, 2, 0, 196616, 2, 0, 786433, 2, 0, 786434, 2, 0, 262151, 65538, 0, 327687, 65538, 0, 262150, 65538, 0, 327686, 65538, 0, 655361, 65538, 0, 720897, 65538, 0, 655362, 65538, 0, 720898, 65538, 0, 131073, 65538, 0, 196609, 65538, 0, 131074, 65538, 0, 196610, 65538, 0, 131075, 2, 0, 196611, 2, 0, 262145, 65538, 0, 327681, 65538, 0, 262146, 65538, 0, 327682, 65538, 0, 851969, 2, 0, 851970, 2, 0)
 
 [node name="ShaderFloor" parent="Floor" index="0"]
-layer_0/tile_data = PackedInt32Array(65537, 0, 0, 131074, 0, 0, 196609, 0, 0, 196611, 0, 0, 262146, 0, 0, 65539, 0, 0, 131076, 0, 0, 65541, 0, 0, 65543, 0, 0, 131078, 0, 0, 131080, 0, 0, 196615, 0, 0, 196613, 0, 0, 262150, 0, 0, 262152, 0, 0, 327687, 0, 0, 393224, 0, 0, 458759, 0, 0, 524296, 0, 0, 524294, 0, 0, 393222, 0, 0, 458757, 0, 0, 524292, 0, 0, 458755, 0, 0, 524290, 0, 0, 327685, 0, 0, 393220, 0, 0, 262148, 0, 0, 327683, 0, 0, 393218, 0, 0, 458753, 0, 0, 327681, 0, 0, 5, 0, 0, -65531, 0, 0, -131067, 0, 0)
+layer_0/tile_data = PackedInt32Array(393221, 0, 0, 458757, 0, 0, 524293, 0, 0, 589829, 0, 0, 655365, 0, 0, 720901, 0, 0, 786437, 0, 0, 851973, 0, 0, 393222, 0, 0, 458758, 0, 0, 524294, 0, 0, 589830, 0, 0, 655366, 0, 0, 720902, 0, 0, 786438, 0, 0, 851974, 0, 0, 393223, 0, 0, 458759, 0, 0, 524295, 0, 0, 589831, 0, 0, 655367, 0, 0, 720903, 0, 0, 786439, 0, 0, 851975, 0, 0, 393224, 0, 0, 458760, 0, 0, 524296, 0, 0, 589832, 0, 0, 655368, 0, 0, 720904, 0, 0, 786440, 0, 0, 851976, 0, 0, 131076, 0, 0, 196612, 0, 0, 131077, 0, 0, 196613, 0, 0, 131078, 0, 0, 196614, 0, 0, 131079, 0, 0, 196615, 0, 0, 131080, 0, 0, 196616, 0, 0, 393217, 0, 0, 458753, 0, 0, 524289, 0, 0, 589825, 0, 0, 393218, 0, 0, 458754, 0, 0, 524290, 0, 0, 589826, 0, 0, 786433, 0, 0, 786434, 0, 0, 131075, 0, 0, 196611, 0, 0, 851969, 0, 0, 851970, 0, 0)
 
 [node name="Wall" parent="." index="3"]
-layer_0/tile_data = PackedInt32Array(65545, 131072, 1, 131081, 131072, 1, 196617, 131072, 1, 262153, 131072, 1, 327689, 131072, 1, 393225, 131072, 1, 458761, 131072, 1, 524297, 131072, 1, 589832, 65536, 2, 589831, 65536, 2, 589830, 65536, 2, 589826, 65536, 2, 589825, 65536, 2, 8, 65536, 0, 7, 65536, 0, 2, 65536, 0, 1, 65536, 0, 524288, 0, 1, 458752, 0, 1, 393216, 0, 1, 327680, 0, 1, 262144, 0, 1, 196608, 0, 1, 131072, 0, 1, 65536, 0, 1, 0, 0, 0, 9, 131072, 0, 589833, 131072, 2, 589824, 0, 2, 655365, 131072, 1, 720901, 131072, 1, 786437, 131072, 2, 786436, 65536, 2, 786435, 0, 2, 720899, 0, 1, 655363, 0, 1, 3, 65536, 0, -65530, 131072, 1, -131066, 131072, 1, -196603, 65536, 0, -196602, 131072, 0, -196604, 0, 0, -131068, 0, 1, -65532, 0, 1)
+layer_0/tile_data = PackedInt32Array(393225, 131072, 1, 458761, 131072, 1, 524297, 131072, 1, 589833, 131072, 1, 655369, 131072, 1, 720905, 131072, 1, 786441, 131072, 1, 851977, 131072, 1, 917513, 131072, 2, 917509, 65536, 2, 917510, 65536, 2, 917511, 65536, 2, 917512, 65536, 2, 131081, 131072, 1, 196617, 131072, 1, 65540, 65536, 0, 65541, 65536, 0, 65542, 65536, 0, 65543, 65536, 0, 65544, 65536, 0, 65537, 65536, 0, 65538, 65536, 0, 65539, 65536, 0, 393216, 0, 1, 458752, 0, 1, 524288, 0, 1, 589824, 0, 1, 786432, 0, 1, 786435, 131072, 1, 65536, 0, 0, 262153, 131072, 2, 327689, 131072, 0, 262148, 65536, 2, 327683, 131072, 1, 393219, 131072, 1, 458755, 131072, 1, 524291, 131072, 1, 589827, 131072, 1, 655363, 131072, 1, 720899, 131072, 1, 655360, 0, 1, 720896, 0, 1, 131072, 0, 1, 196608, 0, 1, 262144, 0, 1, 327680, 0, 1, 393220, 0, 1, 458756, 0, 1, 524292, 0, 1, 589828, 0, 1, 655364, 0, 1, 720900, 0, 1, 786436, 0, 1, 851972, 0, 1, 327684, 0, 0, 917508, 0, 2, 65545, 131072, 0, 917505, 65536, 2, 917506, 65536, 2, 917507, 131072, 2, 851971, 131072, 1, 851968, 0, 1, 917504, 0, 2)
 
 [node name="Player" parent="." index="4"]
-position = Vector2(579, 1473)
+position = Vector2(897, 1721)
 
 [node name="Goal" parent="." index="5"]
-position = Vector2(703, -191)
+position = Vector2(255, 1726)
 
 [node name="Camera2D" parent="." index="6"]
-position = Vector2(639, 655)
+position = Vector2(637, 1036)
 
-[node name="Queen" type="StaticBody2D" parent="." index="7"]
-position = Vector2(451, 573)
+[node name="Breakable" type="StaticBody2D" parent="." index="7"]
+position = Vector2(895, 639)
 script = ExtResource("2_fpxk2")
 
-[node name="Sprite2D" type="Sprite2D" parent="Queen" index="0"]
+[node name="Sprite2D" type="Sprite2D" parent="Breakable" index="0"]
 texture_repeat = 2
 position = Vector2(0, -2.02656e-06)
 scale = Vector2(0.375, 0.375)
-texture = SubResource("AtlasTexture_eytra")
+texture = SubResource("AtlasTexture_17tb6")
 
-[node name="TextureRect" type="TextureRect" parent="Queen/Sprite2D" index="0"]
-offset_right = 40.0
-offset_bottom = 40.0
+[node name="Area2D" type="Area2D" parent="Breakable" index="1"]
 
-[node name="Area2D" type="Area2D" parent="Queen" index="1"]
-
-[node name="Timer" type="Timer" parent="Queen" index="2"]
+[node name="Timer" type="Timer" parent="Breakable" index="2"]
 wait_time = 2.0
 
-[node name="King" type="StaticBody2D" parent="." index="8"]
-position = Vector2(703, 193)
+[node name="Breakable2" type="StaticBody2D" parent="." index="8"]
+position = Vector2(256, 384)
 script = ExtResource("2_fpxk2")
 
-[node name="Sprite2D" type="Sprite2D" parent="King" index="0"]
+[node name="Sprite2D" type="Sprite2D" parent="Breakable2" index="0"]
 texture_repeat = 2
 position = Vector2(0, -2.02656e-06)
 scale = Vector2(0.375, 0.375)
-texture = SubResource("AtlasTexture_sqikq")
+texture = SubResource("AtlasTexture_s1e5x")
 
-[node name="Area2D" type="Area2D" parent="King" index="1"]
+[node name="Area2D" type="Area2D" parent="Breakable2" index="1"]
 
-[node name="Timer" type="Timer" parent="King" index="2"]
+[node name="Timer" type="Timer" parent="Breakable2" index="2"]
 wait_time = 2.0
 
-[node name="Knight" type="StaticBody2D" parent="." index="9"]
-position = Vector2(1086, 575)
+[node name="Breakable3" type="StaticBody2D" parent="." index="9"]
+position = Vector2(256, 1398)
+scale = Vector2(1.545, 1.545)
 script = ExtResource("2_fpxk2")
 
-[node name="Sprite2D" type="Sprite2D" parent="Knight" index="0"]
+[node name="Sprite2D" type="Sprite2D" parent="Breakable3" index="0"]
 texture_repeat = 2
 position = Vector2(0, -2.02656e-06)
 scale = Vector2(0.375, 0.375)
-texture = SubResource("AtlasTexture_fjxvg")
+texture = SubResource("AtlasTexture_cagfy")
 
-[node name="Area2D" type="Area2D" parent="Knight" index="1"]
+[node name="Area2D" type="Area2D" parent="Breakable3" index="1"]
 
-[node name="Timer" type="Timer" parent="Knight" index="2"]
+[node name="Timer" type="Timer" parent="Breakable3" index="2"]
 wait_time = 2.0
 
-[node name="Bishop" type="StaticBody2D" parent="." index="10"]
-position = Vector2(833, 192)
-script = ExtResource("2_fpxk2")
-
-[node name="Sprite2D" type="Sprite2D" parent="Bishop" index="0"]
-texture_repeat = 2
-position = Vector2(0, -2.02656e-06)
-scale = Vector2(0.375, 0.375)
-texture = SubResource("AtlasTexture_r7iam")
-
-[node name="Area2D" type="Area2D" parent="Bishop" index="1"]
-
-[node name="Timer" type="Timer" parent="Bishop" index="2"]
-wait_time = 2.0
-
-[node name="Rook" type="StaticBody2D" parent="." index="11"]
-position = Vector2(1091, 956)
-script = ExtResource("2_fpxk2")
-
-[node name="Sprite2D" type="Sprite2D" parent="Rook" index="0"]
-texture_repeat = 2
-position = Vector2(0, -2.02656e-06)
-scale = Vector2(0.375, 0.375)
-texture = SubResource("AtlasTexture_gg5a1")
-
-[node name="Area2D" type="Area2D" parent="Rook" index="1"]
-
-[node name="Timer" type="Timer" parent="Rook" index="2"]
-wait_time = 2.0
-
-[node name="Bishop2" type="StaticBody2D" parent="." index="12"]
-position = Vector2(575, 319)
-script = ExtResource("2_fpxk2")
-
-[node name="Sprite2D" type="Sprite2D" parent="Bishop2" index="0"]
-texture_repeat = 2
-position = Vector2(0, -2.02656e-06)
-scale = Vector2(0.375, 0.375)
-texture = SubResource("AtlasTexture_0lva4")
-
-[node name="Area2D" type="Area2D" parent="Bishop2" index="1"]
-
-[node name="Timer" type="Timer" parent="Bishop2" index="2"]
-wait_time = 2.0
-
-[node name="Knight2" type="StaticBody2D" parent="." index="13"]
-position = Vector2(702, 565)
-script = ExtResource("2_fpxk2")
-
-[node name="Sprite2D" type="Sprite2D" parent="Knight2" index="0"]
-texture_repeat = 2
-position = Vector2(0, -2.02656e-06)
-scale = Vector2(0.375, 0.375)
-texture = SubResource("AtlasTexture_wcprl")
-
-[node name="Area2D" type="Area2D" parent="Knight2" index="1"]
-
-[node name="Timer" type="Timer" parent="Knight2" index="2"]
-wait_time = 2.0
-
-[node name="Rook2" type="StaticBody2D" parent="." index="14"]
-position = Vector2(192, 318)
-script = ExtResource("2_fpxk2")
-
-[node name="Sprite2D" type="Sprite2D" parent="Rook2" index="0"]
-texture_repeat = 2
-position = Vector2(0, -2.02656e-06)
-scale = Vector2(0.375, 0.375)
-texture = SubResource("AtlasTexture_lis3j")
-
-[node name="Area2D" type="Area2D" parent="Rook2" index="1"]
-
-[node name="Timer" type="Timer" parent="Rook2" index="2"]
-wait_time = 2.0
-
-[node name="Pawn1" type="StaticBody2D" parent="." index="15"]
-position = Vector2(190, 575)
-script = ExtResource("2_fpxk2")
-
-[node name="Sprite2D" type="Sprite2D" parent="Pawn1" index="0"]
-texture_repeat = 2
-position = Vector2(0, -2.02656e-06)
-scale = Vector2(0.375, 0.375)
-texture = SubResource("AtlasTexture_fsb2h")
-
-[node name="Area2D" type="Area2D" parent="Pawn1" index="1"]
-
-[node name="Timer" type="Timer" parent="Pawn1" index="2"]
-wait_time = 2.0
-
-[node name="Pawn2" type="StaticBody2D" parent="." index="16"]
-position = Vector2(319, 447)
-script = ExtResource("2_fpxk2")
-
-[node name="Sprite2D" type="Sprite2D" parent="Pawn2" index="0"]
-texture_repeat = 2
-position = Vector2(0, -2.02656e-06)
-scale = Vector2(0.375, 0.375)
-texture = SubResource("AtlasTexture_0bako")
-
-[node name="Area2D" type="Area2D" parent="Pawn2" index="1"]
-
-[node name="Timer" type="Timer" parent="Pawn2" index="2"]
-wait_time = 2.0
-
-[node name="Pawn3" type="StaticBody2D" parent="." index="17"]
-position = Vector2(451, 698)
-script = ExtResource("2_fpxk2")
-
-[node name="Sprite2D" type="Sprite2D" parent="Pawn3" index="0"]
-texture_repeat = 2
-position = Vector2(0, -2.02656e-06)
-scale = Vector2(0.375, 0.375)
-texture = SubResource("AtlasTexture_ix1pw")
-
-[node name="Area2D" type="Area2D" parent="Pawn3" index="1"]
-
-[node name="Timer" type="Timer" parent="Pawn3" index="2"]
-wait_time = 2.0
-
-[node name="Pawn4" type="StaticBody2D" parent="." index="18"]
-position = Vector2(712, 698)
-script = ExtResource("2_fpxk2")
-
-[node name="Sprite2D" type="Sprite2D" parent="Pawn4" index="0"]
-texture_repeat = 2
-position = Vector2(0, -2.02656e-06)
-scale = Vector2(0.375, 0.375)
-texture = SubResource("AtlasTexture_4rij6")
-
-[node name="Area2D" type="Area2D" parent="Pawn4" index="1"]
-
-[node name="Timer" type="Timer" parent="Pawn4" index="2"]
-wait_time = 2.0
-
-[node name="Pawn5" type="StaticBody2D" parent="." index="19"]
-position = Vector2(578, 575)
-script = ExtResource("2_fpxk2")
-
-[node name="Sprite2D" type="Sprite2D" parent="Pawn5" index="0"]
-texture_repeat = 2
-position = Vector2(0, -2.02656e-06)
-scale = Vector2(0.375, 0.375)
-texture = SubResource("AtlasTexture_s0cbs")
-
-[node name="Area2D" type="Area2D" parent="Pawn5" index="1"]
-
-[node name="Timer" type="Timer" parent="Pawn5" index="2"]
-wait_time = 2.0
-
-[node name="Pawn6" type="StaticBody2D" parent="." index="20"]
-position = Vector2(964, 822)
-script = ExtResource("2_fpxk2")
-
-[node name="Sprite2D" type="Sprite2D" parent="Pawn6" index="0"]
-texture_repeat = 2
-position = Vector2(0, -2.02656e-06)
-scale = Vector2(0.375, 0.375)
-texture = SubResource("AtlasTexture_iwi5l")
-
-[node name="Area2D" type="Area2D" parent="Pawn6" index="1"]
-
-[node name="Timer" type="Timer" parent="Pawn6" index="2"]
-wait_time = 2.0
-
-[node name="Pawn7" type="StaticBody2D" parent="." index="21"]
-position = Vector2(962, 693)
-script = ExtResource("2_fpxk2")
-
-[node name="Sprite2D" type="Sprite2D" parent="Pawn7" index="0"]
-texture_repeat = 2
-position = Vector2(0, -2.02656e-06)
-scale = Vector2(0.375, 0.375)
-texture = SubResource("AtlasTexture_ejnxu")
-
-[node name="Area2D" type="Area2D" parent="Pawn7" index="1"]
-
-[node name="Timer" type="Timer" parent="Pawn7" index="2"]
-wait_time = 2.0
-
-[node name="Pawn8" type="StaticBody2D" parent="." index="22"]
-position = Vector2(832, 566)
-script = ExtResource("2_fpxk2")
-
-[node name="Sprite2D" type="Sprite2D" parent="Pawn8" index="0"]
-texture_repeat = 2
-position = Vector2(0, -2.02656e-06)
-scale = Vector2(0.375, 0.375)
-texture = SubResource("AtlasTexture_s7a12")
-
-[node name="Area2D" type="Area2D" parent="Pawn8" index="1"]
-
-[node name="Timer" type="Timer" parent="Pawn8" index="2"]
-wait_time = 2.0
-
-[connection signal="body_entered" from="Queen/Area2D" to="Queen" method="_on_area_2d_body_entered"]
-[connection signal="timeout" from="Queen/Timer" to="Queen" method="_on_timer_timeout"]
-[connection signal="body_entered" from="King/Area2D" to="King" method="_on_area_2d_body_entered"]
-[connection signal="timeout" from="King/Timer" to="King" method="_on_timer_timeout"]
-[connection signal="body_entered" from="Knight/Area2D" to="Knight" method="_on_area_2d_body_entered"]
-[connection signal="timeout" from="Knight/Timer" to="Knight" method="_on_timer_timeout"]
-[connection signal="body_entered" from="Bishop/Area2D" to="Bishop" method="_on_area_2d_body_entered"]
-[connection signal="timeout" from="Bishop/Timer" to="Bishop" method="_on_timer_timeout"]
-[connection signal="body_entered" from="Rook/Area2D" to="Rook" method="_on_area_2d_body_entered"]
-[connection signal="timeout" from="Rook/Timer" to="Rook" method="_on_timer_timeout"]
-[connection signal="body_entered" from="Bishop2/Area2D" to="Bishop2" method="_on_area_2d_body_entered"]
-[connection signal="timeout" from="Bishop2/Timer" to="Bishop2" method="_on_timer_timeout"]
-[connection signal="body_entered" from="Knight2/Area2D" to="Knight2" method="_on_area_2d_body_entered"]
-[connection signal="timeout" from="Knight2/Timer" to="Knight2" method="_on_timer_timeout"]
-[connection signal="body_entered" from="Rook2/Area2D" to="Rook2" method="_on_area_2d_body_entered"]
-[connection signal="timeout" from="Rook2/Timer" to="Rook2" method="_on_timer_timeout"]
-[connection signal="body_entered" from="Pawn1/Area2D" to="Pawn1" method="_on_area_2d_body_entered"]
-[connection signal="timeout" from="Pawn1/Timer" to="Pawn1" method="_on_timer_timeout"]
-[connection signal="body_entered" from="Pawn2/Area2D" to="Pawn2" method="_on_area_2d_body_entered"]
-[connection signal="timeout" from="Pawn2/Timer" to="Pawn2" method="_on_timer_timeout"]
-[connection signal="body_entered" from="Pawn3/Area2D" to="Pawn3" method="_on_area_2d_body_entered"]
-[connection signal="timeout" from="Pawn3/Timer" to="Pawn3" method="_on_timer_timeout"]
-[connection signal="body_entered" from="Pawn4/Area2D" to="Pawn4" method="_on_area_2d_body_entered"]
-[connection signal="timeout" from="Pawn4/Timer" to="Pawn4" method="_on_timer_timeout"]
-[connection signal="body_entered" from="Pawn5/Area2D" to="Pawn5" method="_on_area_2d_body_entered"]
-[connection signal="timeout" from="Pawn5/Timer" to="Pawn5" method="_on_timer_timeout"]
-[connection signal="body_entered" from="Pawn6/Area2D" to="Pawn6" method="_on_area_2d_body_entered"]
-[connection signal="timeout" from="Pawn6/Timer" to="Pawn6" method="_on_timer_timeout"]
-[connection signal="body_entered" from="Pawn7/Area2D" to="Pawn7" method="_on_area_2d_body_entered"]
-[connection signal="timeout" from="Pawn7/Timer" to="Pawn7" method="_on_timer_timeout"]
-[connection signal="body_entered" from="Pawn8/Area2D" to="Pawn8" method="_on_area_2d_body_entered"]
-[connection signal="timeout" from="Pawn8/Timer" to="Pawn8" method="_on_timer_timeout"]
+[connection signal="body_entered" from="Breakable/Area2D" to="Breakable" method="_on_area_2d_body_entered"]
+[connection signal="timeout" from="Breakable/Timer" to="Breakable" method="_on_timer_timeout"]
+[connection signal="body_entered" from="Breakable2/Area2D" to="Breakable2" method="_on_area_2d_body_entered"]
+[connection signal="timeout" from="Breakable2/Timer" to="Breakable2" method="_on_timer_timeout"]
+[connection signal="body_entered" from="Breakable3/Area2D" to="Breakable3" method="_on_area_2d_body_entered"]
+[connection signal="timeout" from="Breakable3/Timer" to="Breakable3" method="_on_timer_timeout"]

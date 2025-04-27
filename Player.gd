@@ -1,6 +1,5 @@
 extends CharacterBody2D
 
-@onready var shader_floor = $"../TileMap/ShaderFloor"
 @onready var eyes = $Sprite/Eyes
 
 const SPEED = 300.0

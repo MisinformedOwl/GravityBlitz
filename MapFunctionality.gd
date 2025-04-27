@@ -30,5 +30,4 @@ func _physics_process(_d):
 	mouseInput()
 
 func _goal_reached(_body):
-	print("stage1")
 	emit_signal("goal_reached")
