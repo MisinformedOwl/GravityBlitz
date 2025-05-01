@@ -6,9 +6,11 @@ extends Node2D
 @onready var goal = $Goal
 
 signal goal_reached
+signal playerDeath
 
 func _ready():
 	goal.connect("body_entered", _goal_reached)
+	player.connect("death", _playerDeath)
 
 func mouseInput():
 	if Input.is_action_pressed("PlayerPoint"):
@@ -31,3 +33,9 @@ func _physics_process(_d):
 
 func _goal_reached(_body):
 	emit_signal("goal_reached")
+
+func _playerDeath():
+	emit_signal("playerDeath")
+
+func reload():
+	pass

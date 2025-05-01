@@ -1,6 +1,6 @@
 extends Node
 
-var CurrentLevel = 1
+var CurrentLevel = 11
 var transitioning
 var Limit = 1
 
@@ -17,16 +17,22 @@ func LoadMap(name=""):
 		newMap = load("res://Levels/{0}.tscn".format([name])).instantiate()
 		print("Loading level {0}".format([name]))
 	newMap.connect("goal_reached", _on_goal_reached)
+	newMap.connect("playerDeath", _restart)
 	add_child(newMap)
 
 #===============================================================================
 
 func _ready():
-	LoadMap("Level 1")
+	LoadMap("Level 11")
 
 #===============================================================================
 
 func _on_goal_reached():
 	get_child(0).queue_free()
 	CurrentLevel+=1
+	LoadMap()
+
+func _restart():
+	print("Restarting")
+	get_child(0).queue_free()
 	LoadMap()

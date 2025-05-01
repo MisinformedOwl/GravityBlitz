@@ -1,6 +1,7 @@
 extends Sprite2D
 
-
+var lock = false
 
 func _on_animated_sprite_2d_frame_changed():
-	visible = !visible
+	if not lock:
+		visible = !visible
