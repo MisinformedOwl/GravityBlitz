@@ -13,6 +13,7 @@ z_index = -2
 z_as_relative = false
 tile_set = SubResource("TileSet_2p6on")
 format = 2
+layer_0/z_index = -5
 script = ExtResource("2_bdsix")
 
 [node name="Timer" type="Timer" parent="."]

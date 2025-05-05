@@ -57,7 +57,7 @@ func lockdownAnims():
 
 func pitfallDeath():
 	lockdownAnims()
-	z_index = -1
+	z_index = -3
 	$AnimationPlayer.play("Pitfall Death")
 
 func dead():

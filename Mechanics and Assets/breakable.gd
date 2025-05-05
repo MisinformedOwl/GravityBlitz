@@ -26,7 +26,6 @@ func _ready():
 
 func _on_area_2d_body_entered(body):
 	if body.name == "Player" and dying == false:
-		print(body.getspeedhit())
 		if body.getspeedhit() >= body.SPEEDTHRESHOLD:
 			dying = true
 			var noise = NoiseTexture2D.new()

@@ -9,7 +9,9 @@ signal goal_reached
 signal playerDeath
 
 func _ready():
-	goal.connect("body_entered", _goal_reached)
+	for child in get_children():
+		if child.name.substr(0,4) == "Goal":
+			child.connect("body_entered", _goal_reached)
 	player.connect("death", _playerDeath)
 
 func mouseInput():
