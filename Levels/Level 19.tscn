@@ -23,4 +23,5 @@ position = Vector2(4159, 11332)
 position = Vector2(3775, 2754)
 
 [node name="Camera2D" parent="." index="6"]
+position = Vector2(4159, 11332)
 moving = true

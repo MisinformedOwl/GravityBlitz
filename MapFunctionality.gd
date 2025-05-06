@@ -1,9 +1,13 @@
 extends Node2D
 
+var goalPointerLoader = preload("res://Mechanics and Assets/GoalPointer.tscn")
+
 @onready var tile_map = $Floor
 @onready var player = $Player
 @onready var gravitation = $Gravitation
-@onready var goal = $Goal
+
+var goals = []
+var gPointers = []
 
 signal goal_reached
 signal playerDeath
@@ -11,8 +15,15 @@ signal playerDeath
 func _ready():
 	for child in get_children():
 		if child.name.substr(0,4) == "Goal":
+			var goalPointer = goalPointerLoader.instantiate()
+			goalPointer.goal = child
+			add_child(goalPointer)
 			child.connect("body_entered", _goal_reached)
+			goals.append(child)
 	player.connect("death", _playerDeath)
+
+func getGoals():
+	return goals
 
 func mouseInput():
 	if Input.is_action_pressed("PlayerPoint"):

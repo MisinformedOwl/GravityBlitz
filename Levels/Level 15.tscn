@@ -17,14 +17,13 @@ layer_0/tile_data = PackedInt32Array(-786424, 131072, 1, -720888, 131072, 1, -65
 position = Vector2(580, 1724)
 
 [node name="Goal" parent="." index="5"]
-position = Vector2(576, -1461)
+position = Vector2(576, -1229)
 
 [node name="Camera2D" parent="." index="6"]
 limit_left = -100000000
 limit_top = -100000000
 limit_right = 100000000
 limit_bottom = 100000000
-position_smoothing_speed = 6.0
 drag_left_margin = 0.1
 drag_top_margin = 0.1
 drag_right_margin = 0.1
