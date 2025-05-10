@@ -5,6 +5,7 @@ var goalPointerLoader = preload("res://Mechanics and Assets/GoalPointer.tscn")
 @onready var tile_map = $Floor
 @onready var player = $Player
 @onready var gravitation = $Gravitation
+@onready var camera = $Camera2D
 
 var goals = []
 var gPointers = []
@@ -15,9 +16,11 @@ signal playerDeath
 func _ready():
 	for child in get_children():
 		if child.name.substr(0,4) == "Goal":
-			var goalPointer = goalPointerLoader.instantiate()
-			goalPointer.goal = child
-			add_child(goalPointer)
+			# The pointers are not nesicery if the camera is not moving, as the goal is on the screen.
+			if camera.moving == true:
+				var goalPointer = goalPointerLoader.instantiate()
+				goalPointer.goal = child
+				add_child(goalPointer)
 			child.connect("body_entered", _goal_reached)
 			goals.append(child)
 	player.connect("death", _playerDeath)
@@ -39,7 +42,6 @@ func mouseInput():
 			gravitation.visible = false
 	else:
 		gravitation.visible = false
-
 
 func _physics_process(_d):
 	mouseInput()

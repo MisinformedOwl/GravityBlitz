@@ -55,6 +55,9 @@ func setShaderParameters():
 func lockdownAnims():
 	eyes.lockdown()
 
+func laserDeath():
+	dead()
+
 func pitfallDeath():
 	lockdownAnims()
 	z_index = -3

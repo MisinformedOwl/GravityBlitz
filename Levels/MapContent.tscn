@@ -209,9 +209,13 @@ format = 2
 [node name="Player" parent="." instance=ExtResource("8_j4p1d")]
 z_index = 1
 position = Vector2(573, 1410)
+collision_layer = 13
+collision_mask = 13
 
 [node name="Goal" parent="." instance=ExtResource("9_grwwk")]
 position = Vector2(569, 353)
+collision_layer = 8
+collision_mask = 8
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(583, 906)

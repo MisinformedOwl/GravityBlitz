@@ -1,0 +1,61 @@
+[gd_scene load_steps=8 format=3 uid="uid://dxsqo16nsfy3u"]
+
+[ext_resource type="Texture2D" uid="uid://nu8d4vjyq14b" path="res://Mechanics and Assets/Button.png" id="1_vasft"]
+[ext_resource type="Script" path="res://Mechanics and Assets/button.gd" id="1_wcwdp"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6hhkl"]
+atlas = ExtResource("1_vasft")
+region = Rect2(80, 0, 80, 37)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xu6k6"]
+atlas = ExtResource("1_vasft")
+region = Rect2(160, 0, 80, 37)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_novaa"]
+atlas = ExtResource("1_vasft")
+region = Rect2(0, 0, 80, 37)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_uy7u2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6hhkl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xu6k6")
+}],
+"loop": false,
+"name": &"Pushed",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_novaa")
+}],
+"loop": false,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lrpk7"]
+size = Vector2(52, 31)
+
+[node name="Button" type="Area2D"]
+script = ExtResource("1_wcwdp")
+
+[node name="ButtonSprite" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_uy7u2")
+
+[node name="TileMap" type="TileMap" parent="."]
+format = 2
+
+[node name="Collision" type="CollisionShape2D" parent="."]
+position = Vector2(0, 2.5)
+shape = SubResource("RectangleShape2D_lrpk7")
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
