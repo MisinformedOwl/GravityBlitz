@@ -15,7 +15,6 @@ func activate(b : bool, rect : Rect2):
 		beam_area.monitoring = false
 
 func setCollision(rect: Rect2):
-	print(rect.get_area())
 	beam_collision.shape.size = rect.size
 
 func _on_beam_area_body_entered(body):

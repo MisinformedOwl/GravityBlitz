@@ -40,6 +40,7 @@ func recast():
 	range = global_position.distance_to(pos)
 	beam.texture.region = Rect2(0, animateVal, 256, range)
 
-func _onButtonPressed():
-	Switch = !Switch
+func _onButtonPressed(boolean: bool):
+	print(boolean)
+	Switch = boolean
 	manageBeam()

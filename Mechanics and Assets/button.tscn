@@ -1,7 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://dxsqo16nsfy3u"]
+[gd_scene load_steps=13 format=3 uid="uid://dxsqo16nsfy3u"]
 
 [ext_resource type="Texture2D" uid="uid://nu8d4vjyq14b" path="res://Mechanics and Assets/Button.png" id="1_vasft"]
 [ext_resource type="Script" path="res://Mechanics and Assets/button.gd" id="1_wcwdp"]
+[ext_resource type="Texture2D" uid="uid://dathje0bheshg" path="res://Mechanics and Assets/Wires off.png" id="3_7d54o"]
+[ext_resource type="Texture2D" uid="uid://cx40yyy4q2i3b" path="res://Mechanics and Assets/Wires on.png" id="4_1pme2"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6hhkl"]
 atlas = ExtResource("1_vasft")
@@ -37,6 +39,41 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wbpyx"]
+texture = ExtResource("3_7d54o")
+texture_region_size = Vector2i(128, 128)
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_b1eng"]
+texture = ExtResource("4_1pme2")
+texture_region_size = Vector2i(128, 128)
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_watif"]
+tile_size = Vector2i(128, 128)
+sources/1 = SubResource("TileSetAtlasSource_b1eng")
+sources/0 = SubResource("TileSetAtlasSource_wbpyx")
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lrpk7"]
 size = Vector2(52, 31)
 
@@ -44,10 +81,16 @@ size = Vector2(52, 31)
 script = ExtResource("1_wcwdp")
 
 [node name="ButtonSprite" type="AnimatedSprite2D" parent="."]
+z_index = 1
+z_as_relative = false
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_uy7u2")
 
 [node name="TileMap" type="TileMap" parent="."]
+show_behind_parent = true
+texture_filter = 1
+position = Vector2(-63, 0)
+tile_set = SubResource("TileSet_watif")
 format = 2
 
 [node name="Collision" type="CollisionShape2D" parent="."]

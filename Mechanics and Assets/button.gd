@@ -2,13 +2,31 @@ extends Area2D
 
 @onready var sprite = $ButtonSprite
 @onready var timer = $Timer
+@onready var wires = $TileMap
 
-signal pressed
+@export var switch: bool = true
+
+signal pressed(boolean)
+
+func _ready():
+	sprite.z_index+=1 # No idea why the fuck this doesn't just work in the editor, but here we are.
+	pressed.emit(switch)
+	if switch:
+		wires.tile_set.set_source_id(0,2)
+		wires.tile_set.set_source_id(1,0)
+		wires.tile_set.set_source_id(2,1)
+
+func setWires():
+	wires.tile_set.set_source_id(0,2)
+	wires.tile_set.set_source_id(1,0)
+	wires.tile_set.set_source_id(2,1)
 
 func _on_body_entered(body):
 	if sprite.animation == "default":
 		if body.name == "Player":
-			emit_signal("pressed")
+			switch = !switch
+			setWires()
+			pressed.emit(switch)
 			timer.start()
 			sprite.play("Pushed")
 
