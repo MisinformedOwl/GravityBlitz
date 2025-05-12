@@ -6,9 +6,11 @@ extends Area2D
 
 @export var switch: bool = true
 
+signal updatekids
 signal pressed(boolean)
 
 func _ready():
+	get_parent().connect("updateChildren", updateChildren)
 	sprite.z_index+=1 # No idea why the fuck this doesn't just work in the editor, but here we are.
 	pressed.emit(switch)
 	if switch:
@@ -32,3 +34,6 @@ func _on_body_entered(body):
 
 func _on_timer_timeout():
 	sprite.play("default")
+
+func updateChildren():
+	emit_signal("updatekids")

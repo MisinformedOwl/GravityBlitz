@@ -10,7 +10,10 @@ var collision : CollisionShape2D
 var detection : CollisionShape2D
 @onready var area_2d = $Area2D
 
+signal updateWorld
+
 func _ready():
+	set_physics_process(false)
 	collision = CollisionShape2D.new()
 	detection = CollisionShape2D.new()
 	collision.shape = RectangleShape2D.new()
@@ -27,6 +30,7 @@ func _ready():
 func _on_area_2d_body_entered(body):
 	if body.name == "Player" and dying == false:
 		if body.getspeedhit() >= body.SPEEDTHRESHOLD:
+			set_physics_process(true)
 			dying = true
 			var noise = NoiseTexture2D.new()
 			var mat = ShaderMaterial.new()
@@ -41,9 +45,11 @@ func _on_area_2d_body_entered(body):
 			timer.start()
 
 func _physics_process(_delta):
-	if dying:
 		collision.disabled = true
 		detection.disabled = true
+		set_physics_process(false)
+		await get_tree().process_frame
+		emit_signal("updateWorld")
 
 func _on_timer_timeout():
 	queue_free()

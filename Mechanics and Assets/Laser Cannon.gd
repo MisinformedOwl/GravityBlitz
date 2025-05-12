@@ -13,7 +13,9 @@ var range = 0
 
 func _ready():
 	await get_tree().process_frame
+	await get_tree().process_frame
 	get_parent().connect("pressed", _onButtonPressed)
+	get_parent().connect("updatekids", _onUpdate)
 	manageBeam()
 
 func _physics_process(delta):
@@ -36,11 +38,13 @@ func manageBeam():
 func recast():
 	var pos = beamcast.get_collision_point()
 	beam.global_position = global_position
-	beam.global_position = global_position-((pos-global_position)/2 * beamcast.get_collision_normal())
+	beam.global_position += ((pos-global_position)/2 * abs(beamcast.get_collision_normal()))
 	range = global_position.distance_to(pos)
 	beam.texture.region = Rect2(0, animateVal, 256, range)
 
 func _onButtonPressed(boolean: bool):
-	print(boolean)
 	Switch = boolean
 	manageBeam()
+
+func _onUpdate():
+	recast()

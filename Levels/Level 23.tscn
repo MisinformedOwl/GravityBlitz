@@ -1,0 +1,255 @@
+[gd_scene load_steps=23 format=3 uid="uid://dbla484qsakgv"]
+
+[ext_resource type="PackedScene" uid="uid://bdx77watf0xjr" path="res://Levels/MapContent.tscn" id="1_e31i5"]
+[ext_resource type="PackedScene" uid="uid://qrpd88843g6" path="res://Mechanics and Assets/pitmap.tscn" id="2_ffeb8"]
+[ext_resource type="Texture2D" uid="uid://ckeepeo0r3rgw" path="res://Mechanics and Assets/pit.png" id="3_6c4kl"]
+[ext_resource type="Script" path="res://Mechanics and Assets/breakable.gd" id="4_42jux"]
+[ext_resource type="Texture2D" uid="uid://cs551w6jo4ieu" path="res://Shaders/destructableTexture.png" id="5_7xw0s"]
+[ext_resource type="Script" path="res://Mechanics and Assets/button.gd" id="6_xiyw8"]
+[ext_resource type="Texture2D" uid="uid://nu8d4vjyq14b" path="res://Mechanics and Assets/Button.png" id="7_koa8x"]
+[ext_resource type="Texture2D" uid="uid://dathje0bheshg" path="res://Mechanics and Assets/Wires off.png" id="8_wjp7x"]
+[ext_resource type="Texture2D" uid="uid://cx40yyy4q2i3b" path="res://Mechanics and Assets/Wires on.png" id="9_w6pff"]
+[ext_resource type="PackedScene" uid="uid://bqrq5ig1oqqrw" path="res://Mechanics and Assets/Laser Cannon.tscn" id="10_yottp"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_aiekl"]
+texture = ExtResource("3_6c4kl")
+texture_region_size = Vector2i(128, 128)
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+1:0/0 = 0
+1:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+1:0/0/physics_layer_0/angular_velocity = 0.0
+2:0/0 = 0
+2:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+2:0/0/physics_layer_0/angular_velocity = 0.0
+0:1/0 = 0
+0:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:1/0/physics_layer_0/angular_velocity = 0.0
+1:1/0 = 0
+1:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+1:1/0/physics_layer_0/angular_velocity = 0.0
+2:1/0 = 0
+2:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+2:1/0/physics_layer_0/angular_velocity = 0.0
+0:2/0 = 0
+0:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:2/0/physics_layer_0/angular_velocity = 0.0
+1:2/0 = 0
+1:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+1:2/0/physics_layer_0/angular_velocity = 0.0
+2:2/0 = 0
+2:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+2:2/0/physics_layer_0/angular_velocity = 0.0
+
+[sub_resource type="TileSet" id="TileSet_j1uii"]
+resource_local_to_scene = true
+tile_size = Vector2i(128, 128)
+physics_layer_0/collision_layer = 2
+physics_layer_0/collision_mask = 2
+sources/0 = SubResource("TileSetAtlasSource_aiekl")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p6mpr"]
+resource_local_to_scene = true
+atlas = ExtResource("5_7xw0s")
+region = Rect2(739.076, 7.41024, 200.718, 1020.54)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vdfi8"]
+resource_local_to_scene = true
+atlas = ExtResource("5_7xw0s")
+region = Rect2(242.98, 1.82549, 207.928, 1018.21)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6hhkl"]
+atlas = ExtResource("7_koa8x")
+region = Rect2(80, 0, 80, 37)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xu6k6"]
+atlas = ExtResource("7_koa8x")
+region = Rect2(160, 0, 80, 37)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_novaa"]
+atlas = ExtResource("7_koa8x")
+region = Rect2(0, 0, 80, 37)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_uy7u2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6hhkl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xu6k6")
+}],
+"loop": false,
+"name": &"Pushed",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_novaa")
+}],
+"loop": false,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wbpyx"]
+texture = ExtResource("8_wjp7x")
+texture_region_size = Vector2i(128, 128)
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_b1eng"]
+texture = ExtResource("9_w6pff")
+texture_region_size = Vector2i(128, 128)
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_watif"]
+tile_size = Vector2i(128, 128)
+sources/1 = SubResource("TileSetAtlasSource_b1eng")
+sources/0 = SubResource("TileSetAtlasSource_wbpyx")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lrpk7"]
+size = Vector2(52, 31)
+
+[node name="MapContent" instance=ExtResource("1_e31i5")]
+
+[node name="Wallsop" parent="." index="0"]
+layer_0/tile_data = PackedInt32Array(458758, 0, 0, 524294, 0, 2, 589831, 0, 2, 589825, 131072, 2, 524290, 131072, 2, 458754, 131072, 0, 851969, 131072, 0, 851975, 0, 0)
+
+[node name="Floor" parent="." index="1"]
+layer_0/tile_data = PackedInt32Array(65537, 2, 0, 131073, 2, 0, 196609, 2, 0, 262145, 2, 0, 327681, 2, 0, 393217, 2, 0, 65538, 2, 0, 131074, 2, 0, 196610, 2, 0, 262146, 2, 0, 327682, 2, 0, 393218, 2, 0, 65539, 2, 0, 131075, 2, 0, 196611, 2, 0, 262147, 2, 0, 327683, 2, 0, 393219, 2, 0, 458755, 2, 0, 65540, 2, 0, 131076, 2, 0, 196612, 2, 0, 262148, 2, 0, 327684, 2, 0, 393220, 2, 0, 458756, 2, 0, 65541, 2, 0, 131077, 2, 0, 196613, 2, 0, 262149, 2, 0, 327685, 2, 0, 393221, 2, 0, 458757, 2, 0, 65542, 2, 0, 131078, 2, 0, 196614, 2, 0, 262150, 2, 0, 327686, 2, 0, 393222, 2, 0, 65543, 2, 0, 131079, 2, 0, 196615, 2, 0, 262151, 2, 0, 327687, 2, 0, 393223, 2, 0, 524291, 2, 0, 524292, 2, 0, 524293, 2, 0, 589826, 2, 0, 655362, 2, 0, 720898, 2, 0, 786434, 2, 0, 851970, 2, 0, 589827, 2, 0, 655363, 2, 0, 720899, 2, 0, 786435, 2, 0, 851971, 2, 0, 589828, 2, 0, 655364, 2, 0, 720900, 2, 0, 786436, 2, 0, 851972, 2, 0, 589829, 2, 0, 655365, 2, 0, 720901, 2, 0, 786437, 2, 0, 851973, 2, 0, 589830, 2, 0, 655366, 2, 0, 720902, 2, 0, 786438, 2, 0, 851974, 2, 0, 655361, 2, 0, 720897, 2, 0, 786433, 2, 0, 655367, 2, 0, 720903, 2, 0, 786439, 2, 0, 720890, 65538, 0, 786426, 65538, 0, 851962, 65538, 0, 720891, 65538, 0, 786427, 65538, 0, 851963, 65538, 0, 720892, 65538, 0, 786428, 65538, 0, 851964, 65538, 0, 720893, 65538, 0, 786429, 65538, 0, 851965, 65538, 0, 720894, 65538, 0, 786430, 65538, 0, 851966, 65538, 0, 720895, 65538, 0, 786431, 65538, 0, 851967, 65538, 0, 655360, 2, 0, 720896, 2, 0, 786432, 2, 0, 655368, 2, 0, 655369, 2, 0, 655370, 2, 0, 786442, 2, 0, 655371, 2, 0, 786443, 2, 0, 655372, 2, 0, 786444, 2, 0, 786445, 2, 0, 786446, 2, 0, 655375, 2, 0, 720911, 2, 0, 786447, 2, 0, 720905, 2, 0, 786441, 2, 0, 720908, 2, 0, 655374, 2, 0, 720910, 2, 0)
+
+[node name="ShaderFloor" parent="Floor" index="0"]
+layer_0/tile_data = PackedInt32Array(655367, 0, 0, 720903, 0, 0, 786439, 0, 0, 589826, 0, 0, 655362, 0, 0, 720898, 0, 0, 786434, 0, 0, 851970, 0, 0, 589827, 0, 0, 655363, 0, 0, 720899, 0, 0, 786435, 0, 0, 851971, 0, 0, 589828, 0, 0, 655364, 0, 0, 720900, 0, 0, 786436, 0, 0, 851972, 0, 0, 589829, 0, 0, 655365, 0, 0, 720901, 0, 0, 786437, 0, 0, 851973, 0, 0, 589830, 0, 0, 655366, 0, 0, 720902, 0, 0, 786438, 0, 0, 851974, 0, 0, 655360, 0, 0, 720896, 0, 0, 786432, 0, 0, 655361, 0, 0, 720897, 0, 0, 786433, 0, 0, 458755, 0, 0, 524291, 0, 0, 458756, 0, 0, 524292, 0, 0, 458757, 0, 0, 524293, 0, 0, 65537, 0, 0, 131073, 0, 0, 196609, 0, 0, 262145, 0, 0, 327681, 0, 0, 393217, 0, 0, 65538, 0, 0, 131074, 0, 0, 196610, 0, 0, 262146, 0, 0, 327682, 0, 0, 393218, 0, 0, 65539, 0, 0, 131075, 0, 0, 196611, 0, 0, 262147, 0, 0, 327683, 0, 0, 393219, 0, 0, 65540, 0, 0, 131076, 0, 0, 196612, 0, 0, 262148, 0, 0, 327684, 0, 0, 393220, 0, 0, 65541, 0, 0, 131077, 0, 0, 196613, 0, 0, 262149, 0, 0, 327685, 0, 0, 393221, 0, 0, 65542, 0, 0, 131078, 0, 0, 196614, 0, 0, 262150, 0, 0, 327686, 0, 0, 393222, 0, 0, 65543, 0, 0, 131079, 0, 0, 196615, 0, 0, 262151, 0, 0, 327687, 0, 0, 393223, 0, 0, 655368, 0, 0, 655369, 0, 0, 655370, 0, 0, 655371, 0, 0, 786444, 0, 0, 786445, 0, 0, 720905, 0, 0, 786441, 0, 0, 786442, 0, 0, 786443, 0, 0, 786446, 0, 0, 786447, 0, 0, 655375, 0, 0, 720911, 0, 0, 655372, 0, 0, 720908, 0, 0, 655374, 0, 0, 720910, 0, 0)
+
+[node name="Wall" parent="." index="3"]
+layer_0/tile_data = PackedInt32Array(720889, 0, 1, 786425, 0, 1, 851961, 0, 1, 655354, 65536, 0, 655355, 65536, 0, 655356, 65536, 0, 655357, 65536, 0, 655358, 65536, 0, 655359, 65536, 0, 589824, 65536, 0, 917498, 65536, 2, 917499, 65536, 2, 917500, 65536, 2, 917501, 65536, 2, 917502, 65536, 2, 917503, 65536, 2, 851968, 65536, 2, 917506, 65536, 2, 917507, 65536, 2, 917508, 65536, 2, 917509, 65536, 2, 917510, 65536, 2, 851976, 65536, 2, 851978, 65536, 2, 851979, 65536, 2, 851980, 65536, 2, 851981, 65536, 2, 851982, 65536, 2, 851983, 65536, 2, 851977, 65536, 2, 851984, 131072, 2, 655376, 131072, 1, 720912, 131072, 1, 786448, 131072, 1, 589840, 131072, 0, 589832, 65536, 0, 589833, 65536, 0, 589834, 65536, 0, 589835, 65536, 0, 589836, 65536, 0, 589837, 65536, 0, 589838, 65536, 0, 589839, 65536, 0, 655353, 0, 0, 917497, 0, 2, 524289, 0, 0, 917505, 0, 2, 917511, 131072, 2, 524295, 131072, 0, 458760, 131072, 2, 458752, 0, 2, 0, 0, 0, 8, 131072, 0, 1, 65536, 0, 2, 65536, 0, 3, 65536, 0, 4, 65536, 0, 5, 65536, 0, 6, 65536, 0, 7, 65536, 0, 65544, 131072, 1, 131080, 131072, 1, 196616, 131072, 1, 262152, 131072, 1, 327688, 131072, 1, 393224, 131072, 1, 65536, 0, 1, 131072, 0, 1, 196608, 0, 1, 262144, 0, 1, 327680, 0, 1, 393216, 0, 1, 458753, 65536, 2, 458759, 65536, 2)
+
+[node name="Player" parent="." index="4"]
+position = Vector2(576, 1470)
+
+[node name="Goal" parent="." index="5"]
+position = Vector2(576, 321)
+
+[node name="Camera2D" parent="." index="6"]
+moving = true
+
+[node name="Pitmap" parent="." index="7" instance=ExtResource("2_ffeb8")]
+tile_set = SubResource("TileSet_j1uii")
+layer_0/tile_data = PackedInt32Array(720907, 65536, 0, 720904, 65536, 0, 786440, 65536, 1, 720906, 0, 0, 655373, 65536, 0, 720909, 65536, 1)
+
+[node name="Breakable" type="StaticBody2D" parent="." index="8"]
+position = Vector2(-37, 1473)
+script = ExtResource("4_42jux")
+
+[node name="Sprite2D" type="Sprite2D" parent="Breakable" index="0"]
+texture_repeat = 2
+scale = Vector2(0.375, 0.375)
+texture = SubResource("AtlasTexture_p6mpr")
+
+[node name="Area2D" type="Area2D" parent="Breakable" index="1"]
+
+[node name="Timer" type="Timer" parent="Breakable" index="2"]
+wait_time = 2.0
+
+[node name="Breakable2" type="StaticBody2D" parent="." index="9"]
+position = Vector2(-447, 1467)
+script = ExtResource("4_42jux")
+
+[node name="Sprite2D" type="Sprite2D" parent="Breakable2" index="0"]
+texture_repeat = 2
+position = Vector2(0, 5)
+scale = Vector2(0.375, 0.375)
+texture = SubResource("AtlasTexture_vdfi8")
+
+[node name="Area2D" type="Area2D" parent="Breakable2" index="1"]
+
+[node name="Timer" type="Timer" parent="Breakable2" index="2"]
+wait_time = 2.0
+
+[node name="Button" type="Area2D" parent="." index="10"]
+position = Vector2(1983, 1280)
+script = ExtResource("6_xiyw8")
+
+[node name="ButtonSprite" type="AnimatedSprite2D" parent="Button" index="0"]
+z_index = 1
+z_as_relative = false
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_uy7u2")
+
+[node name="TileMap" type="TileMap" parent="Button" index="1"]
+show_behind_parent = true
+texture_filter = 1
+position = Vector2(-63, 0)
+tile_set = SubResource("TileSet_watif")
+format = 2
+layer_0/tile_data = PackedInt32Array(-65536, 131072, 1, -7, 65536, 0, -6, 65536, 0, -5, 65536, 0, -4, 65536, 0, -3, 65536, 0, -2, 65536, 0, -1, 65536, 0, -8, 65536, 2, -65545, 65536, 2, -65544, 131072, 1, -131081, 65536, 1, -131080, 65536, 0, -131079, 131072, 2, -196615, 131072, 1)
+
+[node name="Collision" type="CollisionShape2D" parent="Button" index="2"]
+position = Vector2(0, 2.5)
+shape = SubResource("RectangleShape2D_lrpk7")
+
+[node name="Timer" type="Timer" parent="Button" index="3"]
+one_shot = true
+
+[node name="Laser Cannon" parent="Button" index="4" instance=ExtResource("10_yottp")]
+position = Vector2(-1052, -447)
+rotation = 1.5708
+
+[node name="Button2" type="Area2D" parent="." index="11"]
+position = Vector2(-768, 1472)
+rotation = -1.5708
+script = ExtResource("6_xiyw8")
+
+[node name="ButtonSprite" type="AnimatedSprite2D" parent="Button2" index="0"]
+z_index = 1
+z_as_relative = false
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_uy7u2")
+
+[node name="TileMap" type="TileMap" parent="Button2" index="1"]
+show_behind_parent = true
+texture_filter = 1
+position = Vector2(-63, 0)
+tile_set = SubResource("TileSet_watif")
+format = 2
+layer_0/tile_data = PackedInt32Array(-65536, 65536, 1, -65535, 65536, 0, -65534, 131072, 1, 2, 0, 0, 65538, 0, 0, 131074, 0, 0, 196610, 0, 0, 262146, 0, 0, 327682, 0, 0, 393218, 0, 0, 458754, 65536, 2, 458755, 131072, 1, 524292, 131072, 2, 524291, 65536, 2, 458756, 0, 0, 393220, 65536, 1, 393221, 65536, 0, 393222, 131072, 1)
+
+[node name="Collision" type="CollisionShape2D" parent="Button2" index="2"]
+position = Vector2(0, 2.5)
+shape = SubResource("RectangleShape2D_lrpk7")
+
+[node name="Timer" type="Timer" parent="Button2" index="3"]
+one_shot = true
+
+[node name="Laser Cannon" parent="Button2" index="4" instance=ExtResource("10_yottp")]
+position = Vector2(768, 989)
+
+[connection signal="body_entered" from="Breakable/Area2D" to="Breakable" method="_on_area_2d_body_entered"]
+[connection signal="timeout" from="Breakable/Timer" to="Breakable" method="_on_timer_timeout"]
+[connection signal="body_entered" from="Breakable2/Area2D" to="Breakable2" method="_on_area_2d_body_entered"]
+[connection signal="timeout" from="Breakable2/Timer" to="Breakable2" method="_on_timer_timeout"]
+[connection signal="body_entered" from="Button" to="Button" method="_on_body_entered"]
+[connection signal="timeout" from="Button/Timer" to="Button" method="_on_timer_timeout"]
+[connection signal="body_entered" from="Button2" to="Button2" method="_on_body_entered"]
+[connection signal="timeout" from="Button2/Timer" to="Button2" method="_on_timer_timeout"]

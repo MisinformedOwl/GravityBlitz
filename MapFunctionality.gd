@@ -12,6 +12,7 @@ var gPointers = []
 
 signal goal_reached
 signal playerDeath
+signal updateChildren
 
 func _ready():
 	for child in get_children():
@@ -23,6 +24,8 @@ func _ready():
 				add_child(goalPointer)
 			child.connect("body_entered", _goal_reached)
 			goals.append(child)
+		elif child.has_signal("updateWorld"):
+			child.connect("updateWorld", _worldUpdated)
 	player.connect("death", _playerDeath)
 
 func getGoals():
@@ -51,6 +54,10 @@ func _goal_reached(_body):
 
 func _playerDeath():
 	emit_signal("playerDeath")
+
+func _worldUpdated():
+	print("Run")
+	emit_signal("updateChildren")
 
 func reload():
 	pass

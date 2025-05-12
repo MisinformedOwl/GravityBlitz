@@ -210,6 +210,8 @@ _data = {
 
 [node name="Player" type="CharacterBody2D"]
 texture_filter = 1
+collision_layer = 2
+collision_mask = 2
 script = ExtResource("1_mx110")
 
 [node name="Collision" type="CollisionShape2D" parent="."]
