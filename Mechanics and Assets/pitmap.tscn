@@ -1,12 +1,44 @@
-[gd_scene load_steps=3 format=3 uid="uid://qrpd88843g6"]
+[gd_scene load_steps=5 format=3 uid="uid://qrpd88843g6"]
 
+[ext_resource type="Texture2D" uid="uid://ckeepeo0r3rgw" path="res://Mechanics and Assets/pit.png" id="1_u0le8"]
 [ext_resource type="Script" path="res://Mechanics and Assets/pitmap.gd" id="2_bdsix"]
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jwfoe"]
+texture = ExtResource("1_u0le8")
+texture_region_size = Vector2i(128, 128)
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+1:0/0 = 0
+1:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+1:0/0/physics_layer_0/angular_velocity = 0.0
+2:0/0 = 0
+2:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+2:0/0/physics_layer_0/angular_velocity = 0.0
+0:1/0 = 0
+0:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:1/0/physics_layer_0/angular_velocity = 0.0
+1:1/0 = 0
+1:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+1:1/0/physics_layer_0/angular_velocity = 0.0
+2:1/0 = 0
+2:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+2:1/0/physics_layer_0/angular_velocity = 0.0
+0:2/0 = 0
+0:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:2/0/physics_layer_0/angular_velocity = 0.0
+1:2/0 = 0
+1:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+1:2/0/physics_layer_0/angular_velocity = 0.0
+2:2/0 = 0
+2:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+2:2/0/physics_layer_0/angular_velocity = 0.0
+
 [sub_resource type="TileSet" id="TileSet_2p6on"]
-resource_local_to_scene = true
 tile_size = Vector2i(128, 128)
 physics_layer_0/collision_layer = 2
 physics_layer_0/collision_mask = 2
+sources/0 = SubResource("TileSetAtlasSource_jwfoe")
 
 [node name="Pitmap" type="TileMap"]
 z_index = -2

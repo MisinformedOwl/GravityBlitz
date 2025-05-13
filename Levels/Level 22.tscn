@@ -226,6 +226,7 @@ rotation = 1.5708
 [node name="Laser Cannon7" parent="Button" index="10" instance=ExtResource("10_yottp")]
 position = Vector2(-1506, 64)
 rotation = -1.5708
+debugmode = true
 
 [node name="Laser Cannon8" parent="Button" index="11" instance=ExtResource("10_yottp")]
 position = Vector2(-1506, 192)

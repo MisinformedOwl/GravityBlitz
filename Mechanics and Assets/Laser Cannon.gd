@@ -6,6 +6,8 @@ extends StaticBody2D
 @export var Switch: bool = true
 @onready var beamcast = $Beamcast
 
+@export var debugmode: bool = false
+
 var space
 var animateVal = 0
 var range = 0
@@ -37,6 +39,8 @@ func manageBeam():
 
 func recast():
 	var pos = beamcast.get_collision_point()
+	if debugmode:
+		print(pos)
 	beam.global_position = global_position
 	beam.global_position += ((pos-global_position)/2 * abs(beamcast.get_collision_normal()))
 	range = global_position.distance_to(pos)
@@ -47,4 +51,5 @@ func _onButtonPressed(boolean: bool):
 	manageBeam()
 
 func _onUpdate():
+	await get_tree().process_frame
 	recast()

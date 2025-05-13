@@ -41,6 +41,10 @@ func mouseInput():
 			player.grav(mousePos)
 			gravitation.visible = true
 			gravitation.position = mousePos
+		elif tileid == Vector2i(0,1):
+			player.grav(mousePos, 1)
+			gravitation.visible = true
+			gravitation.position = mousePos
 		else:
 			gravitation.visible = false
 	else:

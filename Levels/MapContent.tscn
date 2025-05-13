@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://bdx77watf0xjr"]
+[gd_scene load_steps=28 format=3 uid="uid://bdx77watf0xjr"]
 
 [ext_resource type="Script" path="res://MapFunctionality.gd" id="1_b6gcc"]
 [ext_resource type="Shader" path="res://Shaders/Wallsop.gdshader" id="2_1c823"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://sg4dhjdag5ec" path="res://Mechanics and Assets/gravitation.tscn" id="5_jdh6f"]
 [ext_resource type="Shader" path="res://Shaders/Walls.gdshader" id="6_kgt4c"]
 [ext_resource type="Texture2D" uid="uid://c8dpnbvh1m4f7" path="res://walls.png" id="7_gxqib"]
+[ext_resource type="Shader" path="res://Shaders/InverseInteract.gdshader" id="7_y2rsb"]
 [ext_resource type="PackedScene" uid="uid://citts2xpwqa2h" path="res://Mechanics and Assets/Player.tscn" id="8_j4p1d"]
 [ext_resource type="PackedScene" uid="uid://8uqvnx8qycrk" path="res://Mechanics and Assets/Goal.tscn" id="9_grwwk"]
 [ext_resource type="Script" path="res://Mechanics and Assets/Camera.gd" id="11_igi42"]
@@ -132,6 +133,21 @@ texture_region_size = Vector2i(128, 128)
 tile_size = Vector2i(128, 128)
 sources/0 = SubResource("TileSetAtlasSource_frkf1")
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_wbt01"]
+shader = ExtResource("7_y2rsb")
+shader_parameter/speed = 0.1
+shader_parameter/line_thickness = 0.01
+shader_parameter/diamond_size = 0.5
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mrpvn"]
+texture = ExtResource("4_qfam2")
+texture_region_size = Vector2i(128, 128)
+0:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_164ra"]
+tile_size = Vector2i(128, 128)
+sources/0 = SubResource("TileSetAtlasSource_mrpvn")
+
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_mgg5p"]
 shader = ExtResource("6_kgt4c")
 shader_parameter/time_scale = 0.4
@@ -196,6 +212,11 @@ layer_0/z_index = -1
 [node name="ShaderFloor" type="TileMap" parent="Floor"]
 material = SubResource("ShaderMaterial_k3f3e")
 tile_set = SubResource("TileSet_astal")
+format = 2
+
+[node name="InverseShader" type="TileMap" parent="Floor"]
+material = SubResource("ShaderMaterial_wbt01")
+tile_set = SubResource("TileSet_164ra")
 format = 2
 
 [node name="Gravitation" parent="." instance=ExtResource("5_jdh6f")]

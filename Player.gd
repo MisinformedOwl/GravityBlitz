@@ -17,17 +17,17 @@ var speedHit = 0
 func _ready():
 	fire.play()
 
-func decodeVelocity(pos,dist,dir):
-	velocity += (pos-global_position)/(dist/40)
+func decodeVelocity(pos,dist,dir, inverse : int = 0):
+	velocity += (pos-global_position)/(dist/40) * (1 - 2 * inverse)
 
 func getspeedhit():
 	return speedHit
 
-func grav(pos):
+func grav(pos, inverse: bool = false):
 	if not dying:
 		var dist : float = pos.distance_to(position)
 		var dir = rad_to_deg(atan2(pos.x, pos.y))
-		decodeVelocity(pos,dist,dir)
+		decodeVelocity(pos,dist,dir, inverse)
 
 func moveEyes():
 	var vel = velocity.normalized()
