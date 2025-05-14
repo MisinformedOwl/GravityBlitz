@@ -17,17 +17,17 @@ var speedHit = 0
 func _ready():
 	fire.play()
 
-func decodeVelocity(pos,dist,dir, inverse : int = 0):
-	velocity += (pos-global_position)/(dist/40) * (1 - 2 * inverse)
+func decodeVelocity(pos,dist,dir, inverse : int = 0, str: float = 1):
+	velocity += ((pos-global_position)/(dist/40) * (1 - 2 * inverse) * str)
 
 func getspeedhit():
 	return speedHit
 
-func grav(pos, inverse: bool = false):
+func grav(pos, inverse: bool = false, str: float = 1):
 	if not dying:
 		var dist : float = pos.distance_to(position)
 		var dir = rad_to_deg(atan2(pos.x, pos.y))
-		decodeVelocity(pos,dist,dir, inverse)
+		decodeVelocity(pos,dist,dir, inverse, str)
 
 func moveEyes():
 	var vel = velocity.normalized()
@@ -56,6 +56,9 @@ func lockdownAnims():
 	eyes.lockdown()
 
 func laserDeath():
+	dead()
+
+func blackHoleDeath():
 	dead()
 
 func pitfallDeath():
