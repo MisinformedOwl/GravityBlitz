@@ -6,6 +6,7 @@ var goalPointerLoader = preload("res://Mechanics and Assets/GoalPointer.tscn")
 @onready var player = $Player
 @onready var gravitation = $Gravitation
 @onready var camera = $Camera2D
+@onready var background = $Background
 
 var goals = []
 var gPointers = []
@@ -15,6 +16,7 @@ signal playerDeath
 signal updateChildren
 
 func _ready():
+	background.visible = true
 	for child in get_children():
 		if child.name.substr(0,4) == "Goal":
 			# The pointers are not nesicery if the camera is not moving, as the goal is on the screen.
@@ -52,6 +54,7 @@ func mouseInput():
 
 func _physics_process(_d):
 	mouseInput()
+	background.position = camera.position
 
 func _goal_reached(_body):
 	emit_signal("goal_reached")

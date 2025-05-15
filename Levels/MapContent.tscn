@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://bdx77watf0xjr"]
+[gd_scene load_steps=29 format=3 uid="uid://bdx77watf0xjr"]
 
 [ext_resource type="Script" path="res://MapFunctionality.gd" id="1_b6gcc"]
 [ext_resource type="Shader" path="res://Shaders/Wallsop.gdshader" id="2_1c823"]
@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://citts2xpwqa2h" path="res://Mechanics and Assets/Player.tscn" id="8_j4p1d"]
 [ext_resource type="PackedScene" uid="uid://8uqvnx8qycrk" path="res://Mechanics and Assets/Goal.tscn" id="9_grwwk"]
 [ext_resource type="Script" path="res://Mechanics and Assets/Camera.gd" id="11_igi42"]
+[ext_resource type="PackedScene" uid="uid://bkhbdemw5sjdm" path="res://Mechanics and Assets/Background.tscn" id="13_yfuu2"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_3ujt7"]
 shader = ExtResource("2_1c823")
@@ -244,3 +245,5 @@ zoom = Vector2(0.665, 0.665)
 position_smoothing_enabled = true
 position_smoothing_speed = 6.0
 script = ExtResource("11_igi42")
+
+[node name="Background" parent="." instance=ExtResource("13_yfuu2")]

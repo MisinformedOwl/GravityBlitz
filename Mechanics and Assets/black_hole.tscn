@@ -21,10 +21,11 @@ texture = ExtResource("2_pe1lt")
 shape = SubResource("CircleShape2D_t6cet")
 
 [node name="Area2D" type="Area2D" parent="."]
-collision_layer = 3
-collision_mask = 3
+collision_layer = 4
+collision_mask = 4
 
 [node name="Gravitation" type="CollisionShape2D" parent="Area2D"]
+visible = false
 shape = SubResource("CircleShape2D_svhxa")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

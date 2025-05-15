@@ -71,8 +71,8 @@ texture_region_size = Vector2i(128, 128)
 
 [sub_resource type="TileSet" id="TileSet_watif"]
 tile_size = Vector2i(128, 128)
-sources/1 = SubResource("TileSetAtlasSource_b1eng")
 sources/0 = SubResource("TileSetAtlasSource_wbpyx")
+sources/1 = SubResource("TileSetAtlasSource_b1eng")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lrpk7"]
 size = Vector2(52, 31)
