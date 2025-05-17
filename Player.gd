@@ -8,11 +8,14 @@ const SPEED = 300.0
 const SPEEDTHRESHOLD = 13
 
 signal death
+signal movedATile
 
 var dying = false
 var currSpeed
 var tilesReady = true
 var speedHit = 0
+
+var tileChecker = Vector2(0,0)
 
 func _ready():
 	fire.play()
@@ -62,8 +65,8 @@ func blackHoleDeath():
 	dead()
 
 func pitfallDeath():
+	set_physics_process(false)
 	lockdownAnims()
-	z_index = -3
 	$AnimationPlayer.play("Pitfall Death")
 
 func dead():
@@ -80,6 +83,14 @@ func _physics_process(delta):
 			velocity.y = velocity.bounce(Vector2(0,1)).y*0.6
 		else:
 			velocity = velocity.bounce(collision.get_normal())*0.6 # Further work required to ensure stable movement.
+	var playertile = position/128
+	if !dying:
+		if tileChecker.x != int(playertile.x):
+			emit_signal("movedATile")
+			tileChecker.x = int(playertile.x)
+		elif tileChecker.y != int(playertile.y):
+			emit_signal("movedATile")
+			tileChecker.y = int(playertile.y)
 	moveEyes()
 	moveFlame()
 	setShaderParameters()
