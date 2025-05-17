@@ -26,4 +26,5 @@ func _physics_process(delta):
 	#tween.property(player, "position", targetTile, 1)
 
 func _on_timer_timeout():
+	set_physics_process(false)
 	player.pitfallDeath()

@@ -1,7 +1,6 @@
-[gd_scene load_steps=29 format=3 uid="uid://citts2xpwqa2h"]
+[gd_scene load_steps=34 format=3 uid="uid://citts2xpwqa2h"]
 
 [ext_resource type="Script" path="res://Player.gd" id="1_mx110"]
-[ext_resource type="Shader" path="res://Mechanics and Assets/PlayerSpriteHeat.gdshader" id="2_k44ho"]
 [ext_resource type="Texture2D" uid="uid://c4mtdao8fd4u7" path="res://ball.png" id="2_ybxki"]
 [ext_resource type="Texture2D" uid="uid://c0tqxk83eeboe" path="res://TempFiles/eyes calm.png" id="3_so4l4"]
 [ext_resource type="Texture2D" uid="uid://cirk0x2ux4hom" path="res://Mechanics and Assets/fire-Sheet.png" id="3_wmot5"]
@@ -16,10 +15,155 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_bxhcm"]
 radius = 32.0156
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_kc0v6"]
-shader = ExtResource("2_k44ho")
-shader_parameter/dir = 0.0
-shader_parameter/speed = 0.0
+[sub_resource type="Animation" id="Animation_pdf86"]
+resource_name = "Pitfall Death"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Eyes:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.2, 0.3, 0.6001, 1.2, 1.2001, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 3.86375, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, 10.175), Vector2(0, 22), Vector2(0, -5.96104e-06), Vector2(0, -1.1775e-05), Vector2(0, 600)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Eyes/Eyeball:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.2, 0.3, 0.6, 1.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, 59.205), Vector2(0, 59.205), Vector2(0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Eyes:animation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [&"Blink", &"Blink", &"Fear"]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Eyes/Eyeball:texture")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [ExtResource("5_405te"), ExtResource("5_405te"), ExtResource("12_nduni")]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Eyes/Eyeball:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath(".:z_index")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 1.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [0, -3]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Sprite:position")
+tracks/6/interp = 2
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(1.2, 2),
+"transitions": PackedFloat32Array(3.86375, 0.999999),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, 600)]
+}
+
+[sub_resource type="Animation" id="Animation_m11gg"]
+resource_name = "laserDeath"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_m3xdx"]
+_data = {
+"Pitfall Death": SubResource("Animation_pdf86"),
+"laserDeath": SubResource("Animation_m11gg")
+}
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3eqxq"]
+atlas = ExtResource("2_ybxki")
+region = Rect2(384, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ghe7o"]
+atlas = ExtResource("2_ybxki")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5jed2"]
+atlas = ExtResource("2_ybxki")
+region = Rect2(256, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_illbb"]
+atlas = ExtResource("2_ybxki")
+region = Rect2(384, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d4h7x"]
+atlas = ExtResource("2_ybxki")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wjp8f"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3eqxq")
+}],
+"loop": true,
+"name": &"Fast",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ghe7o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5jed2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_illbb")
+}],
+"loop": false,
+"name": &"Heatup",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d4h7x")
+}],
+"loop": true,
+"name": &"default",
+"speed": 1.0
+}]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_suo3d"]
 atlas = ExtResource("3_wmot5")
@@ -127,99 +271,6 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="Animation" id="Animation_pdf86"]
-resource_name = "Pitfall Death"
-length = 2.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite:position")
-tracks/0/interp = 2
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1.5, 2),
-"transitions": PackedFloat32Array(1e-05, 6.45471, 1),
-"update": 0,
-"values": [Vector2(0, 0), Vector2(0, 0), Vector2(0, 400)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Sprite/Eyes:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0.2, 0.3, 0.6, 1.2, 1.5),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
-"update": 0,
-"values": [Vector2(0, 0), Vector2(0, 10.175), Vector2(0, 10.175), Vector2(0, 0), Vector2(0, 0)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Sprite/Eyes/Eyeball:position")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0.2, 0.3, 0.6, 1.2, 1.5),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
-"update": 0,
-"values": [Vector2(0, 0), Vector2(0, 59.205), Vector2(0, 59.205), Vector2(0, 0), Vector2(0, 0)]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("Sprite/Eyes:animation")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 1,
-"values": [&"Blink", &"Blink", &"Fear"]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("Sprite/Eyes/Eyeball:texture")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 1,
-"values": [ExtResource("5_405te"), ExtResource("5_405te"), ExtResource("12_nduni")]
-}
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("Sprite/Eyes/Eyeball:visible")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"times": PackedFloat32Array(0, 0.2),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [false, true]
-}
-tracks/6/type = "value"
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/path = NodePath(".:z_index")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/keys = {
-"times": PackedFloat32Array(0, 1.2),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [0, -3]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_m3xdx"]
-_data = {
-"Pitfall Death": SubResource("Animation_pdf86")
-}
-
 [node name="Player" type="CharacterBody2D"]
 texture_filter = 1
 collision_layer = 2
@@ -231,32 +282,32 @@ scale = Vector2(1.634, 1.634)
 shape = SubResource("CircleShape2D_bxhcm")
 one_way_collision_margin = 0.0
 
-[node name="Sprite" type="Sprite2D" parent="."]
-material = SubResource("ShaderMaterial_kc0v6")
-scale = Vector2(0.835, 0.835)
-texture = ExtResource("2_ybxki")
-
-[node name="FireAnim" type="AnimatedSprite2D" parent="Sprite"]
-visible = false
-z_index = -1
-scale = Vector2(0.994012, 0.994012)
-sprite_frames = SubResource("SpriteFrames_hnq05")
-
-[node name="Eyes" type="AnimatedSprite2D" parent="Sprite"]
-scale = Vector2(0.37, 0.37)
-sprite_frames = SubResource("SpriteFrames_anxgr")
-animation = &"Blink"
-script = ExtResource("6_7cg6d")
-
-[node name="Eyeball" type="Sprite2D" parent="Sprite/Eyes"]
-visible = false
-texture = ExtResource("5_405te")
-script = ExtResource("7_ry5qw")
-
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 "": SubResource("AnimationLibrary_m3xdx")
 }
 
-[connection signal="frame_changed" from="Sprite/Eyes" to="Sprite/Eyes/Eyeball" method="_on_animated_sprite_2d_frame_changed"]
+[node name="Sprite" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_wjp8f")
+animation = &"Heatup"
+
+[node name="FireAnim" type="AnimatedSprite2D" parent="."]
+visible = false
+z_index = -1
+scale = Vector2(0.83, 0.83)
+sprite_frames = SubResource("SpriteFrames_hnq05")
+
+[node name="Eyes" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.30895, 0.30895)
+sprite_frames = SubResource("SpriteFrames_anxgr")
+animation = &"Blink"
+script = ExtResource("6_7cg6d")
+
+[node name="Eyeball" type="Sprite2D" parent="Eyes"]
+visible = false
+texture = ExtResource("5_405te")
+script = ExtResource("7_ry5qw")
+
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
+[connection signal="animation_finished" from="Sprite" to="." method="_on_sprite_animation_finished"]
+[connection signal="frame_changed" from="Eyes" to="Eyes/Eyeball" method="_on_animated_sprite_2d_frame_changed"]

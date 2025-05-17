@@ -23,3 +23,7 @@ func changeExpression(which):
 			play("fast")
 		else:
 			play("default")
+
+func closeEyes():
+	eyeball.visible = false
+	eyeball.lock = true

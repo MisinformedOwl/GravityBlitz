@@ -2,8 +2,10 @@ extends Area2D
 
 var playerInGrav: bool = false
 var player: CharacterBody2D
+@onready var sprite = $AnimatedSprite2D
 
 func _ready():
+	sprite.play("Default")
 	set_physics_process(false)
 
 func _on_body_entered(body):

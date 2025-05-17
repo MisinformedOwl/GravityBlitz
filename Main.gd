@@ -1,6 +1,6 @@
 extends Node
 
-var CurrentLevel = 11
+var CurrentLevel = 20
 var transitioning
 var Limit = 1
 
@@ -23,7 +23,7 @@ func LoadMap(name=""):
 #===============================================================================
 
 func _ready():
-	LoadMap("Level 11")
+	LoadMap("Level 30")
 
 #===============================================================================
 

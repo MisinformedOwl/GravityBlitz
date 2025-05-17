@@ -29,6 +29,7 @@ func _ready():
 		elif child.has_signal("updateWorld"):
 			child.connect("updateWorld", _worldUpdated)
 	player.connect("death", _playerDeath)
+	player.connect("playerDying", _playerDying)
 
 func getGoals():
 	return goals
@@ -56,6 +57,12 @@ func _physics_process(_d):
 	mouseInput()
 	background.position = camera.position
 
+func _playerDying():
+	if !camera.moving:
+		camera.set_physics_process(true)
+	var tween = create_tween()
+	tween.tween_property(camera, "zoom", Vector2(1.3,1.3), 1).set_trans(Tween.TRANS_QUAD)
+
 func _goal_reached(_body):
 	emit_signal("goal_reached")
 
@@ -63,7 +70,6 @@ func _playerDeath():
 	emit_signal("playerDeath")
 
 func _worldUpdated():
-	print("Run")
 	emit_signal("updateChildren")
 
 func reload():

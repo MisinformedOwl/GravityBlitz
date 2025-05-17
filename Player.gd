@@ -1,21 +1,25 @@
 extends CharacterBody2D
 
-@onready var eyes = $Sprite/Eyes
-@onready var fire = $Sprite/FireAnim
+@onready var eyes = $Eyes
+@onready var fire = $FireAnim
 @onready var sprite = $Sprite
 
-const SPEED = 300.0
 const SPEEDTHRESHOLD = 13
 
 signal death
 signal movedATile
+signal playerDying
 
-var dying = false
-var currSpeed
-var tilesReady = true
-var speedHit = 0
+var dying             : bool = false
+var currSpeed         : float
+var tilesReady        : bool = true
+var speedHit          : float = 0
+var speed             : float = 0.0
+var dir               : float = 0
 
-var tileChecker = Vector2(0,0)
+var tileChecker       : Vector2 = Vector2(0,0)
+
+var shaders = [preload("res://Shaders/laserDeath.gdshader")]
 
 func _ready():
 	fire.play()
@@ -34,7 +38,7 @@ func grav(pos, inverse: bool = false, str: float = 1):
 
 func moveEyes():
 	var vel = velocity.normalized()
-	var speed = sqrt((velocity.x**2)+(velocity.y**2))/100
+	speed = sqrt((velocity.x**2)+(velocity.y**2))/100
 	eyes.position = vel*15
 	eyes.moveEyes(vel)
 	currSpeed = speed
@@ -46,31 +50,42 @@ func moveEyes():
 func moveFlame():
 	if currSpeed >= SPEEDTHRESHOLD:
 		fire.visible = true
-		var dir = velocity.angle()+PI/2
+		dir = velocity.angle()+PI/2
 		fire.rotation = dir
 	else:
 		fire.visible = false
-
-func setShaderParameters():
-	sprite.material.set_shader_parameter("speed", currSpeed)
-	sprite.material.set_shader_parameter("dir", fire.rotation-PI/2)
 
 func lockdownAnims():
 	eyes.lockdown()
 
 func laserDeath():
-	dead()
+	print(dying)
+	if !dying:
+		sprite.rotation = 0
+		lockdownAnims()
+		moveCameraDeath()
+		var ShaderMat = ShaderMaterial.new()
+		ShaderMat.shader = shaders[0]
+		ShaderMat.set_shader_parameter("time", Time.get_ticks_msec()/1000)
+		sprite.material = ShaderMat
+		eyes.material = ShaderMat
+		eyes.closeEyes()
+		dying = true
 
 func blackHoleDeath():
 	dead()
 
 func pitfallDeath():
+	moveCameraDeath()
 	set_physics_process(false)
 	lockdownAnims()
 	$AnimationPlayer.play("Pitfall Death")
 
 func dead():
 	emit_signal("death")
+
+func moveCameraDeath():
+	emit_signal("playerDying")
 
 func _physics_process(delta):
 	velocity -= velocity/200
@@ -93,7 +108,22 @@ func _physics_process(delta):
 			tileChecker.y = int(playertile.y)
 	moveEyes()
 	moveFlame()
-	setShaderParameters()
+	if !dying:
+		setSpriteAnim()
+	else:
+		velocity -= velocity/10
+
+func setSpriteAnim():
+	sprite.rotation = dir
+	if speed > SPEEDTHRESHOLD:
+		if sprite.animation == "default":
+			sprite.play("Heatup")
+	else:
+		sprite.play("default")
 
 func _on_animation_player_animation_finished(anim_name):
 	dead()
+
+func _on_sprite_animation_finished():
+	if sprite.animation == "Heatup":
+		sprite.play("Fast")
