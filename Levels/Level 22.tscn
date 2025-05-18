@@ -190,7 +190,7 @@ texture_filter = 1
 position = Vector2(-63, 0)
 tile_set = SubResource("TileSet_watif")
 format = 2
-layer_0/tile_data = PackedInt32Array(-65536, 65536, 1, -65535, 131072, 1, 1, 0, 0, 65537, 0, 0, 131073, 196608, 0, 196609, 196608, 0, 262145, 196608, 0, 327681, 196608, 0, 393217, 196608, 0, 458753, 196608, 0, 524289, 131072, 2, 589818, 65536, 0, 589819, 65536, 0, 589820, 65536, 0, 589821, 65536, 0, 589822, 65536, 0, 589823, 65536, 0, 524288, 65536, 0, 589817, 65536, 1, 786425, 131072, 2, 655353, 0, 0, 720889, 0, 0, 786422, 65536, 0, 786423, 65536, 0, 786424, 65536, 0, 786421, 65536, 2, 655349, 0, 0, 720885, 0, 0, 589813, 131072, 1, 589812, 65536, 0, 589811, 65536, 2, 524275, 0, 0, 131059, 196608, 2, 196595, 196608, 2, 262131, 196608, 2, 327667, 196608, 2, 393203, 196608, 2, 458739, 196608, 2, 65523, 65536, 1)
+layer_0/tile_data = PackedInt32Array(-65536, 65536, 1, -65535, 131072, 1, 1, 0, 0, 65537, 0, 0, 131073, 196608, 0, 196609, 196608, 0, 262145, 196608, 0, 327681, 196608, 0, 393217, 196608, 0, 458753, 196608, 0, 524289, 131072, 2, 589818, 65536, 0, 589819, 65536, 0, 589820, 65536, 0, 589821, 65536, 0, 589822, 65536, 0, 589823, 65536, 0, 524288, 65536, 0, 589817, 65536, 1, 786425, 131072, 2, 655353, 0, 0, 720889, 0, 0, 786422, 65536, 0, 786423, 65536, 0, 786424, 65536, 0, 786421, 65536, 2, 655349, 0, 0, 720885, 0, 0, 589813, 131072, 1, 589812, 65536, 0, 589811, 65536, 2, 524275, 0, 0, 131059, 65536, 1, 196595, 196608, 2, 262131, 196608, 2, 327667, 196608, 2, 393203, 196608, 2, 458739, 196608, 2)
 
 [node name="Collision" type="CollisionShape2D" parent="Button" index="2"]
 position = Vector2(0, 2.5)
@@ -223,32 +223,27 @@ rotation = 1.5708
 position = Vector2(-28, 960)
 rotation = 1.5708
 
-[node name="Laser Cannon7" parent="Button" index="10" instance=ExtResource("10_yottp")]
-position = Vector2(-1506, 64)
-rotation = -1.5708
-debugmode = true
-
-[node name="Laser Cannon8" parent="Button" index="11" instance=ExtResource("10_yottp")]
+[node name="Laser Cannon8" parent="Button" index="10" instance=ExtResource("10_yottp")]
 position = Vector2(-1506, 192)
 rotation = -1.5708
 
-[node name="Laser Cannon9" parent="Button" index="12" instance=ExtResource("10_yottp")]
+[node name="Laser Cannon9" parent="Button" index="11" instance=ExtResource("10_yottp")]
 position = Vector2(-1506, 320)
 rotation = -1.5708
 
-[node name="Laser Cannon10" parent="Button" index="13" instance=ExtResource("10_yottp")]
+[node name="Laser Cannon10" parent="Button" index="12" instance=ExtResource("10_yottp")]
 position = Vector2(-1506, 447)
 rotation = -1.5708
 
-[node name="Laser Cannon11" parent="Button" index="14" instance=ExtResource("10_yottp")]
+[node name="Laser Cannon11" parent="Button" index="13" instance=ExtResource("10_yottp")]
 position = Vector2(-1506, 576)
 rotation = -1.5708
 
-[node name="Laser Cannon12" parent="Button" index="15" instance=ExtResource("10_yottp")]
+[node name="Laser Cannon12" parent="Button" index="14" instance=ExtResource("10_yottp")]
 position = Vector2(-1506, 704)
 rotation = -1.5708
 
-[node name="Laser Cannon13" parent="Button" index="16" instance=ExtResource("10_yottp")]
+[node name="Laser Cannon13" parent="Button" index="15" instance=ExtResource("10_yottp")]
 position = Vector2(-1506, 832)
 rotation = -1.5708
 

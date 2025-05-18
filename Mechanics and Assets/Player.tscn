@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://citts2xpwqa2h"]
+[gd_scene load_steps=35 format=3 uid="uid://citts2xpwqa2h"]
 
 [ext_resource type="Script" path="res://Player.gd" id="1_mx110"]
 [ext_resource type="Texture2D" uid="uid://c4mtdao8fd4u7" path="res://ball.png" id="2_ybxki"]
@@ -103,12 +103,42 @@ tracks/6/keys = {
 "values": [Vector2(0, 0), Vector2(0, 600)]
 }
 
+[sub_resource type="Animation" id="Animation_w05mf"]
+resource_name = "blackholeDeath"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1e-05, 1e-05)]
+}
+
 [sub_resource type="Animation" id="Animation_m11gg"]
 resource_name = "laserDeath"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"update": 0,
+"values": []
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_m3xdx"]
 _data = {
 "Pitfall Death": SubResource("Animation_pdf86"),
+"blackholeDeath": SubResource("Animation_w05mf"),
 "laserDeath": SubResource("Animation_m11gg")
 }
 
@@ -272,6 +302,7 @@ animations = [{
 }]
 
 [node name="Player" type="CharacterBody2D"]
+z_index = 3
 texture_filter = 1
 collision_layer = 2
 collision_mask = 2

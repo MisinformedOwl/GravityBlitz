@@ -10,6 +10,7 @@ var goalPointerLoader = preload("res://Mechanics and Assets/GoalPointer.tscn")
 
 var goals = []
 var gPointers = []
+var playerDying : bool = false
 
 signal goal_reached
 signal playerDeath
@@ -57,11 +58,16 @@ func _physics_process(_d):
 	mouseInput()
 	background.position = camera.position
 
-func _playerDying():
-	if !camera.moving:
-		camera.set_physics_process(true)
-	var tween = create_tween()
-	tween.tween_property(camera, "zoom", Vector2(1.3,1.3), 1).set_trans(Tween.TRANS_QUAD)
+func _playerDying(cause):
+	if !playerDying:
+		var tween = create_tween()
+		tween.tween_property(camera, "zoom", Vector2(1.3, 1.3), 1).set_trans(Tween.TRANS_QUAD)
+		if !camera.moving:
+			camera.set_physics_process(true)
+		if cause == "blackhole":
+			camera.position = player.position
+			camera.set_physics_process(false)
+		playerDying = true
 
 func _goal_reached(_body):
 	emit_signal("goal_reached")

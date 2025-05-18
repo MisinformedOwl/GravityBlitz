@@ -1,17 +1,54 @@
-[gd_scene load_steps=4 format=3 uid="uid://8uqvnx8qycrk"]
+[gd_scene load_steps=9 format=3 uid="uid://8uqvnx8qycrk"]
 
 [ext_resource type="Script" path="res://Mechanics and Assets/Goal.gd" id="1_5epr8"]
-[ext_resource type="Texture2D" uid="uid://c4mtdao8fd4u7" path="res://ball.png" id="1_s4rq4"]
+[ext_resource type="Texture2D" uid="uid://fjnhaxvyo7i" path="res://Mechanics and Assets/goal.png" id="2_hhoxq"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c42mk"]
+atlas = ExtResource("2_hhoxq")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o7sau"]
+atlas = ExtResource("2_hhoxq")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pjsp8"]
+atlas = ExtResource("2_hhoxq")
+region = Rect2(256, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1ugir"]
+atlas = ExtResource("2_hhoxq")
+region = Rect2(384, 0, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_tu64d"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c42mk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o7sau")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pjsp8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1ugir")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_4yvex"]
-radius = 18.0
+radius = 32.249
 
 [node name="Goal" type="Area2D"]
+scale = Vector2(2, 2)
 script = ExtResource("1_5epr8")
 
-[node name="Sprite" type="Sprite2D" parent="."]
-modulate = Color(0.0666666, 1, 0, 1)
-texture = ExtResource("1_s4rq4")
+[node name="Sprite" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_tu64d")
 
 [node name="Collision" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_4yvex")

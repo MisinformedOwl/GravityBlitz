@@ -3,12 +3,14 @@ extends CharacterBody2D
 @onready var eyes = $Eyes
 @onready var fire = $FireAnim
 @onready var sprite = $Sprite
+@onready var animation = $AnimationPlayer
+
 
 const SPEEDTHRESHOLD = 13
 
 signal death
 signal movedATile
-signal playerDying
+signal playerDying(String)
 
 var dying             : bool = false
 var currSpeed         : float
@@ -23,6 +25,7 @@ var shaders = [preload("res://Shaders/laserDeath.gdshader")]
 
 func _ready():
 	fire.play()
+	z_index = 1
 
 func decodeVelocity(pos,dist,dir, inverse : int = 0, str: float = 1):
 	velocity += ((pos-global_position)/(dist/40) * (1 - 2 * inverse) * str)
@@ -63,7 +66,7 @@ func laserDeath():
 	if !dying:
 		sprite.rotation = 0
 		lockdownAnims()
-		moveCameraDeath()
+		moveCameraDeath("laser")
 		var ShaderMat = ShaderMaterial.new()
 		ShaderMat.shader = shaders[0]
 		ShaderMat.set_shader_parameter("time", Time.get_ticks_msec()/1000)
@@ -71,21 +74,28 @@ func laserDeath():
 		eyes.material = ShaderMat
 		eyes.closeEyes()
 		dying = true
+		animation.play("laserDeath")
 
-func blackHoleDeath():
-	dead()
+func blackHoleDeath(pos):
+	if !dying:
+		moveCameraDeath("blackhole")
+		lockdownAnims()
+		animation.play("blackholeDeath")
+		set_physics_process(false)
+		var tween = create_tween()
+		tween.tween_property(self, "position", pos, 1)
 
 func pitfallDeath():
-	moveCameraDeath()
+	moveCameraDeath("pitfall")
 	set_physics_process(false)
 	lockdownAnims()
-	$AnimationPlayer.play("Pitfall Death")
+	animation.play("Pitfall Death")
 
 func dead():
 	emit_signal("death")
 
-func moveCameraDeath():
-	emit_signal("playerDying")
+func moveCameraDeath(cause: String):
+	playerDying.emit(cause)
 
 func _physics_process(delta):
 	velocity -= velocity/200
@@ -111,7 +121,7 @@ func _physics_process(delta):
 	if !dying:
 		setSpriteAnim()
 	else:
-		velocity -= velocity/10
+		velocity /= 2
 
 func setSpriteAnim():
 	sprite.rotation = dir
