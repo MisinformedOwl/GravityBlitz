@@ -1,43 +1,16 @@
-[gd_scene load_steps=9 format=3 uid="uid://8uqvnx8qycrk"]
+[gd_scene load_steps=6 format=3 uid="uid://8uqvnx8qycrk"]
 
 [ext_resource type="Script" path="res://Mechanics and Assets/Goal.gd" id="1_5epr8"]
 [ext_resource type="Texture2D" uid="uid://fjnhaxvyo7i" path="res://Mechanics and Assets/goal.png" id="2_hhoxq"]
+[ext_resource type="Shader" path="res://Shaders/Goal.gdshader" id="2_mxoef"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_c42mk"]
-atlas = ExtResource("2_hhoxq")
-region = Rect2(0, 0, 128, 128)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_o7sau"]
-atlas = ExtResource("2_hhoxq")
-region = Rect2(128, 0, 128, 128)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_pjsp8"]
-atlas = ExtResource("2_hhoxq")
-region = Rect2(256, 0, 128, 128)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_1ugir"]
-atlas = ExtResource("2_hhoxq")
-region = Rect2(384, 0, 128, 128)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_tu64d"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_c42mk")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_o7sau")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_pjsp8")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_1ugir")
-}],
-"loop": true,
-"name": &"default",
-"speed": 10.0
-}]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_g68bn"]
+shader = ExtResource("2_mxoef")
+shader_parameter/color1 = Color(0.9, 0.2, 0.5, 1)
+shader_parameter/color2 = Color(0.17, 0.86, 0.7, 1)
+shader_parameter/color3 = Color(0.6, 0.1, 0.8, 1)
+shader_parameter/color4 = Color(1, 1, 0, 1)
+shader_parameter/animation_speed = 2.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_4yvex"]
 radius = 32.249
@@ -46,9 +19,11 @@ radius = 32.249
 scale = Vector2(2, 2)
 script = ExtResource("1_5epr8")
 
-[node name="Sprite" type="AnimatedSprite2D" parent="."]
+[node name="Sprite" type="Sprite2D" parent="."]
 texture_filter = 1
-sprite_frames = SubResource("SpriteFrames_tu64d")
+material = SubResource("ShaderMaterial_g68bn")
+scale = Vector2(0.51, 0.51)
+texture = ExtResource("2_hhoxq")
 
 [node name="Collision" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_4yvex")
