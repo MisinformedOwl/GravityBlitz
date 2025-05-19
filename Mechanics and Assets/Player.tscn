@@ -122,18 +122,6 @@ tracks/0/keys = {
 [sub_resource type="Animation" id="Animation_m11gg"]
 resource_name = "laserDeath"
 length = 2.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:scale")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(),
-"transitions": PackedFloat32Array(),
-"update": 0,
-"values": []
-}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_m3xdx"]
 _data = {
@@ -302,7 +290,6 @@ animations = [{
 }]
 
 [node name="Player" type="CharacterBody2D"]
-z_index = 3
 texture_filter = 1
 collision_layer = 2
 collision_mask = 2
@@ -320,7 +307,6 @@ libraries = {
 
 [node name="Sprite" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_wjp8f")
-animation = &"Heatup"
 
 [node name="FireAnim" type="AnimatedSprite2D" parent="."]
 visible = false

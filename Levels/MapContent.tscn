@@ -229,7 +229,6 @@ tile_set = SubResource("TileSet_ee6qa")
 format = 2
 
 [node name="Player" parent="." instance=ExtResource("8_j4p1d")]
-z_index = 1
 position = Vector2(573, 1410)
 collision_layer = 13
 collision_mask = 13
@@ -247,3 +246,5 @@ position_smoothing_speed = 6.0
 script = ExtResource("11_igi42")
 
 [node name="Background" parent="." instance=ExtResource("13_yfuu2")]
+visible = true
+scale = Vector2(16.916, 6362.03)

@@ -62,8 +62,8 @@ func lockdownAnims():
 	eyes.lockdown()
 
 func laserDeath():
-	print(dying)
 	if !dying:
+		print("Running")
 		sprite.rotation = 0
 		lockdownAnims()
 		moveCameraDeath("laser")
