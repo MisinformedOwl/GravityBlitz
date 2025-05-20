@@ -17,7 +17,7 @@ func pointerPos():
 	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	if global_position.distance_to(goal.global_position) > 10:
 		visible = true
 		pointerPos()

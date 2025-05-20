@@ -27,17 +27,17 @@ func _ready():
 	fire.play()
 	z_index = 1
 
-func decodeVelocity(pos,dist,dir, inverse : int = 0, str: float = 1):
-	velocity += ((pos-global_position)/(dist/40) * (1 - 2 * inverse) * str)
+func decodeVelocity(pos,dist,inverse : int = 0, strength: float = 1):
+	velocity += ((pos-global_position)/(dist/40) * (1 - 2 * inverse) * strength)
 
 func getspeedhit():
 	return speedHit
 
-func grav(pos, inverse: bool = false, str: float = 1):
+func grav(pos, inverse: bool = false, strength: float = 1):
 	if not dying:
 		var dist : float = pos.distance_to(position)
-		var dir = rad_to_deg(atan2(pos.x, pos.y))
-		decodeVelocity(pos,dist,dir, inverse, str)
+		dir = rad_to_deg(atan2(pos.x, pos.y))
+		decodeVelocity(pos,dist,inverse, strength)
 
 func moveEyes():
 	var vel = velocity.normalized()
@@ -69,7 +69,7 @@ func laserDeath():
 		moveCameraDeath("laser")
 		var ShaderMat = ShaderMaterial.new()
 		ShaderMat.shader = shaders[0]
-		ShaderMat.set_shader_parameter("time", Time.get_ticks_msec()/1000)
+		ShaderMat.set_shader_parameter("time", Time.get_ticks_msec()/1000.0)
 		sprite.material = ShaderMat
 		eyes.material = ShaderMat
 		eyes.closeEyes()
@@ -131,7 +131,7 @@ func setSpriteAnim():
 	else:
 		sprite.play("default")
 
-func _on_animation_player_animation_finished(anim_name):
+func _on_animation_player_animation_finished(_anim_name):
 	dead()
 
 func _on_sprite_animation_finished():

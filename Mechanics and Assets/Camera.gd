@@ -2,12 +2,12 @@ extends Camera2D
 
 @export var moving = false
 @onready var player = $"../Player"
-@onready var floor = $"../Floor"
+@onready var flooring = $"../Floor"
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	if moving:
-		var area = floor.get_used_rect()
+		var area = flooring.get_used_rect()
 		area.position = (area.position * 128)-Vector2i(128,128)
 		area.size = (area.size * 128)+Vector2i(128,128)*2
 		

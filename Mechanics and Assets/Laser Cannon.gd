@@ -10,20 +10,17 @@ extends StaticBody2D
 
 var space
 var animateVal = 0
-var range = 0
-@onready var sprite_2d = $Sprite2D
+var dist = 0
 
 func _ready():
 	await get_tree().process_frame
 	await get_tree().process_frame
-	get_parent().connect("pressed", _onButtonPressed)
-	get_parent().connect("updatekids", _onUpdate)
 	manageBeam()
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	animateVal -= 25
-	beam.texture.region = Rect2(0, animateVal, 256, range)
-	if abs(animateVal) > range:
+	beam.texture.region = Rect2(0, animateVal, 256, dist)
+	if abs(animateVal) > dist:
 		animateVal = 0
 
 func manageBeam():
@@ -43,13 +40,13 @@ func recast():
 		print(pos)
 	beam.global_position = global_position
 	beam.global_position += ((pos-global_position)/2 * abs(beamcast.get_collision_normal()))
-	range = global_position.distance_to(pos)
-	beam.texture.region = Rect2(0, animateVal, 256, range)
+	dist = global_position.distance_to(pos)
+	beam.texture.region = Rect2(0, animateVal, 256, dist)
 
-func _onButtonPressed(boolean: bool):
+func onButtonPressed(boolean: bool):
 	Switch = boolean
 	manageBeam()
 
-func _onUpdate():
+func onUpdate():
 	await get_tree().process_frame
 	recast()

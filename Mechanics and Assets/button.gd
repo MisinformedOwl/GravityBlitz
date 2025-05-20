@@ -28,7 +28,9 @@ func _on_body_entered(body):
 		if body.name == "Player":
 			switch = !switch
 			setWires()
-			pressed.emit(switch)
+			for c in get_children():
+				if c.is_in_group("Activatable"):
+					c.onButtonPressed(switch)
 			timer.start()
 			sprite.play("Pushed")
 
@@ -36,4 +38,7 @@ func _on_timer_timeout():
 	sprite.play("default")
 
 func updateChildren():
-	emit_signal("updatekids")
+	for c in get_children():
+		if c.is_in_group("Activatable"):
+			c.onUpdate()
+			

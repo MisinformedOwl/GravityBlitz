@@ -39,7 +39,7 @@ func _on_area_2d_body_entered(body):
 			
 			mat.shader = shader
 			mat.set_shader_parameter("noise_texture", noise)
-			mat.set_shader_parameter("t", Time.get_ticks_msec() / 1000-0.3)
+			mat.set_shader_parameter("t", Time.get_ticks_msec() / 1000.0-0.3)
 
 			sprite.material = mat
 			timer.start()

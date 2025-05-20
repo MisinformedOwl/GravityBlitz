@@ -140,7 +140,7 @@ region = Rect2(0, 0, 256, 1018.12)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8dple"]
 
-[node name="Laser Cannon" type="StaticBody2D"]
+[node name="Laser Cannon" type="StaticBody2D" groups=["Activatable"]]
 z_index = 5
 z_as_relative = false
 script = ExtResource("1_divhr")
