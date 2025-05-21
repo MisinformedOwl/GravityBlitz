@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://bdx77watf0xjr"]
+[gd_scene load_steps=28 format=3 uid="uid://bdx77watf0xjr"]
 
 [ext_resource type="Script" path="res://MapFunctionality.gd" id="1_b6gcc"]
 [ext_resource type="Shader" path="res://Shaders/Wallsop.gdshader" id="2_1c823"]
@@ -62,58 +62,25 @@ tile_size = Vector2i(128, 128)
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_ofnqf")
 
-[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_a3s5y"]
-friction = 0.17
-bounce = 0.63
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_e27ik"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_461yk"]
 texture = ExtResource("2_2r5pm")
 texture_region_size = Vector2i(128, 128)
 0:0/0 = 0
-0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
-0:0/0/physics_layer_0/angular_velocity = 0.0
 1:0/0 = 0
-1:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
-1:0/0/physics_layer_0/angular_velocity = 0.0
 2:0/0 = 0
-2:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
-2:0/0/physics_layer_0/angular_velocity = 0.0
 3:0/0 = 0
-3:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
-3:0/0/physics_layer_0/angular_velocity = 0.0
 4:0/0 = 0
-4:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
-4:0/0/physics_layer_0/angular_velocity = 0.0
 0:1/0 = 0
-0:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
-0:1/0/physics_layer_0/angular_velocity = 0.0
 1:1/0 = 0
-1:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
-1:1/0/physics_layer_0/angular_velocity = 0.0
 2:1/0 = 0
-2:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
-2:1/0/physics_layer_0/angular_velocity = 0.0
-3:1/0 = 0
-3:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
-3:1/0/physics_layer_0/angular_velocity = 0.0
 4:1/0 = 0
-4:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
-4:1/0/physics_layer_0/angular_velocity = 0.0
 2:2/0 = 0
-2:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
-2:2/0/physics_layer_0/angular_velocity = 0.0
 3:2/0 = 0
-3:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
-3:2/0/physics_layer_0/angular_velocity = 0.0
 4:2/0 = 0
-4:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
-4:2/0/physics_layer_0/angular_velocity = 0.0
 
-[sub_resource type="TileSet" id="TileSet_bpgqd"]
+[sub_resource type="TileSet" id="TileSet_tb8ws"]
 tile_size = Vector2i(128, 128)
-physics_layer_0/collision_layer = 1
-physics_layer_0/physics_material = SubResource("PhysicsMaterial_a3s5y")
-sources/0 = SubResource("TileSetAtlasSource_e27ik")
+sources/0 = SubResource("TileSetAtlasSource_461yk")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_k3f3e"]
 shader = ExtResource("3_c225m")
@@ -202,7 +169,7 @@ tile_set = SubResource("TileSet_t6d18")
 format = 2
 
 [node name="Floor" type="TileMap" parent="."]
-tile_set = SubResource("TileSet_bpgqd")
+tile_set = SubResource("TileSet_tb8ws")
 format = 2
 layer_0/z_index = -1
 
@@ -242,5 +209,4 @@ position_smoothing_speed = 6.0
 script = ExtResource("11_igi42")
 
 [node name="Background" parent="." instance=ExtResource("13_yfuu2")]
-visible = true
 scale = Vector2(16.916, 6362.03)
