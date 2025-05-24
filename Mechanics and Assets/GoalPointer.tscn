@@ -224,6 +224,7 @@ visible = false
 script = ExtResource("1_wwdp2")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+z_index = 4
 sprite_frames = SubResource("SpriteFrames_kl2rr")
 animation = &"8"
 frame = 2

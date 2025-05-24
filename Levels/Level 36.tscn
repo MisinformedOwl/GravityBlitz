@@ -1,5 +1,69 @@
-[gd_scene load_steps=2 format=3 uid="uid://m80itxfq25ty"]
+[gd_scene load_steps=5 format=3 uid="uid://fmmgx12sdwr5"]
 
 [ext_resource type="PackedScene" uid="uid://bdx77watf0xjr" path="res://Levels/MapContent.tscn" id="1_xvxln"]
+[ext_resource type="PackedScene" uid="uid://coauejq0yl6qg" path="res://Mechanics and Assets/portal_manager.tscn" id="2_umhwu"]
+[ext_resource type="PackedScene" uid="uid://ld18eqltmdx2" path="res://Mechanics and Assets/Portal.tscn" id="3_w50dc"]
+[ext_resource type="PackedScene" uid="uid://qrpd88843g6" path="res://Mechanics and Assets/pitmap.tscn" id="4_5u40n"]
 
 [node name="MapContent" instance=ExtResource("1_xvxln")]
+
+[node name="Floor" parent="." index="1"]
+layer_0/tile_data = PackedInt32Array(655362, 0, 1, 720898, 0, 1, 786434, 0, 1, 851970, 0, 1, 655363, 0, 1, 720899, 0, 1, 786435, 0, 1, 851971, 0, 1, 655364, 0, 1, 720900, 0, 1, 786436, 0, 1, 851972, 0, 1, 655367, 0, 0, 720903, 0, 0, 786439, 0, 0, 655368, 0, 0, 720904, 0, 0, 786440, 0, 0, 655369, 0, 0, 720905, 0, 0, 786441, 0, 0, 851977, 0, 0, 262151, 0, 1, 393223, 0, 1, 458759, 0, 1, 262152, 0, 1, 393224, 0, 1, 458760, 0, 1, 262153, 0, 1, 327689, 0, 1, 393225, 0, 1, 458761, 0, 1, 262146, 0, 0, 327682, 0, 0, 262147, 0, 0, 327683, 0, 0, 393219, 0, 0, 458755, 0, 0, 262148, 0, 0, 327684, 0, 0, 196610, 0, 0, 196611, 0, 0, 196612, 0, 0, 917506, 0, 1, 917507, 0, 1, 917508, 0, 1, 917511, 0, 0, 917512, 0, 0, 917513, 0, 0, 196615, 0, 1, 196616, 0, 1, 196617, 0, 1, 393218, 0, 0, 458754, 0, 0, 393220, 0, 0, 458756, 0, 0)
+
+[node name="ShaderFloor" parent="Floor" index="0"]
+layer_0/tile_data = PackedInt32Array(655367, 0, 0, 720903, 0, 0, 786439, 0, 0, 655368, 0, 0, 720904, 0, 0, 786440, 0, 0, 655369, 0, 0, 720905, 0, 0, 786441, 0, 0, 851977, 0, 0, 917511, 0, 0, 917512, 0, 0, 917513, 0, 0, 196610, 0, 0, 262146, 0, 0, 327682, 0, 0, 393218, 0, 0, 458754, 0, 0, 196611, 0, 0, 262147, 0, 0, 327683, 0, 0, 393219, 0, 0, 458755, 0, 0, 196612, 0, 0, 262148, 0, 0, 327684, 0, 0, 393220, 0, 0, 458756, 0, 0)
+
+[node name="InverseShader" parent="Floor" index="1"]
+layer_0/tile_data = PackedInt32Array(655362, 0, 0, 720898, 0, 0, 786434, 0, 0, 851970, 0, 0, 917506, 0, 0, 655363, 0, 0, 720899, 0, 0, 786435, 0, 0, 851971, 0, 0, 917507, 0, 0, 655364, 0, 0, 720900, 0, 0, 786436, 0, 0, 851972, 0, 0, 917508, 0, 0, 393223, 0, 0, 458759, 0, 0, 393224, 0, 0, 458760, 0, 0, 393225, 0, 0, 458761, 0, 0, 327689, 0, 0, 196615, 0, 0, 262151, 0, 0, 196616, 0, 0, 262152, 0, 0, 196617, 0, 0, 262153, 0, 0)
+
+[node name="Wall" parent="." index="3"]
+layer_0/tile_data = PackedInt32Array(589826, 65536, 0, 589827, 65536, 0, 589828, 65536, 0, 589831, 65536, 0, 589832, 65536, 0, 589833, 65536, 0, 131079, 65536, 0, 131080, 65536, 0, 131081, 65536, 0, 131074, 65536, 0, 131075, 65536, 0, 131076, 65536, 0, 655366, 0, 1, 720902, 0, 1, 786438, 0, 1, 851974, 0, 1, 917510, 0, 1, 196614, 0, 1, 262150, 0, 1, 327686, 0, 1, 393222, 0, 1, 458758, 0, 1, 196609, 0, 1, 262145, 0, 1, 327681, 0, 1, 393217, 0, 1, 458753, 0, 1, 196613, 131072, 1, 262149, 131072, 1, 327685, 131072, 1, 393221, 131072, 1, 458757, 131072, 1, 196618, 131072, 1, 262154, 131072, 1, 327690, 131072, 1, 393226, 131072, 1, 458762, 131072, 1, 655370, 131072, 1, 720906, 131072, 1, 786442, 131072, 1, 851978, 131072, 1, 917514, 131072, 1, 655365, 131072, 1, 720901, 131072, 1, 786437, 131072, 1, 851973, 131072, 1, 917509, 131072, 1, 983047, 65536, 2, 983048, 65536, 2, 983049, 65536, 2, 983042, 65536, 2, 983043, 65536, 2, 983044, 65536, 2, 524290, 65536, 2, 524291, 65536, 2, 524292, 65536, 2, 524295, 65536, 2, 524296, 65536, 2, 524297, 65536, 2, 655361, 0, 1, 720897, 0, 1, 786433, 0, 1, 851969, 0, 1, 917505, 0, 1, 589825, 0, 0, 131073, 0, 0, 131078, 0, 0, 589830, 0, 0, 589829, 131072, 0, 131077, 131072, 0, 131082, 131072, 0, 589834, 131072, 0, 983050, 131072, 2, 983045, 131072, 2, 524293, 131072, 2, 524298, 131072, 2, 983046, 0, 2, 524294, 0, 2, 524289, 0, 2, 983041, 0, 2)
+
+[node name="Player" parent="." index="4"]
+position = Vector2(450, 1727)
+
+[node name="Goal" parent="." index="5"]
+position = Vector2(441, 587)
+
+[node name="Camera2D" parent="." index="6"]
+position = Vector2(756, 1178)
+
+[node name="Portal Manager" parent="." index="8" instance=ExtResource("2_umhwu")]
+
+[node name="Portal" parent="Portal Manager" index="0"]
+position = Vector2(448, 1251)
+rotation = 3.14159
+
+[node name="Portal2" parent="Portal Manager" index="1"]
+position = Vector2(867, 1856)
+rotation = 1.5708
+
+[node name="Portal3" parent="Portal Manager" index="2" instance=ExtResource("3_w50dc")]
+modulate = Color(1, 0, 0, 1)
+position = Vector2(1088, 1254)
+rotation = 3.14159
+portalCode = 1
+
+[node name="Portal4" parent="Portal Manager" index="3" instance=ExtResource("3_w50dc")]
+modulate = Color(1, 0, 0, 1)
+position = Vector2(1306, 961)
+rotation = -1.5708
+portalCode = 1
+
+[node name="Portal5" parent="Portal Manager" index="4" instance=ExtResource("3_w50dc")]
+modulate = Color(1, 1, 0, 1)
+position = Vector2(1307, 449)
+rotation = -1.5708
+portalCode = 2
+
+[node name="Portal6" parent="Portal Manager" index="5" instance=ExtResource("3_w50dc")]
+modulate = Color(1, 1, 0, 1)
+position = Vector2(448, 1050)
+portalCode = 2
+
+[node name="Pitmap" parent="." index="9" instance=ExtResource("4_5u40n")]
+layer_0/tile_data = PackedInt32Array(851975, 65536, 0, 851976, 65536, 0, 327687, 65536, 0, 327688, 65536, 0)
+
+[editable path="Portal Manager"]
+[editable path="Portal Manager/Portal"]
+[editable path="Portal Manager/Portal2"]

@@ -1,0 +1,78 @@
+[gd_scene load_steps=11 format=3 uid="uid://ld18eqltmdx2"]
+
+[ext_resource type="Script" path="res://Portal.gd" id="1_u05yd"]
+[ext_resource type="Texture2D" uid="uid://eu5as2yothoe" path="res://Mechanics and Assets/Portal.png" id="2_qu7if"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6e0uq"]
+atlas = ExtResource("2_qu7if")
+region = Rect2(0, 0, 150, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u7uow"]
+atlas = ExtResource("2_qu7if")
+region = Rect2(150, 0, 150, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vjowt"]
+atlas = ExtResource("2_qu7if")
+region = Rect2(300, 0, 150, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c45o8"]
+atlas = ExtResource("2_qu7if")
+region = Rect2(450, 0, 150, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sk42m"]
+atlas = ExtResource("2_qu7if")
+region = Rect2(600, 0, 150, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ynwjn"]
+atlas = ExtResource("2_qu7if")
+region = Rect2(750, 0, 150, 80)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vjin6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6e0uq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u7uow")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vjowt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c45o8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sk42m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ynwjn")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ti4rv"]
+size = Vector2(113, 78)
+
+[node name="Portal" type="Area2D"]
+texture_filter = 1
+script = ExtResource("1_u05yd")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_vjin6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, -29)
+shape = SubResource("RectangleShape2D_ti4rv")
+
+[node name="Marker2D" type="Marker2D" parent="."]
+position = Vector2(0, -76)
+
+[node name="Sickness" type="Timer" parent="."]
+wait_time = 0.5
+one_shot = true
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="timeout" from="Sickness" to="." method="_on_timer_timeout"]

@@ -6,16 +6,7 @@ extends Camera2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	if moving:
-		var area = flooring.get_used_rect()
-		area.position = (area.position * 128)-Vector2i(128,128)
-		area.size = (area.size * 128)+Vector2i(128,128)*2
-		
-		limit_left = area.position.x
-		limit_right = area.position.x+area.size.x
-		limit_top = area.position.y
-		limit_bottom = area.position.y+area.size.y
-	else:
+	if !moving:
 		set_physics_process(false)
 
 func _physics_process(_delta):

@@ -2,7 +2,7 @@ extends Area2D
 
 var playerInGrav: bool = false
 var player: CharacterBody2D
-var gravMult: float = 1.0
+@export var gravMult: float = 1.0
 @onready var sprite = $AnimatedSprite2D
 
 func _ready():

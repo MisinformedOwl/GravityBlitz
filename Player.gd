@@ -1,3 +1,4 @@
+class_name Player
 extends CharacterBody2D
 
 @onready var eyes = $Eyes
@@ -18,6 +19,7 @@ var tilesReady        : bool = true
 var speedHit          : float = 0
 var speed             : float = 0.0
 var dir               : float = 0
+var TPSickness        : bool = false
 
 var tileChecker       : Vector2 = Vector2(0,0)
 

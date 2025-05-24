@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://coauejq0yl6qg"]
+
+[ext_resource type="Script" path="res://Portal Manager.gd" id="1_wm1hd"]
+[ext_resource type="PackedScene" uid="uid://ld18eqltmdx2" path="res://Mechanics and Assets/Portal.tscn" id="2_2tb1j"]
+
+[node name="Portal Manager" type="Node2D"]
+script = ExtResource("1_wm1hd")
+
+[node name="Portal" parent="." instance=ExtResource("2_2tb1j")]
+
+[node name="AnimatedSprite2D" parent="Portal" index="0"]
+modulate = Color(0, 0, 1, 1)
+
+[node name="Portal2" parent="." instance=ExtResource("2_2tb1j")]
+
+[node name="AnimatedSprite2D" parent="Portal2" index="0"]
+modulate = Color(0, 0, 1, 1)
+
+[editable path="Portal"]
+[editable path="Portal2"]
