@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://qrpd88843g6" path="res://Mechanics and Assets/pitmap.tscn" id="4_x7jel"]
 
 [node name="MapContent" instance=ExtResource("1_gcgbc")]
+LevelNum = 38
 
 [node name="Wallsop" parent="." index="0"]
 layer_0/tile_data = PackedInt32Array(589830, 0, 0, 589826, 131072, 0)

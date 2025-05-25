@@ -1,0 +1,80 @@
+[gd_scene load_steps=5 format=3 uid="uid://mrs0gxwuoy7r"]
+
+[ext_resource type="Script" path="res://UI/Main Menu.gd" id="1_la2y0"]
+[ext_resource type="Texture2D" uid="uid://c6viuddvpbjdf" path="res://Gravity Blitz.png" id="2_e3nl0"]
+[ext_resource type="StyleBox" uid="uid://btmxtj0offyhr" path="res://UI/ButtonFull.tres" id="3_aki2j"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ujg3k"]
+bg_color = Color(1, 1, 1, 1)
+border_width_top = 4
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+script = ExtResource("1_la2y0")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 2
+offset_right = 720.0
+offset_bottom = 1280.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.0338533, 0.0338533, 0.0338533, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+offset_left = 110.0
+offset_right = 610.0
+offset_bottom = 1280.0
+size_flags_horizontal = 4
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 105
+alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(500, 200)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("2_e3nl0")
+expand_mode = 1
+
+[node name="HSeparator" type="HSeparator" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 71.425)
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxFlat_ujg3k")
+
+[node name="Continue" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 60
+theme_override_styles/normal = ExtResource("3_aki2j")
+action_mode = 0
+text = "CONTINUE"
+
+[node name="Level Select" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 60
+theme_override_styles/normal = ExtResource("3_aki2j")
+action_mode = 0
+text = "LEVEL SELECT"
+
+[node name="Credits" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 60
+theme_override_styles/normal = ExtResource("3_aki2j")
+action_mode = 0
+text = "CREDITS"
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Continue" to="." method="_on_continue_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Level Select" to="." method="_on_level_select_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Credits" to="." method="_on_credits_pressed"]

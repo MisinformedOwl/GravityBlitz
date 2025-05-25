@@ -35,7 +35,7 @@ texture_region_size = Vector2i(128, 128)
 2:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 2:2/0/physics_layer_0/angular_velocity = 0.0
 
-[sub_resource type="TileSet" id="TileSet_ybilc"]
+[sub_resource type="TileSet" id="TileSet_125dr"]
 resource_local_to_scene = true
 tile_size = Vector2i(128, 128)
 physics_layer_0/collision_layer = 2
@@ -43,6 +43,7 @@ physics_layer_0/collision_mask = 2
 sources/0 = SubResource("TileSetAtlasSource_3b3w8")
 
 [node name="MapContent" instance=ExtResource("1_0uiso")]
+LevelNum = 13
 
 [node name="Wallsop" parent="." index="0"]
 layer_0/tile_data = PackedInt32Array(262149, 131072, 0, 262147, 0, 0)
@@ -63,5 +64,5 @@ position = Vector2(831, 1727)
 position = Vector2(323, 1728)
 
 [node name="Pitmap" parent="." index="7" instance=ExtResource("2_lxyoo")]
-tile_set = SubResource("TileSet_ybilc")
+tile_set = SubResource("TileSet_125dr")
 layer_0/tile_data = PackedInt32Array(655366, 131072, 2, 327686, 131072, 1, 393222, 131072, 1, 458758, 131072, 1, 524294, 131072, 1, 589830, 131072, 1, 262150, 131072, 0, 262146, 0, 0, 327682, 0, 2, 589825, 131072, 0, 655361, 131072, 1, 720897, 131072, 1, 786433, 131072, 1, 851969, 131072, 1)

@@ -155,6 +155,7 @@ region = Rect2(0, 0, 256, 1018.12)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8dple"]
 
 [node name="MapContent" instance=ExtResource("1_u4c6y")]
+LevelNum = 32
 
 [node name="Wallsop" parent="." index="0"]
 layer_0/tile_data = PackedInt32Array(589833, 131072, 2, 393228, 131072, 2, -131056, 0, 0)

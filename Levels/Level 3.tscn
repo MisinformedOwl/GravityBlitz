@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://bdx77watf0xjr" path="res://Levels/MapContent.tscn" id="1_oj7gi"]
 
 [node name="MapContent" instance=ExtResource("1_oj7gi")]
+LevelNum = 3
 
 [node name="Wallsop" parent="." index="0"]
 layer_0/tile_data = PackedInt32Array(851973, 131072, 0, 917509, 131072, 2, 524291, 0, 0, 589827, 0, 2)

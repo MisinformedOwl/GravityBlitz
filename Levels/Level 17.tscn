@@ -37,7 +37,7 @@ texture_region_size = Vector2i(128, 128)
 2:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 2:2/0/physics_layer_0/angular_velocity = 0.0
 
-[sub_resource type="TileSet" id="TileSet_26p7e"]
+[sub_resource type="TileSet" id="TileSet_me60s"]
 resource_local_to_scene = true
 tile_size = Vector2i(128, 128)
 physics_layer_0/collision_layer = 2
@@ -70,6 +70,7 @@ atlas = ExtResource("5_3fr7f")
 region = Rect2(19.1841, 22.4051, 256.071, 682.857)
 
 [node name="MapContent" instance=ExtResource("1_d3qr4")]
+LevelNum = 17
 
 [node name="Wallsop" parent="." index="0"]
 layer_0/tile_data = PackedInt32Array(131081, 0, 2, 262153, 0, 0, 262156, 131072, 0, 131084, 131072, 2, 1835023, 0, 0, 2097164, 131072, 2, 2097167, 0, 2, 2162699, 131072, 2, 2359307, 131072, 0)
@@ -94,7 +95,7 @@ position = Vector2(963, 960)
 moving = true
 
 [node name="Pitmap" parent="." index="7" instance=ExtResource("2_gacjh")]
-tile_set = SubResource("TileSet_26p7e")
+tile_set = SubResource("TileSet_me60s")
 layer_0/tile_data = PackedInt32Array(131085, 0, 0, 131086, 65536, 0, 131087, 65536, 0, 131088, 131072, 0, 196624, 0, 1, 262160, 0, 1, 327696, 0, 1, 393232, 0, 1, 458768, 0, 1, 524304, 0, 1, 589840, 0, 1, 655376, 0, 2, 327693, 131072, 0, 393229, 131072, 1, 458765, 131072, 1, 524301, 131072, 1, 589837, 131072, 1, 655373, 131072, 1, 720909, 131072, 1, 786445, 131072, 1, 851982, 131072, 0, 917517, 65536, 1, 917518, 131072, 1, 851981, 65536, 1, 983053, 65536, 1, 1048589, 65536, 1, 1114125, 65536, 2, 983054, 131072, 1, 1048590, 131072, 1, 1114126, 131072, 2, 1310736, 65536, 0, 1310735, 0, 0, 1376272, 65536, 1, 1441808, 65536, 1, 1507344, 65536, 1, 1572880, 65536, 1, 1638416, 65536, 1, 1703952, 65536, 1, 1769488, 65536, 1, 1376271, 0, 1, 1441807, 0, 1, 1507343, 0, 1, 1572879, 0, 1, 1638415, 0, 1, 1703951, 0, 1, 1769487, 0, 1)
 
 [node name="Breakable" type="StaticBody2D" parent="." index="8"]

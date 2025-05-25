@@ -155,6 +155,7 @@ atlas = ExtResource("4_ahd87")
 region = Rect2(1.06582, 13.1287, 1021.78, 261.128)
 
 [node name="MapContent" instance=ExtResource("1_dntbq")]
+LevelNum = 28
 
 [node name="Wallsop" parent="." index="0"]
 layer_0/tile_data = PackedInt32Array(-2359264, 131072, 0, -2359289, 0, 0, -1048544, 131072, 2, -655353, 0, 0)

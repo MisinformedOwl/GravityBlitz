@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://rkdcxfm37rba" path="res://Mechanics and Assets/black_hole.tscn" id="2_vmg6o"]
 
 [node name="MapContent" instance=ExtResource("1_8h5ks")]
+LevelNum = 31
 
 [node name="Wallsop" parent="." index="0"]
 layer_0/tile_data = PackedInt32Array(5, 131072, 2, 196613, 131072, 0)

@@ -8,6 +8,8 @@ var goalPointerLoader = preload("res://Mechanics and Assets/GoalPointer.tscn")
 @onready var camera = $Camera2D
 @onready var background = $Background
 
+@export var LevelNum : int = 0
+
 var goals = []
 var gPointers = []
 var playerDying : bool = false
@@ -78,13 +80,13 @@ func _playerDying(cause):
 		playerDying = true
 
 func _goal_reached(_body):
-	emit_signal("goal_reached")
+	get_tree().change_scene_to_file("res://Levels/Level {0}.tscn".format([LevelNum+1]))
 
 func _playerDeath():
-	emit_signal("playerDeath")
+	reload()
 
 func _worldUpdated():
 	emit_signal("updateChildren")
 
 func reload():
-	pass
+	get_tree().reload_current_scene()

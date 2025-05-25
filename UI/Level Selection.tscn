@@ -1,0 +1,58 @@
+[gd_scene load_steps=5 format=3 uid="uid://cbop1q5qfqujf"]
+
+[ext_resource type="Script" path="res://UI/Level Selection.gd" id="1_w5l00"]
+[ext_resource type="StyleBox" uid="uid://3bht62omj2g2" path="res://UI/Button.tres" id="2_ac17k"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_d8lx6"]
+bg_color = Color(0.0352941, 0.0352941, 0.0352941, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xauyi"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_w5l00")
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_d8lx6")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer"]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 60
+theme_override_styles/normal = ExtResource("2_ac17k")
+action_mode = 0
+text = "Back"
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_left = 30
+theme_override_constants/margin_right = 10
+
+[node name="ScrollContainer" type="ScrollContainer" parent="PanelContainer/VBoxContainer/MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxEmpty_xauyi")
+
+[node name="GridContainer" type="GridContainer" parent="PanelContainer/VBoxContainer/MarginContainer/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+columns = 5
+
+[connection signal="pressed" from="PanelContainer/VBoxContainer/Button" to="." method="_on_button_pressed"]
