@@ -7,6 +7,9 @@ var goalPointerLoader = preload("res://Mechanics and Assets/GoalPointer.tscn")
 @onready var gravitation = $Gravitation
 @onready var camera = $Camera2D
 @onready var background = $Background
+@onready var ui = $"UI Layer"
+@onready var pause_menu = $"UI Layer/Pause Menu"
+
 
 @export var LevelNum : int = 0
 
@@ -19,14 +22,6 @@ signal playerDeath
 signal updateChildren
 
 func _ready():
-	var map = $Wall
-	if map:
-		var used_cells = map.get_used_cells(0)  # Check layer 0
-		for cell in used_cells:
-			var atlas_coords = map.get_cell_atlas_coords(0, cell)
-			if atlas_coords.x > 3 or atlas_coords.y > 3:
-				print("Invalid tile found at cell: ", cell, " with atlas coords: ", atlas_coords)
-
 	background.visible = true
 	for child in get_children():
 		if child.name.substr(0,4) == "Goal":
@@ -94,3 +89,8 @@ func _worldUpdated():
 
 func reload():
 	get_tree().reload_current_scene()
+
+
+func _on_texture_button_pressed():
+	get_tree().paused = true
+	pause_menu.visible = true

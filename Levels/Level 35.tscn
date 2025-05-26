@@ -40,3 +40,4 @@ modulate = Color(0, 0, 1, 1)
 
 [editable path="Portal Manager/Portal"]
 [editable path="Portal Manager/Portal2"]
+[editable path="UI Layer/Pause Menu"]

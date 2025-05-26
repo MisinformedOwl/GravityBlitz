@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://bdx77watf0xjr"]
+[gd_scene load_steps=31 format=3 uid="uid://bdx77watf0xjr"]
 
 [ext_resource type="Script" path="res://MapFunctionality.gd" id="1_b6gcc"]
 [ext_resource type="Shader" path="res://Shaders/Wallsop.gdshader" id="2_1c823"]
@@ -13,6 +13,8 @@
 [ext_resource type="PackedScene" uid="uid://8uqvnx8qycrk" path="res://Mechanics and Assets/Goal.tscn" id="9_grwwk"]
 [ext_resource type="Script" path="res://Mechanics and Assets/Camera.gd" id="11_igi42"]
 [ext_resource type="PackedScene" uid="uid://bkhbdemw5sjdm" path="res://Mechanics and Assets/Background.tscn" id="13_yfuu2"]
+[ext_resource type="PackedScene" uid="uid://b7qnslh5sqdey" path="res://UI/Pause Menu.tscn" id="14_h65s7"]
+[ext_resource type="Texture2D" uid="uid://ddxt3n6dci6m4" path="res://UI/Pause Button.png" id="15_biplt"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_3ujt7"]
 shader = ExtResource("2_1c823")
@@ -160,6 +162,8 @@ tile_size = Vector2i(128, 128)
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_x4fyl")
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_grqek"]
+
 [node name="MapContent" type="Node2D"]
 script = ExtResource("1_b6gcc")
 
@@ -210,3 +214,31 @@ script = ExtResource("11_igi42")
 
 [node name="Background" parent="." instance=ExtResource("13_yfuu2")]
 scale = Vector2(16.916, 6362.03)
+
+[node name="UI Layer" type="CanvasLayer" parent="."]
+
+[node name="ButtonContainer" type="PanelContainer" parent="UI Layer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_grqek")
+
+[node name="MarginContainer" type="MarginContainer" parent="UI Layer/ButtonContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+
+[node name="PauseButton" type="TextureButton" parent="UI Layer/ButtonContainer/MarginContainer"]
+layout_mode = 2
+texture_normal = ExtResource("15_biplt")
+
+[node name="Pause Menu" parent="UI Layer" instance=ExtResource("14_h65s7")]
+visible = false
+
+[connection signal="pressed" from="UI Layer/ButtonContainer/MarginContainer/PauseButton" to="." method="_on_texture_button_pressed"]
+
+[editable path="UI Layer/Pause Menu"]
