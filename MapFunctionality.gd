@@ -80,7 +80,11 @@ func _playerDying(cause):
 		playerDying = true
 
 func _goal_reached(_body):
-	get_tree().change_scene_to_file("res://Levels/Level {0}.tscn".format([LevelNum+1]))
+	var nextLevel : String = "res://Levels/Level {0}.tscn".format([LevelNum+1])
+	if FileAccess.file_exists(nextLevel):
+		get_tree().change_scene_to_file(nextLevel)
+	else:
+		get_tree().change_scene_to_file("res://Levels/Level End.tscn")
 
 func _playerDeath():
 	reload()
