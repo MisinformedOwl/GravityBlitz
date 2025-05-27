@@ -30,12 +30,12 @@ func _ready():
 				var goalPointer = goalPointerLoader.instantiate()
 				goalPointer.goal = child
 				add_child(goalPointer)
-			child.connect("body_entered", _goal_reached)
 			goals.append(child)
 		elif child.has_signal("updateWorld"):
 			child.connect("updateWorld", _worldUpdated)
 	player.connect("death", _playerDeath)
 	player.connect("playerDying", _playerDying)
+	player.connect("goalReached", _goal_reached)
 
 func getGoals():
 	return goals
@@ -74,7 +74,7 @@ func _playerDying(cause):
 			camera.set_physics_process(false)
 		playerDying = true
 
-func _goal_reached(_body):
+func _goal_reached():
 	var nextLevel : String = "res://Levels/Level {0}.tscn".format([LevelNum+1])
 	if FileAccess.file_exists(nextLevel):
 		get_tree().change_scene_to_file(nextLevel)
@@ -89,7 +89,6 @@ func _worldUpdated():
 
 func reload():
 	get_tree().reload_current_scene()
-
 
 func _on_texture_button_pressed():
 	get_tree().paused = true

@@ -12,6 +12,7 @@ const SPEEDTHRESHOLD = 13
 signal death
 signal movedATile
 signal playerDying(String)
+signal goalReached
 
 var dying             : bool = false
 var currSpeed         : float
@@ -133,8 +134,16 @@ func setSpriteAnim():
 	else:
 		sprite.play("default")
 
-func _on_animation_player_animation_finished(_anim_name):
-	dead()
+func goalHit():
+	lockdownAnims()
+	dying = true
+	animation.play("goalHit")
+
+func _on_animation_player_animation_finished(anim_name):
+	if anim_name == "goalHit":
+		goalReached.emit()
+	else:
+		dead()
 
 func _on_sprite_animation_finished():
 	if sprite.animation == "Heatup":
