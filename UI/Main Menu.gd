@@ -1,10 +1,20 @@
 extends Control
 
+@onready var cont = $MarginContainer/VBoxContainer/Continue
+@onready var level_select = $"MarginContainer/VBoxContainer/Level Select"
+@onready var credits = $MarginContainer/VBoxContainer/Credits
+
+func _ready():
+	cont.connect("pressed", _on_continue_pressed)
+	level_select.connect("pressed", _on_level_select_pressed)
+	credits.connect("pressed", _on_credits_pressed)
+	#Find furthest level.
+
 func _on_continue_pressed():
 	get_tree().change_scene_to_file("res://Levels/Level 1.tscn")
 
-func _on_credits_pressed():
-	get_tree().change_scene_to_file("res://UI/Credits.tscn")
-
 func _on_level_select_pressed():
 	get_tree().change_scene_to_file("res://UI/Level Selection.tscn")
+
+func _on_credits_pressed():
+	get_tree().change_scene_to_file("res://UI/Credits.tscn")
