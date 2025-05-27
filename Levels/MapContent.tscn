@@ -1,14 +1,10 @@
-[gd_scene load_steps=31 format=3 uid="uid://bdx77watf0xjr"]
+[gd_scene load_steps=19 format=3 uid="uid://bdx77watf0xjr"]
 
 [ext_resource type="Script" path="res://MapFunctionality.gd" id="1_b6gcc"]
-[ext_resource type="Shader" path="res://Shaders/Wallsop.gdshader" id="2_1c823"]
 [ext_resource type="Texture2D" uid="uid://w0iyv6rny0cm" path="res://tiles.png" id="2_2r5pm"]
-[ext_resource type="Shader" path="res://Shaders/InteractableMapShader.gdshader" id="3_c225m"]
-[ext_resource type="Texture2D" uid="uid://d2rxsbcua8y5y" path="res://tile.png" id="4_qfam2"]
+[ext_resource type="Texture2D" uid="uid://h3yqj77a7w7d" path="res://wallsop.png" id="2_wlkwx"]
 [ext_resource type="PackedScene" uid="uid://sg4dhjdag5ec" path="res://Mechanics and Assets/gravitation.tscn" id="5_jdh6f"]
-[ext_resource type="Shader" path="res://Shaders/Walls.gdshader" id="6_kgt4c"]
 [ext_resource type="Texture2D" uid="uid://c8dpnbvh1m4f7" path="res://walls.png" id="7_gxqib"]
-[ext_resource type="Shader" path="res://Shaders/InverseInteract.gdshader" id="7_y2rsb"]
 [ext_resource type="PackedScene" uid="uid://citts2xpwqa2h" path="res://Mechanics and Assets/Player.tscn" id="8_j4p1d"]
 [ext_resource type="PackedScene" uid="uid://8uqvnx8qycrk" path="res://Mechanics and Assets/Goal.tscn" id="9_grwwk"]
 [ext_resource type="Script" path="res://Mechanics and Assets/Camera.gd" id="11_igi42"]
@@ -16,12 +12,8 @@
 [ext_resource type="PackedScene" uid="uid://b7qnslh5sqdey" path="res://UI/Pause Menu.tscn" id="14_h65s7"]
 [ext_resource type="Texture2D" uid="uid://ddxt3n6dci6m4" path="res://UI/Pause Button.png" id="15_biplt"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_3ujt7"]
-shader = ExtResource("2_1c823")
-shader_parameter/time_scale = 0.4
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ofnqf"]
-texture = ExtResource("7_gxqib")
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bad7x"]
+texture = ExtResource("2_wlkwx")
 texture_region_size = Vector2i(128, 128)
 0:0/0 = 0
 0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
@@ -62,7 +54,7 @@ texture_region_size = Vector2i(128, 128)
 [sub_resource type="TileSet" id="TileSet_t6d18"]
 tile_size = Vector2i(128, 128)
 physics_layer_0/collision_layer = 1
-sources/0 = SubResource("TileSetAtlasSource_ofnqf")
+sources/0 = SubResource("TileSetAtlasSource_bad7x")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_461yk"]
 texture = ExtResource("2_2r5pm")
@@ -83,40 +75,6 @@ texture_region_size = Vector2i(128, 128)
 [sub_resource type="TileSet" id="TileSet_tb8ws"]
 tile_size = Vector2i(128, 128)
 sources/0 = SubResource("TileSetAtlasSource_461yk")
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_k3f3e"]
-shader = ExtResource("3_c225m")
-shader_parameter/speed = 0.1
-shader_parameter/line_thickness = 0.02
-shader_parameter/diamond_size = 0.5
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_frkf1"]
-texture = ExtResource("4_qfam2")
-texture_region_size = Vector2i(128, 128)
-0:0/0 = 0
-
-[sub_resource type="TileSet" id="TileSet_astal"]
-tile_size = Vector2i(128, 128)
-sources/0 = SubResource("TileSetAtlasSource_frkf1")
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_wbt01"]
-shader = ExtResource("7_y2rsb")
-shader_parameter/speed = 0.1
-shader_parameter/line_thickness = 0.01
-shader_parameter/diamond_size = 0.5
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mrpvn"]
-texture = ExtResource("4_qfam2")
-texture_region_size = Vector2i(128, 128)
-0:0/0 = 0
-
-[sub_resource type="TileSet" id="TileSet_164ra"]
-tile_size = Vector2i(128, 128)
-sources/0 = SubResource("TileSetAtlasSource_mrpvn")
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_mgg5p"]
-shader = ExtResource("6_kgt4c")
-shader_parameter/time_scale = 0.4
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_x4fyl"]
 texture = ExtResource("7_gxqib")
@@ -168,30 +126,21 @@ sources/0 = SubResource("TileSetAtlasSource_x4fyl")
 script = ExtResource("1_b6gcc")
 
 [node name="Wallsop" type="TileMap" parent="."]
-material = SubResource("ShaderMaterial_3ujt7")
+texture_filter = 1
 tile_set = SubResource("TileSet_t6d18")
 format = 2
 
 [node name="Floor" type="TileMap" parent="."]
+texture_filter = 1
 tile_set = SubResource("TileSet_tb8ws")
 format = 2
 layer_0/z_index = -1
-
-[node name="ShaderFloor" type="TileMap" parent="Floor"]
-material = SubResource("ShaderMaterial_k3f3e")
-tile_set = SubResource("TileSet_astal")
-format = 2
-
-[node name="InverseShader" type="TileMap" parent="Floor"]
-material = SubResource("ShaderMaterial_wbt01")
-tile_set = SubResource("TileSet_164ra")
-format = 2
 
 [node name="Gravitation" parent="." instance=ExtResource("5_jdh6f")]
 visible = false
 
 [node name="Wall" type="TileMap" parent="."]
-material = SubResource("ShaderMaterial_mgg5p")
+texture_filter = 1
 tile_set = SubResource("TileSet_ee6qa")
 format = 2
 
