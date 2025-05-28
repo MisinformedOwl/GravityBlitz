@@ -42,7 +42,7 @@ texture_region_size = Vector2i(128, 128)
 2:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 2:2/0/physics_layer_0/angular_velocity = 0.0
 
-[sub_resource type="TileSet" id="TileSet_t3n76"]
+[sub_resource type="TileSet" id="TileSet_pqebr"]
 resource_local_to_scene = true
 tile_size = Vector2i(128, 128)
 physics_layer_0/collision_layer = 2
@@ -133,6 +133,7 @@ size = Vector2(52, 31)
 
 [node name="MapContent" instance=ExtResource("1_e31i5")]
 LevelNum = 23
+LevelName = "2 Factor Authentication"
 
 [node name="Wallsop" parent="." index="0"]
 layer_0/tile_data = PackedInt32Array(458758, 0, 0, 524294, 0, 2, 589831, 0, 2, 589825, 131072, 2, 524290, 131072, 2, 458754, 131072, 0, 851969, 131072, 0, 851975, 0, 0)
@@ -153,7 +154,7 @@ position = Vector2(576, 321)
 moving = true
 
 [node name="Pitmap" parent="." index="7" instance=ExtResource("2_ffeb8")]
-tile_set = SubResource("TileSet_t3n76")
+tile_set = SubResource("TileSet_pqebr")
 layer_0/tile_data = PackedInt32Array(720907, 65536, 0, 720904, 65536, 0, 786440, 65536, 1, 720906, 65536, 0, 655373, 65536, 0, 720909, 65536, 1)
 
 [node name="Breakable" type="StaticBody2D" parent="." index="8"]

@@ -7,6 +7,7 @@ func _on_resume_pressed():
 	visible = false
 
 func _on_main_menu_pressed():
+	GameState.skip_intro = false
 	get_tree().paused = false
 	get_tree().change_scene_to_file("res://UI/Main Menu.tscn")
 

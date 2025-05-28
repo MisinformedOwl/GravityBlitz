@@ -14,8 +14,10 @@ var goalPointerLoader = preload("res://Mechanics and Assets/GoalPointer.tscn")
 @onready var CenterOfCanvas = $"UI Layer/CenterOfCanvas"
 @onready var arrow_display = $ArrowDisplay
 @onready var arrow_button = $"UI Layer/ButtonContainer/MarginContainer2/ArrowButton"
+@onready var levelTitle = $"UI Layer/Fade transition/MarginContainer/Title"
 
 @export var LevelNum : int = 0
+@export var LevelName : String = ""
 
 var goals = []
 var gPointers = []
@@ -26,11 +28,23 @@ signal playerDeath
 signal updateChildren
 
 func _ready():
+	#Holds player until the scene begins to fade in. Particularly a problem with the black hole tutorial...
+	player.set_physics_process(false)
 	
+	#If the player has already seen the intro, skip it for brevity and time saving for the player.
+	if GameState.skip_intro:
+		fade_transition.visible = false
+		player.set_physics_process(true)
+	else:
+		fade_transition.visible = true
+		var titleTween = create_tween()
+		titleTween.connect("finished", _on_loadin_timeout)
+		levelTitle.text = "Level {0}\n\n{1}".format([LevelNum,LevelName])
+		titleTween.tween_property(levelTitle, "modulate", Color(1,1,1,1), 2)
+	
+	#Position the node to the middle of the canvas for use in goal pointers.
 	CenterOfCanvas.position = get_viewport_rect().size/2
-	fade_transition.visible = true
-	var fadetween = get_tree().create_tween()
-	fadetween.tween_property(fade_transition, "color", Color(0, 0, 0, 0), 1)
+	#Background hidden so i can actually see what im doing when designing maps.
 	background.visible = true
 	for child in get_children():
 		if child.name.substr(0,4) == "Goal":
@@ -49,6 +63,7 @@ func _ready():
 	player.connect("death", _playerDeath)
 	player.connect("playerDying", _playerDying)
 	player.connect("goalReached", _goal_reached)
+	GameState.skip_intro = true
 
 func getGoals():
 	return goals
@@ -88,6 +103,7 @@ func _playerDying(cause):
 		playerDying = true
 
 func _goal_reached():
+	GameState.skip_intro = false
 	var fadetween = get_tree().create_tween()
 	fadetween.tween_property(fade_transition, "color", Color(0, 0, 0, 1), 1)
 	fade_out_timer.start()
@@ -116,3 +132,9 @@ func _on_fade_out_timer_timeout():
 func _on_arrow_button_pressed():
 	for p in gPointers:
 		p.reveal()
+
+func _on_loadin_timeout():
+	player.velocity = Vector2.ZERO
+	player.set_physics_process(true)
+	var fadetween = get_tree().create_tween()
+	fadetween.tween_property(fade_transition, "modulate", Color(0, 0, 0, 0), 1)

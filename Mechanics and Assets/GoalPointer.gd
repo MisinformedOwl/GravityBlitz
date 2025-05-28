@@ -18,9 +18,6 @@ func _process(_delta):
 	angle = round(fmod(angle + 495, 360)/45)
 	animation.play("%d" % angle)
 
-func dirToGoal(dir):
-	dir
-
 func reveal():
 	print("test")
 	animation.modulate = Color(1,1,1,1)
@@ -29,3 +26,5 @@ func reveal():
 func _on_timer_timeout():
 	var tween = create_tween()
 	tween.tween_property(animation, "modulate", Color(1,1,1,0), 2).set_trans(Tween.TRANS_QUAD)
+	await tween.finished
+	print("done")

@@ -7,6 +7,7 @@
 
 [node name="MapContent" instance=ExtResource("1_gcgbc")]
 LevelNum = 38
+LevelName = "Take Your Pick"
 
 [node name="Wallsop" parent="." index="0"]
 layer_0/tile_data = PackedInt32Array(589830, 0, 0, 589826, 131072, 0)

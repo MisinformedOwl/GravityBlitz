@@ -1,16 +1,13 @@
-[gd_scene load_steps=43 format=3 uid="uid://vubxtnrlomnj"]
+[gd_scene load_steps=21 format=3 uid="uid://vubxtnrlomnj"]
 
 [ext_resource type="PackedScene" uid="uid://bdx77watf0xjr" path="res://Levels/MapContent.tscn" id="1_arnbv"]
 [ext_resource type="Script" path="res://Mechanics and Assets/breakable.gd" id="3_73b4j"]
 [ext_resource type="Texture2D" uid="uid://cs551w6jo4ieu" path="res://Shaders/destructableTexture.png" id="4_mwkjm"]
 [ext_resource type="Script" path="res://Mechanics and Assets/button.gd" id="4_mxuty"]
-[ext_resource type="Script" path="res://Mechanics and Assets/Laser Cannon.gd" id="5_1mfpc"]
 [ext_resource type="Texture2D" uid="uid://nu8d4vjyq14b" path="res://Mechanics and Assets/Button.png" id="5_3byde"]
-[ext_resource type="Texture2D" uid="uid://b13aetxs5t4sf" path="res://TempFiles/LaserCannon-Sheet.png" id="6_ki8n8"]
 [ext_resource type="Texture2D" uid="uid://dathje0bheshg" path="res://Mechanics and Assets/Wires off.png" id="6_sagrw"]
 [ext_resource type="Texture2D" uid="uid://cx40yyy4q2i3b" path="res://Mechanics and Assets/Wires on.png" id="7_4mexh"]
 [ext_resource type="Texture2D" uid="uid://cov7lbdvj0eg5" path="res://TempFiles/Energy Beam.png" id="7_i1kg5"]
-[ext_resource type="Script" path="res://Mechanics and Assets/Beam.gd" id="8_ip2sx"]
 [ext_resource type="PackedScene" uid="uid://bqrq5ig1oqqrw" path="res://Mechanics and Assets/Laser Cannon.tscn" id="8_yfb6d"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_b7fv3"]
@@ -90,140 +87,10 @@ sources/0 = SubResource("TileSetAtlasSource_wbpyx")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lrpk7"]
 size = Vector2(52, 31)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ltea2"]
-atlas = ExtResource("6_ki8n8")
-region = Rect2(896, 128, 128, 128)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_rawcq"]
-atlas = ExtResource("6_ki8n8")
-region = Rect2(0, 0, 128, 128)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_hn3en"]
-atlas = ExtResource("6_ki8n8")
-region = Rect2(128, 0, 128, 128)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_p6277"]
-atlas = ExtResource("6_ki8n8")
-region = Rect2(256, 0, 128, 128)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ddnbj"]
-atlas = ExtResource("6_ki8n8")
-region = Rect2(384, 0, 128, 128)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_xuhal"]
-atlas = ExtResource("6_ki8n8")
-region = Rect2(512, 0, 128, 128)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_phmm2"]
-atlas = ExtResource("6_ki8n8")
-region = Rect2(640, 0, 128, 128)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_x4c0v"]
-atlas = ExtResource("6_ki8n8")
-region = Rect2(768, 0, 128, 128)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_aeyjo"]
-atlas = ExtResource("6_ki8n8")
-region = Rect2(896, 0, 128, 128)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_m2q4t"]
-atlas = ExtResource("6_ki8n8")
-region = Rect2(0, 128, 128, 128)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_csj2o"]
-atlas = ExtResource("6_ki8n8")
-region = Rect2(128, 128, 128, 128)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ixtao"]
-atlas = ExtResource("6_ki8n8")
-region = Rect2(256, 128, 128, 128)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_k1554"]
-atlas = ExtResource("6_ki8n8")
-region = Rect2(384, 128, 128, 128)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_bcx1e"]
-atlas = ExtResource("6_ki8n8")
-region = Rect2(512, 128, 128, 128)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_u1h82"]
-atlas = ExtResource("6_ki8n8")
-region = Rect2(640, 128, 128, 128)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_qecul"]
-atlas = ExtResource("6_ki8n8")
-region = Rect2(768, 128, 128, 128)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_thvoh"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ltea2")
-}],
-"loop": true,
-"name": &"Off",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_rawcq")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_hn3en")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_p6277")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ddnbj")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_xuhal")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_phmm2")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_x4c0v")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_aeyjo")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_m2q4t")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_csj2o")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ixtao")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_k1554")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_bcx1e")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_u1h82")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_qecul")
-}],
-"loop": true,
-"name": &"On",
-"speed": 20.0
-}]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_3ggbb"]
-size = Vector2(66, 101)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_kn8yg"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_0t0d2"]
 resource_local_to_scene = true
 atlas = ExtResource("7_i1kg5")
 region = Rect2(0, 0, 256, 1018.12)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_8dple"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_r0c0h"]
 resource_local_to_scene = true
@@ -232,15 +99,13 @@ region = Rect2(5.33325, 13.1287, 2386.76, 261.128)
 
 [node name="MapContent" instance=ExtResource("1_arnbv")]
 LevelNum = 27
+LevelName = "Push Through"
 
 [node name="Wallsop" parent="." index="0"]
 layer_0/tile_data = PackedInt32Array(393224, 0, 0, 393227, 131072, 0, 655379, 0, 2)
 
 [node name="Floor" parent="." index="1"]
 layer_0/tile_data = PackedInt32Array(65537, 0, 1, 131073, 0, 1, 196609, 0, 1, 262145, 0, 1, 327681, 0, 1, 393217, 0, 1, 458753, 0, 1, 524289, 0, 1, 589825, 0, 1, 655361, 0, 1, 720897, 0, 1, 786433, 0, 1, 851969, 0, 1, 65538, 0, 1, 131074, 0, 1, 196610, 0, 1, 262146, 0, 1, 327682, 0, 1, 393218, 0, 1, 458754, 0, 1, 524290, 0, 1, 589826, 0, 1, 655362, 0, 1, 720898, 0, 1, 786434, 0, 1, 851970, 0, 1, 65539, 0, 1, 131075, 0, 1, 196611, 0, 1, 262147, 0, 1, 327683, 0, 1, 393219, 0, 1, 458755, 0, 1, 524291, 0, 1, 589827, 0, 1, 655363, 0, 1, 720899, 0, 1, 786435, 0, 1, 851971, 0, 1, 65540, 0, 1, 131076, 0, 1, 196612, 0, 1, 262148, 0, 1, 327684, 0, 1, 393220, 0, 1, 458756, 0, 1, 524292, 0, 1, 589828, 0, 1, 655364, 0, 1, 720900, 0, 1, 786436, 0, 1, 851972, 0, 1, 65541, 0, 1, 131077, 0, 1, 196613, 0, 1, 262149, 0, 1, 327685, 0, 1, 393221, 0, 1, 458757, 0, 1, 524293, 0, 1, 589829, 0, 1, 655365, 0, 1, 720901, 0, 1, 786437, 0, 1, 851973, 0, 1, 65542, 0, 1, 131078, 0, 1, 196614, 0, 1, 262150, 0, 1, 327686, 0, 1, 393222, 0, 1, 458758, 0, 1, 524294, 0, 1, 589830, 0, 1, 655366, 0, 1, 720902, 0, 1, 786438, 0, 1, 851974, 0, 1, 65543, 0, 1, 131079, 0, 1, 196615, 0, 1, 262151, 0, 1, 327687, 0, 1, 393223, 0, 1, 458759, 0, 1, 524295, 0, 1, 589831, 0, 1, 655367, 0, 1, 720903, 0, 1, 786439, 0, 1, 851975, 0, 1, 65544, 65536, 0, 131080, 65536, 0, 196616, 65536, 0, 262152, 65536, 0, 327688, 65536, 0, 65545, 65536, 0, 131081, 65536, 0, 196617, 65536, 0, 262153, 65536, 0, 327689, 65536, 0, 65546, 65536, 0, 131082, 65536, 0, 196618, 65536, 0, 262154, 65536, 0, 327690, 65536, 0, 65547, 65536, 0, 131083, 65536, 0, 196619, 65536, 0, 262155, 65536, 0, 327691, 65536, 0, 65548, 0, 1, 131084, 0, 1, 196620, 0, 1, 262156, 0, 1, 327692, 0, 1, 393228, 0, 1, 458764, 0, 1, 524300, 0, 1, 589836, 0, 1, 655372, 0, 1, 720908, 0, 1, 786444, 0, 1, 851980, 0, 1, 65549, 0, 1, 131085, 0, 1, 196621, 0, 1, 262157, 0, 1, 327693, 0, 1, 393229, 0, 1, 458765, 0, 1, 524301, 0, 1, 589837, 0, 1, 655373, 0, 1, 720909, 0, 1, 786445, 0, 1, 851981, 0, 1, 65550, 0, 1, 131086, 0, 1, 196622, 0, 1, 262158, 0, 1, 327694, 0, 1, 393230, 0, 1, 458766, 0, 1, 524302, 0, 1, 589838, 0, 1, 655374, 0, 1, 720910, 0, 1, 786446, 0, 1, 851982, 0, 1, 65551, 0, 1, 131087, 0, 1, 196623, 0, 1, 262159, 0, 1, 327695, 0, 1, 393231, 0, 1, 458767, 0, 1, 524303, 0, 1, 589839, 0, 1, 655375, 0, 1, 720911, 0, 1, 786447, 0, 1, 851983, 0, 1, 65552, 0, 1, 131088, 0, 1, 196624, 0, 1, 262160, 0, 1, 327696, 0, 1, 393232, 0, 1, 458768, 0, 1, 524304, 0, 1, 589840, 0, 1, 655376, 0, 1, 720912, 0, 1, 786448, 0, 1, 851984, 0, 1, 65553, 0, 1, 131089, 0, 1, 196625, 0, 1, 262161, 0, 1, 327697, 0, 1, 393233, 0, 1, 458769, 0, 1, 524305, 0, 1, 589841, 0, 1, 655377, 0, 1, 720913, 0, 1, 786449, 0, 1, 851985, 0, 1, 65554, 0, 1, 131090, 0, 1, 196626, 0, 1, 262162, 0, 1, 327698, 0, 1, 393234, 0, 1, 458770, 0, 1, 524306, 0, 1, 589842, 0, 1, 655378, 0, 1, 720914, 0, 1, 786450, 0, 1, 851986, 0, 1, 720915, 65536, 0, 786451, 65536, 0, 851987, 65536, 0, 720916, 65536, 0, 786452, 65536, 0, 851988, 65536, 0, 720917, 65536, 0, 786453, 65536, 0, 851989, 65536, 0, 720918, 65536, 0, 786454, 65536, 0, 851990, 65536, 0, 720919, 65536, 0, 786455, 65536, 0, 851991, 65536, 0)
-
-[node name="InverseShader" parent="Floor" index="1"]
-layer_0/tile_data = PackedInt32Array(65537, 0, 0, 131073, 0, 0, 196609, 0, 0, 262145, 0, 0, 327681, 0, 0, 393217, 0, 0, 458753, 0, 0, 524289, 0, 0, 589825, 0, 0, 655361, 0, 0, 720897, 0, 0, 786433, 0, 0, 851969, 0, 0, 65538, 0, 0, 131074, 0, 0, 196610, 0, 0, 262146, 0, 0, 327682, 0, 0, 393218, 0, 0, 458754, 0, 0, 524290, 0, 0, 589826, 0, 0, 655362, 0, 0, 720898, 0, 0, 786434, 0, 0, 851970, 0, 0, 65539, 0, 0, 131075, 0, 0, 196611, 0, 0, 262147, 0, 0, 327683, 0, 0, 393219, 0, 0, 458755, 0, 0, 524291, 0, 0, 589827, 0, 0, 655363, 0, 0, 720899, 0, 0, 786435, 0, 0, 851971, 0, 0, 65540, 0, 0, 131076, 0, 0, 196612, 0, 0, 262148, 0, 0, 327684, 0, 0, 393220, 0, 0, 458756, 0, 0, 524292, 0, 0, 589828, 0, 0, 655364, 0, 0, 720900, 0, 0, 786436, 0, 0, 851972, 0, 0, 65541, 0, 0, 131077, 0, 0, 196613, 0, 0, 262149, 0, 0, 327685, 0, 0, 393221, 0, 0, 458757, 0, 0, 524293, 0, 0, 589829, 0, 0, 655365, 0, 0, 720901, 0, 0, 786437, 0, 0, 851973, 0, 0, 65542, 0, 0, 131078, 0, 0, 196614, 0, 0, 262150, 0, 0, 327686, 0, 0, 393222, 0, 0, 458758, 0, 0, 524294, 0, 0, 589830, 0, 0, 655366, 0, 0, 720902, 0, 0, 786438, 0, 0, 851974, 0, 0, 65543, 0, 0, 131079, 0, 0, 196615, 0, 0, 262151, 0, 0, 327687, 0, 0, 393223, 0, 0, 458759, 0, 0, 524295, 0, 0, 589831, 0, 0, 655367, 0, 0, 720903, 0, 0, 786439, 0, 0, 851975, 0, 0, 65548, 0, 0, 131084, 0, 0, 196620, 0, 0, 262156, 0, 0, 327692, 0, 0, 393228, 0, 0, 458764, 0, 0, 524300, 0, 0, 589836, 0, 0, 655372, 0, 0, 720908, 0, 0, 786444, 0, 0, 851980, 0, 0, 65549, 0, 0, 131085, 0, 0, 196621, 0, 0, 262157, 0, 0, 327693, 0, 0, 393229, 0, 0, 458765, 0, 0, 524301, 0, 0, 589837, 0, 0, 655373, 0, 0, 720909, 0, 0, 786445, 0, 0, 65550, 0, 0, 131086, 0, 0, 196622, 0, 0, 262158, 0, 0, 327694, 0, 0, 393230, 0, 0, 458766, 0, 0, 524302, 0, 0, 589838, 0, 0, 655374, 0, 0, 720910, 0, 0, 786446, 0, 0, 65551, 0, 0, 131087, 0, 0, 196623, 0, 0, 262159, 0, 0, 327695, 0, 0, 393231, 0, 0, 458767, 0, 0, 524303, 0, 0, 589839, 0, 0, 655375, 0, 0, 720911, 0, 0, 786447, 0, 0, 65552, 0, 0, 131088, 0, 0, 196624, 0, 0, 262160, 0, 0, 327696, 0, 0, 393232, 0, 0, 458768, 0, 0, 524304, 0, 0, 589840, 0, 0, 655376, 0, 0, 720912, 0, 0, 786448, 0, 0, 65553, 0, 0, 131089, 0, 0, 196625, 0, 0, 262161, 0, 0, 327697, 0, 0, 393233, 0, 0, 458769, 0, 0, 524305, 0, 0, 589841, 0, 0, 655377, 0, 0, 720913, 0, 0, 786449, 0, 0, 851985, 0, 0, 65554, 0, 0, 131090, 0, 0, 196626, 0, 0, 262162, 0, 0, 327698, 0, 0, 393234, 0, 0, 458770, 0, 0, 524306, 0, 0, 589842, 0, 0, 655378, 0, 0, 720914, 0, 0, 786450, 0, 0, 851986, 0, 0, 851981, 0, 0, 851982, 0, 0, 851983, 0, 0, 851984, 0, 0)
 
 [node name="Wall" parent="." index="3"]
 layer_0/tile_data = PackedInt32Array(1, 65536, 0, 2, 65536, 0, 3, 65536, 0, 4, 65536, 0, 5, 65536, 0, 6, 65536, 0, 7, 65536, 0, 8, 65536, 0, 9, 65536, 0, 10, 65536, 0, 11, 65536, 0, 12, 65536, 0, 13, 65536, 0, 14, 65536, 0, 15, 65536, 0, 16, 65536, 0, 17, 65536, 0, 18, 65536, 0, 65555, 131072, 1, 131091, 131072, 1, 196627, 131072, 1, 262163, 131072, 1, 327699, 131072, 1, 393235, 131072, 1, 458771, 131072, 1, 458760, 131072, 1, 524296, 131072, 1, 589832, 131072, 1, 655368, 131072, 1, 720904, 131072, 1, 786440, 131072, 1, 851976, 131072, 1, 917516, 65536, 2, 917517, 65536, 2, 917518, 65536, 2, 917519, 65536, 2, 917520, 65536, 2, 917521, 65536, 2, 917522, 65536, 2, 917505, 65536, 2, 917506, 65536, 2, 917507, 65536, 2, 917508, 65536, 2, 917509, 65536, 2, 917510, 65536, 2, 917511, 65536, 2, 65536, 0, 1, 131072, 0, 1, 196608, 0, 1, 262144, 0, 1, 327680, 0, 1, 393216, 0, 1, 458752, 0, 1, 524288, 0, 1, 589824, 0, 1, 655360, 0, 1, 720896, 0, 1, 786432, 0, 1, 851968, 0, 1, 458763, 0, 1, 524299, 0, 1, 589835, 0, 1, 655371, 0, 1, 720907, 0, 1, 786443, 0, 1, 851979, 0, 1, 0, 0, 0, 19, 131072, 0, 917512, 131072, 2, 917515, 0, 2, 917504, 0, 2, 393225, 65536, 2, 393226, 65536, 2, 524307, 131072, 1, 589843, 131072, 1, 720920, 131072, 1, 786456, 131072, 1, 851992, 131072, 1, 917528, 131072, 2, 655384, 131072, 0, 655380, 65536, 0, 655381, 65536, 0, 655382, 65536, 0, 655383, 65536, 0, 917523, 65536, 2, 917524, 65536, 2, 917525, 65536, 2, 917526, 65536, 2, 917527, 65536, 2)
@@ -292,44 +157,18 @@ shape = SubResource("RectangleShape2D_lrpk7")
 [node name="Timer" type="Timer" parent="Button" index="3"]
 one_shot = true
 
-[node name="Laser Cannon" parent="Button" index="4" instance=ExtResource("8_yfb6d")]
-position = Vector2(-511, 93)
-
-[node name="Laser Cannon2" type="StaticBody2D" parent="Button" index="5"]
-z_index = 5
-z_as_relative = false
-position = Vector2(-356.004, 1471)
+[node name="Laser Cannon2" parent="Button" index="4" instance=ExtResource("8_yfb6d")]
+position = Vector2(-356.004, 1472)
 rotation = -1.5708
-script = ExtResource("5_1mfpc")
 
-[node name="Sprite" type="AnimatedSprite2D" parent="Button/Laser Cannon2" index="0"]
-texture_filter = 1
-position = Vector2(0, -29)
-sprite_frames = SubResource("SpriteFrames_thvoh")
-animation = &"On"
-frame_progress = 0.509841
+[node name="Beam" parent="Button/Laser Cannon2" index="2"]
+texture = SubResource("AtlasTexture_0t0d2")
 
-[node name="Collision" type="CollisionShape2D" parent="Button/Laser Cannon2" index="1"]
-position = Vector2(0, -43)
-shape = SubResource("RectangleShape2D_3ggbb")
-
-[node name="Beam" type="Sprite2D" parent="Button/Laser Cannon2" index="2"]
-visible = false
-texture_repeat = 2
-scale = Vector2(0.255, 1)
-texture = SubResource("AtlasTexture_kn8yg")
-script = ExtResource("8_ip2sx")
-
-[node name="BeamArea" type="Area2D" parent="Button/Laser Cannon2/Beam" index="0"]
-collision_layer = 4
-collision_mask = 4
-
-[node name="BeamCollision" type="CollisionShape2D" parent="Button/Laser Cannon2/Beam/BeamArea" index="0"]
-shape = SubResource("RectangleShape2D_8dple")
-
-[node name="Beamcast" type="RayCast2D" parent="Button/Laser Cannon2" index="3"]
+[node name="Beamcast" parent="Button/Laser Cannon2" index="3"]
 target_position = Vector2(0, 2300)
-collide_with_areas = true
+
+[node name="Laser Cannon" parent="Button" index="5" instance=ExtResource("8_yfb6d")]
+position = Vector2(-511, 92.9987)
 
 [node name="Breakable2" type="StaticBody2D" parent="." index="9"]
 position = Vector2(576, 821)
@@ -350,6 +189,8 @@ wait_time = 2.0
 [connection signal="timeout" from="Breakable/Timer" to="Breakable" method="_on_timer_timeout"]
 [connection signal="body_entered" from="Button" to="Button" method="_on_body_entered"]
 [connection signal="timeout" from="Button/Timer" to="Button" method="_on_timer_timeout"]
-[connection signal="body_entered" from="Button/Laser Cannon2/Beam/BeamArea" to="Button/Laser Cannon2/Beam" method="_on_beam_area_body_entered"]
 [connection signal="body_entered" from="Breakable2/Area2D" to="Breakable2" method="_on_area_2d_body_entered"]
 [connection signal="timeout" from="Breakable2/Timer" to="Breakable2" method="_on_timer_timeout"]
+
+[editable path="Button/Laser Cannon2"]
+[editable path="UI Layer/Pause Menu"]

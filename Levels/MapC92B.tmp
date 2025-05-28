@@ -168,6 +168,7 @@ scale = Vector2(16.916, 6362.03)
 [node name="UI Layer" type="CanvasLayer" parent="."]
 
 [node name="Fade transition" type="ColorRect" parent="UI Layer"]
+visible = false
 z_index = -1
 anchors_preset = 15
 anchor_right = 1.0

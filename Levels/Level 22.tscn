@@ -345,6 +345,7 @@ region = Rect2(667.625, 13.1287, 345.198, 345.841)
 
 [node name="MapContent" instance=ExtResource("1_e31i5")]
 LevelNum = 22
+LevelName = "Thread the Needle"
 
 [node name="Wallsop" parent="." index="0"]
 layer_0/tile_data = PackedInt32Array(655367, 0, 0, 655363, 131072, 0, 65541, 0, 2)
