@@ -47,9 +47,10 @@ func _on_area_2d_body_entered(body):
 func _physics_process(_delta):
 		collision.disabled = true
 		detection.disabled = true
-		set_physics_process(false)
 		await get_tree().process_frame
 		emit_signal("updateWorld")
+		await get_tree().process_frame
+		set_physics_process(false)
 
 func _on_timer_timeout():
 	queue_free()

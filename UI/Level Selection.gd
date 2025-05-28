@@ -9,7 +9,6 @@ func _on_button_pressed():
 	get_tree().change_scene_to_file("res://UI/Main Menu.tscn")
 
 func _ready():
-	print(grid.columns)
 	for x in range(1,80):
 		var b : Button = Button.new()
 		b.text = str(x)
