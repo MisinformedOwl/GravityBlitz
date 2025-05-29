@@ -1,0 +1,107 @@
+[gd_scene load_steps=10 format=3 uid="uid://cf3o3tdsk5s2w"]
+
+[ext_resource type="StyleBox" uid="uid://btmxtj0offyhr" path="res://UI/ButtonFull.tres" id="1_bcri2"]
+[ext_resource type="Texture2D" uid="uid://bbqh884fcforx" path="res://UI/StarFull.png" id="1_c1mcp"]
+[ext_resource type="Script" path="res://UI/Level Complete.gd" id="1_xi4ap"]
+[ext_resource type="Texture2D" uid="uid://bb78jcq100ixf" path="res://UI/StarEmpty.png" id="2_liqgu"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4164i"]
+bg_color = Color(0, 0, 0, 0.654902)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bx6id"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_krxnl"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_t6svd"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gkbb6"]
+
+[node name="Level Complete" type="Control"]
+texture_filter = 1
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_xi4ap")
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_4164i")
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 40
+theme_override_constants/margin_top = 200
+theme_override_constants/margin_right = 40
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_constants/separation = 50
+
+[node name="LevelComplete" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 70
+text = "Level Complete!"
+horizontal_alignment = 1
+
+[node name="Stars" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 10
+
+[node name="Container" type="PanelContainer" parent="PanelContainer/MarginContainer/VBoxContainer/Stars"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_bx6id")
+
+[node name="1Star" type="TextureRect" parent="PanelContainer/MarginContainer/VBoxContainer/Stars/Container"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("1_c1mcp")
+
+[node name="Container2" type="PanelContainer" parent="PanelContainer/MarginContainer/VBoxContainer/Stars"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_krxnl")
+
+[node name="2Star" type="TextureRect" parent="PanelContainer/MarginContainer/VBoxContainer/Stars/Container2"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("2_liqgu")
+
+[node name="Container3" type="PanelContainer" parent="PanelContainer/MarginContainer/VBoxContainer/Stars"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_t6svd")
+
+[node name="3Star" type="TextureRect" parent="PanelContainer/MarginContainer/VBoxContainer/Stars/Container3"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("2_liqgu")
+
+[node name="HSeparator" type="HSeparator" parent="PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 120
+theme_override_styles/separator = SubResource("StyleBoxEmpty_gkbb6")
+
+[node name="Continue" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = ExtResource("1_bcri2")
+text = "Continue"
+
+[node name="MainMenu" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = ExtResource("1_bcri2")
+text = "Main Menu"
+
+[connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/MainMenu" to="." method="_on_main_menu_pressed"]

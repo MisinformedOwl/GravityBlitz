@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://bdx77watf0xjr"]
+[gd_scene load_steps=21 format=3 uid="uid://bdx77watf0xjr"]
 
 [ext_resource type="Script" path="res://MapFunctionality.gd" id="1_b6gcc"]
 [ext_resource type="Texture2D" uid="uid://w0iyv6rny0cm" path="res://tiles.png" id="2_2r5pm"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://8uqvnx8qycrk" path="res://Mechanics and Assets/Goal.tscn" id="9_grwwk"]
 [ext_resource type="Script" path="res://Mechanics and Assets/Camera.gd" id="11_igi42"]
 [ext_resource type="Texture2D" uid="uid://bvwi7asoixop6" path="res://UI/Arrow Button.png" id="11_o6v00"]
+[ext_resource type="PackedScene" uid="uid://cf3o3tdsk5s2w" path="res://UI/Level Complete.tscn" id="13_kr4fw"]
 [ext_resource type="PackedScene" uid="uid://bkhbdemw5sjdm" path="res://Mechanics and Assets/Background.tscn" id="13_yfuu2"]
 [ext_resource type="PackedScene" uid="uid://b7qnslh5sqdey" path="res://UI/Pause Menu.tscn" id="14_h65s7"]
 [ext_resource type="Texture2D" uid="uid://ddxt3n6dci6m4" path="res://UI/Pause Button.png" id="15_biplt"]
@@ -233,11 +234,12 @@ texture_normal = ExtResource("11_o6v00")
 visible = false
 z_index = 5
 
-[node name="FadeOutTimer" type="Timer" parent="."]
-one_shot = true
+[node name="Level Complete" parent="UI Layer" instance=ExtResource("13_kr4fw")]
+visible = false
 
 [connection signal="pressed" from="UI Layer/ButtonContainer/MarginContainer/PauseButton" to="." method="_on_texture_button_pressed"]
 [connection signal="pressed" from="UI Layer/ButtonContainer/MarginContainer2/ArrowButton" to="." method="_on_arrow_button_pressed"]
-[connection signal="timeout" from="FadeOutTimer" to="." method="_on_fade_out_timer_timeout"]
+[connection signal="pressed" from="UI Layer/Level Complete/PanelContainer/MarginContainer/VBoxContainer/Continue" to="." method="_on_continue_pressed"]
 
 [editable path="UI Layer/Pause Menu"]
+[editable path="UI Layer/Level Complete"]

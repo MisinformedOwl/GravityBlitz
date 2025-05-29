@@ -10,11 +10,10 @@ var goalPointerLoader = preload("res://Mechanics and Assets/GoalPointer.tscn")
 @onready var ui = $"UI Layer"
 @onready var pause_menu = $"UI Layer/Pause Menu"
 @onready var fade_transition = $"UI Layer/Fade transition"
-@onready var fade_out_timer = $FadeOutTimer
 @onready var CenterOfCanvas = $"UI Layer/CenterOfCanvas"
-@onready var arrow_display = $ArrowDisplay
 @onready var arrow_button = $"UI Layer/ButtonContainer/MarginContainer2/ArrowButton"
 @onready var levelTitle = $"UI Layer/Fade transition/MarginContainer/Title"
+@onready var completeMenu = $"UI Layer/Level Complete"
 
 @export var LevelNum : int = 0
 @export var LevelName : String = ""
@@ -104,9 +103,8 @@ func _playerDying(cause):
 
 func _goal_reached():
 	GameState.skip_intro = false
-	var fadetween = get_tree().create_tween()
-	fadetween.tween_property(fade_transition, "color", Color(0, 0, 0, 1), 1)
-	fade_out_timer.start()
+	completeMenu.visible = true
+	completeMenu.LevelWon()
 
 func _playerDeath():
 	reload()
@@ -121,13 +119,12 @@ func _on_texture_button_pressed():
 	get_tree().paused = true
 	pause_menu.visible = true
 
-func _on_fade_out_timer_timeout():
+func _on_fade_out():
 	var nextLevel : String = "res://Levels/Level {0}.tscn".format([LevelNum+1])
 	if FileAccess.file_exists(nextLevel):
 		get_tree().change_scene_to_file(nextLevel)
 	else:
 		get_tree().change_scene_to_file("res://Levels/Level End.tscn")
-
 
 func _on_arrow_button_pressed():
 	for p in gPointers:
@@ -138,3 +135,14 @@ func _on_loadin_timeout():
 	player.set_physics_process(true)
 	var fadetween = get_tree().create_tween()
 	fadetween.tween_property(fade_transition, "modulate", Color(0, 0, 0, 0), 1)
+	await fadetween.finished
+	levelTitle.visible = false
+
+func _on_continue_pressed():
+	completeMenu.visible = false
+	fade_transition.visible = true
+	var fadetween = get_tree().create_tween()
+	var tim = get_tree().create_timer(0.9)
+	fadetween.tween_property(fade_transition, "modulate", Color(0, 0, 0, 1), 1)
+	await tim.timeout
+	_on_fade_out()
