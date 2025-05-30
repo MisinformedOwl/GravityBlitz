@@ -12,6 +12,9 @@ region = Rect2(264.416, 170.097, 162.698, 681.447)
 [node name="MapContent" instance=ExtResource("1_rdfb3")]
 LevelNum = 9
 LevelName = "Reposition"
+time1 = 8.0
+time2 = 13.0
+time3 = 17.0
 
 [node name="Wallsop" parent="." index="0"]
 layer_0/tile_data = PackedInt32Array(458755, 131072, 2, 196612, 131072, 2, 196615, 0, 2)
@@ -51,3 +54,4 @@ wait_time = 2.0
 [connection signal="timeout" from="Breakable/Timer" to="Breakable" method="_on_timer_timeout"]
 
 [editable path="UI Layer/Pause Menu"]
+[editable path="UI Layer/Level Complete"]

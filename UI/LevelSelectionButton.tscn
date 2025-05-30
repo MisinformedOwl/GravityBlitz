@@ -1,0 +1,45 @@
+[gd_scene load_steps=5 format=3 uid="uid://ds1p74x2s5lc6"]
+
+[ext_resource type="Script" path="res://UI/LevelSelectorButton.gd" id="1_s6s2k"]
+[ext_resource type="StyleBox" uid="uid://btmxtj0offyhr" path="res://UI/ButtonFull.tres" id="1_sp2hm"]
+[ext_resource type="Texture2D" uid="uid://bbqh884fcforx" path="res://UI/StarFull.png" id="2_rm3qb"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hmc1b"]
+
+[node name="Control" type="PanelContainer"]
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -60.5
+offset_bottom = 60.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme_override_styles/panel = SubResource("StyleBoxEmpty_hmc1b")
+script = ExtResource("1_s6s2k")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = ExtResource("1_sp2hm")
+text = "22"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "0"
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+texture = ExtResource("2_rm3qb")
+expand_mode = 2

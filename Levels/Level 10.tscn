@@ -86,6 +86,9 @@ region = Rect2(2606.48, 437.001, 188.148, 248.43)
 [node name="Level 10" instance=ExtResource("1_am6bx")]
 LevelNum = 10
 LevelName = "Checkmate"
+time1 = 15.0
+time2 = 20.0
+time3 = 25.0
 
 [node name="Wallsop" parent="." index="0"]
 layer_0/tile_data = PackedInt32Array(589829, 0, 0, 589827, 131072, 0, 6, 0, 2, 4, 131072, 2)
@@ -383,3 +386,4 @@ wait_time = 2.0
 [connection signal="timeout" from="Pawn8/Timer" to="Pawn8" method="_on_timer_timeout"]
 
 [editable path="UI Layer/Pause Menu"]
+[editable path="UI Layer/Level Complete"]

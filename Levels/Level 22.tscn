@@ -346,6 +346,9 @@ region = Rect2(667.625, 13.1287, 345.198, 345.841)
 [node name="MapContent" instance=ExtResource("1_e31i5")]
 LevelNum = 22
 LevelName = "Thread the Needle"
+time1 = 10.0
+time2 = 15.0
+time3 = 20.0
 
 [node name="Wallsop" parent="." index="0"]
 layer_0/tile_data = PackedInt32Array(655367, 0, 0, 655363, 131072, 0, 65541, 0, 2)
@@ -799,3 +802,4 @@ wait_time = 2.0
 [editable path="Area2D/Laser Cannon12"]
 [editable path="Area2D/Laser Cannon7"]
 [editable path="UI Layer/Pause Menu"]
+[editable path="UI Layer/Level Complete"]

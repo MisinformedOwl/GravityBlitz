@@ -239,8 +239,12 @@ atlas = ExtResource("10_bl5mb")
 region = Rect2(0.776138, 440.433, 1021.62, 124.718)
 
 [node name="MapContent" instance=ExtResource("1_62k67")]
+position = Vector2(-9, 0)
 LevelNum = 34
 LevelName = "3 Challenges"
+time1 = 50.0
+time2 = 70.0
+time3 = 90.0
 
 [node name="Wallsop" parent="." index="0"]
 layer_0/tile_data = PackedInt32Array(1966098, 131072, 0, 2293778, 131072, 2, 1703946, 0, 2, 1441798, 0, 2, 1048582, 0, 0, 983047, 0, 0, 917512, 0, 0, 1048578, 131072, 0, 983041, 131072, 0, 917504, 131072, 0, 524288, 131072, 2, 458753, 131072, 2, 393218, 131072, 2, 393222, 0, 2, 458759, 0, 2, 524296, 0, 2, 589833, 0, 2, 851977, 0, 0, 655359, 131072, 2, 917503, 131072, 0, 589840, 131072, 2, 655349, 0, 2)
@@ -499,3 +503,4 @@ layer_0/tile_data = PackedInt32Array(655341, 0, 0, 655342, 65536, 0, 655344, 655
 [connection signal="timeout" from="Button3/Timer" to="Button3" method="_on_timer_timeout"]
 
 [editable path="UI Layer/Pause Menu"]
+[editable path="UI Layer/Level Complete"]

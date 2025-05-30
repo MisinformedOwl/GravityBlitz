@@ -157,6 +157,9 @@ region = Rect2(1.06582, 13.1287, 1021.78, 261.128)
 [node name="MapContent" instance=ExtResource("1_dntbq")]
 LevelNum = 28
 LevelName = "Long Distance Control"
+time1 = 10.0
+time2 = 15.0
+time3 = 20.0
 
 [node name="Wallsop" parent="." index="0"]
 layer_0/tile_data = PackedInt32Array(-2359264, 131072, 0, -2359289, 0, 0, -1048544, 131072, 2, -655353, 0, 0)
@@ -252,3 +255,4 @@ wait_time = 2.0
 [connection signal="timeout" from="Breakable2/Timer" to="Breakable2" method="_on_timer_timeout"]
 
 [editable path="UI Layer/Pause Menu"]
+[editable path="UI Layer/Level Complete"]

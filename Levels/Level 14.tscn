@@ -35,7 +35,7 @@ texture_region_size = Vector2i(128, 128)
 2:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 2:2/0/physics_layer_0/angular_velocity = 0.0
 
-[sub_resource type="TileSet" id="TileSet_hbdit"]
+[sub_resource type="TileSet" id="TileSet_nbd36"]
 resource_local_to_scene = true
 tile_size = Vector2i(128, 128)
 physics_layer_0/collision_layer = 2
@@ -45,6 +45,9 @@ sources/0 = SubResource("TileSetAtlasSource_wrpy6")
 [node name="MapContent" instance=ExtResource("1_ixdj6")]
 LevelNum = 14
 LevelName = "Marble Maze"
+time1 = 15.0
+time2 = 20.0
+time3 = 25.0
 
 [node name="Wallsop" parent="." index="0"]
 layer_0/tile_data = PackedInt32Array(655365, 131072, 0, 720901, 131072, 2, 458755, 0, 2, 393219, 0, 0, 131077, 131072, 0, 196613, 131072, 2)
@@ -65,7 +68,8 @@ position = Vector2(190, 72)
 position = Vector2(563, 926)
 
 [node name="Pitmap" parent="." index="7" instance=ExtResource("2_87xw5")]
-tile_set = SubResource("TileSet_hbdit")
+tile_set = SubResource("TileSet_nbd36")
 layer_0/tile_data = PackedInt32Array(786437, 65536, 0, 589829, 65536, 0, 393218, 65536, 0, 262149, 65536, 0, 65542, 65536, 0, 3, 65536, 0)
 
 [editable path="UI Layer/Pause Menu"]
+[editable path="UI Layer/Level Complete"]

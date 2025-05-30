@@ -154,6 +154,9 @@ size = Vector2(52, 31)
 [node name="MapContent" instance=ExtResource("1_60uib")]
 LevelNum = 21
 LevelName = "Progression"
+time1 = 8.0
+time2 = 13.0
+time3 = 16.0
 
 [node name="Wallsop" parent="." index="0"]
 layer_0/tile_data = PackedInt32Array(393219, 0, 0, 458755, 0, 2, 655365, 131072, 0, 720901, 131072, 2)
@@ -240,3 +243,4 @@ rotation = 3.14159
 [connection signal="timeout" from="Button2/Timer" to="Button2" method="_on_timer_timeout"]
 
 [editable path="UI Layer/Pause Menu"]
+[editable path="UI Layer/Level Complete"]

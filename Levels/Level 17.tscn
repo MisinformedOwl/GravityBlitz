@@ -37,7 +37,7 @@ texture_region_size = Vector2i(128, 128)
 2:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 2:2/0/physics_layer_0/angular_velocity = 0.0
 
-[sub_resource type="TileSet" id="TileSet_j8t4p"]
+[sub_resource type="TileSet" id="TileSet_c1m47"]
 resource_local_to_scene = true
 tile_size = Vector2i(128, 128)
 physics_layer_0/collision_layer = 2
@@ -72,6 +72,9 @@ region = Rect2(19.1841, 22.4051, 256.071, 682.857)
 [node name="MapContent" instance=ExtResource("1_d3qr4")]
 LevelNum = 17
 LevelName = "Demonstrate Some Control"
+time1 = 20.0
+time2 = 25.0
+time3 = 30.0
 
 [node name="Wallsop" parent="." index="0"]
 layer_0/tile_data = PackedInt32Array(131081, 0, 2, 262153, 0, 0, 262156, 131072, 0, 131084, 131072, 2, 1835023, 0, 0, 2097164, 131072, 2, 2097167, 0, 2, 2162699, 131072, 2, 2359307, 131072, 0)
@@ -93,7 +96,7 @@ position = Vector2(963, 960)
 moving = true
 
 [node name="Pitmap" parent="." index="7" instance=ExtResource("2_gacjh")]
-tile_set = SubResource("TileSet_j8t4p")
+tile_set = SubResource("TileSet_c1m47")
 layer_0/tile_data = PackedInt32Array(131085, 0, 0, 131086, 65536, 0, 131087, 65536, 0, 131088, 131072, 0, 196624, 131072, 1, 262160, 131072, 1, 327696, 131072, 1, 393232, 131072, 1, 458768, 131072, 1, 524304, 131072, 1, 589840, 131072, 1, 655376, 131072, 1, 327693, 0, 0, 393229, 0, 1, 458765, 0, 1, 524301, 0, 1, 589837, 0, 1, 655373, 0, 1, 720909, 0, 1, 786445, 0, 1, 851982, 65536, 0, 917517, 0, 1, 917518, 65536, 1, 851981, 0, 1, 983053, 0, 1, 1048589, 0, 1, 1114125, 0, 1, 983054, 65536, 1, 1048590, 65536, 1, 1114126, 65536, 1, 1310736, 131072, 0, 1310735, 65536, 0, 1376272, 131072, 1, 1441808, 131072, 1, 1507344, 131072, 1, 1572880, 131072, 1, 1638416, 131072, 1, 1703952, 131072, 1, 1769488, 131072, 1, 1376271, 65536, 1, 1441807, 65536, 1, 1507343, 65536, 1, 1572879, 65536, 1, 1638415, 65536, 1, 1703951, 65536, 1, 1769487, 65536, 1)
 
 [node name="Breakable" type="StaticBody2D" parent="." index="8"]
@@ -183,3 +186,4 @@ wait_time = 2.0
 [connection signal="timeout" from="Breakable5/Timer" to="Breakable5" method="_on_timer_timeout"]
 
 [editable path="UI Layer/Pause Menu"]
+[editable path="UI Layer/Level Complete"]

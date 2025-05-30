@@ -35,7 +35,7 @@ texture_region_size = Vector2i(128, 128)
 2:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 2:2/0/physics_layer_0/angular_velocity = 0.0
 
-[sub_resource type="TileSet" id="TileSet_oqsmr"]
+[sub_resource type="TileSet" id="TileSet_bsdmp"]
 resource_local_to_scene = true
 tile_size = Vector2i(128, 128)
 physics_layer_0/collision_layer = 2
@@ -45,6 +45,9 @@ sources/0 = SubResource("TileSetAtlasSource_3b3w8")
 [node name="MapContent" instance=ExtResource("1_0uiso")]
 LevelNum = 13
 LevelName = "Hold Onto the Wall"
+time1 = 10.0
+time2 = 15.0
+time3 = 20.0
 
 [node name="Wallsop" parent="." index="0"]
 layer_0/tile_data = PackedInt32Array(262149, 131072, 0, 262147, 0, 0)
@@ -62,7 +65,8 @@ position = Vector2(831, 1727)
 position = Vector2(323, 1728)
 
 [node name="Pitmap" parent="." index="7" instance=ExtResource("2_lxyoo")]
-tile_set = SubResource("TileSet_oqsmr")
+tile_set = SubResource("TileSet_bsdmp")
 layer_0/tile_data = PackedInt32Array(655366, 0, 1, 327686, 0, 1, 393222, 0, 1, 458758, 0, 1, 524294, 0, 1, 589830, 0, 1, 262150, 0, 0, 262146, 131072, 0, 327682, 131072, 1, 589825, 0, 0, 655361, 0, 1, 720897, 0, 1, 786433, 0, 1, 851969, 0, 1)
 
 [editable path="UI Layer/Pause Menu"]
+[editable path="UI Layer/Level Complete"]

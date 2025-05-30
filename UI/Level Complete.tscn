@@ -17,6 +17,7 @@ bg_color = Color(0, 0, 0, 0.654902)
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gkbb6"]
 
 [node name="Level Complete" type="Control"]
+process_mode = 2
 texture_filter = 1
 layout_mode = 3
 anchors_preset = 15
@@ -104,4 +105,5 @@ theme_override_font_sizes/font_size = 50
 theme_override_styles/normal = ExtResource("1_bcri2")
 text = "Main Menu"
 
+[connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/Continue" to="." method="_on_continue_pressed"]
 [connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/MainMenu" to="." method="_on_main_menu_pressed"]

@@ -18,6 +18,11 @@ var goalPointerLoader = preload("res://Mechanics and Assets/GoalPointer.tscn")
 @export var LevelNum : int = 0
 @export var LevelName : String = ""
 
+@export var time1 : float = 0.0
+@export var time2 : float = 0.0
+@export var time3 : float = 0.0
+var startTime
+
 var goals = []
 var gPointers = []
 var playerDying : bool = false
@@ -27,6 +32,9 @@ signal playerDeath
 signal updateChildren
 
 func _ready():
+	#Set the times of the level
+	completeMenu.setLevelTimes(time1,time2,time3)
+	
 	#Holds player until the scene begins to fade in. Particularly a problem with the black hole tutorial...
 	player.set_physics_process(false)
 	
@@ -34,6 +42,7 @@ func _ready():
 	if GameState.skip_intro:
 		fade_transition.visible = false
 		player.set_physics_process(true)
+		startTime = Time.get_ticks_msec()
 	else:
 		fade_transition.visible = true
 		var titleTween = create_tween()
@@ -62,6 +71,7 @@ func _ready():
 	player.connect("death", _playerDeath)
 	player.connect("playerDying", _playerDying)
 	player.connect("goalReached", _goal_reached)
+	player.connect("timeStop", _log_time)
 	GameState.skip_intro = true
 
 func getGoals():
@@ -102,9 +112,9 @@ func _playerDying(cause):
 		playerDying = true
 
 func _goal_reached():
+	get_tree().paused = true
 	GameState.skip_intro = false
 	completeMenu.visible = true
-	completeMenu.LevelWon()
 
 func _playerDeath():
 	reload()
@@ -133,6 +143,7 @@ func _on_arrow_button_pressed():
 func _on_loadin_timeout():
 	player.velocity = Vector2.ZERO
 	player.set_physics_process(true)
+	startTime = Time.get_ticks_msec()
 	var fadetween = get_tree().create_tween()
 	fadetween.tween_property(fade_transition, "modulate", Color(0, 0, 0, 0), 1)
 	await fadetween.finished
@@ -142,7 +153,11 @@ func _on_continue_pressed():
 	completeMenu.visible = false
 	fade_transition.visible = true
 	var fadetween = get_tree().create_tween()
-	var tim = get_tree().create_timer(0.9)
+	var tim = get_tree().create_timer(1)
 	fadetween.tween_property(fade_transition, "modulate", Color(0, 0, 0, 1), 1)
 	await tim.timeout
 	_on_fade_out()
+
+func _log_time():
+	completeMenu.LevelWon((Time.get_ticks_msec() - startTime)/1000, LevelNum)
+	get_tree().paused = false # Pauses the fucking game when sending data.

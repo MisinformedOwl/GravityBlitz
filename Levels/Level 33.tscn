@@ -436,6 +436,9 @@ region = Rect2(0, 0, 256, 1018.12)
 [node name="MapContent" instance=ExtResource("1_ood38")]
 LevelNum = 33
 LevelName = "Anti Chambers"
+time1 = 30.0
+time2 = 40.0
+time3 = 50.0
 
 [node name="Wallsop" parent="." index="0"]
 layer_0/tile_data = PackedInt32Array(589894, 0, 2, 589918, 0, 2, 589870, 0, 2, 589848, 0, 2, 589835, 131072, 2, 589857, 131072, 2, 589881, 131072, 2, 589905, 131072, 2, 786526, 0, 0, 786502, 0, 0, 786478, 0, 0, 786456, 0, 0, 786443, 131072, 0, 786465, 131072, 0, 786489, 131072, 0, 786513, 131072, 0)
@@ -616,3 +619,4 @@ collide_with_areas = true
 [connection signal="body_entered" from="Button2/Laser Cannon/Beam/BeamArea" to="Button2/Laser Cannon/Beam" method="_on_beam_area_body_entered"]
 
 [editable path="UI Layer/Pause Menu"]
+[editable path="UI Layer/Level Complete"]

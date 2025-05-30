@@ -12,6 +12,9 @@ region = Rect2(177.089, 434.187, 676.967, 269.749)
 [node name="MapContent" instance=ExtResource("1_gk0y4")]
 LevelNum = 6
 LevelName = "Not as Straight Forward"
+time1 = 10.0
+time2 = 15.0
+time3 = 20.0
 
 [node name="Wallsop" parent="." index="0"]
 layer_0/tile_data = PackedInt32Array(327685, 131072, 0, 327684, 0, 0)
@@ -51,3 +54,4 @@ wait_time = 2.0
 [connection signal="timeout" from="Breakable/Timer" to="Breakable" method="_on_timer_timeout"]
 
 [editable path="UI Layer/Pause Menu"]
+[editable path="UI Layer/Level Complete"]

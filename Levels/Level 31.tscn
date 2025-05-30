@@ -4,8 +4,12 @@
 [ext_resource type="PackedScene" uid="uid://rkdcxfm37rba" path="res://Mechanics and Assets/black_hole.tscn" id="2_vmg6o"]
 
 [node name="MapContent" instance=ExtResource("1_8h5ks")]
+position = Vector2(0, 3)
 LevelNum = 31
 LevelName = "Switcheroo"
+time1 = 7.0
+time2 = 13.0
+time3 = 17.0
 
 [node name="Wallsop" parent="." index="0"]
 layer_0/tile_data = PackedInt32Array(5, 131072, 2, 196613, 131072, 0)
@@ -44,3 +48,4 @@ position = Vector2(4542, -56)
 position = Vector2(5311, 582)
 
 [editable path="UI Layer/Pause Menu"]
+[editable path="UI Layer/Level Complete"]

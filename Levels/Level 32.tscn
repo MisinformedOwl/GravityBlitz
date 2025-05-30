@@ -157,6 +157,9 @@ region = Rect2(0, 0, 256, 1018.12)
 [node name="MapContent" instance=ExtResource("1_u4c6y")]
 LevelNum = 32
 LevelName = "Thinking with Black Holes"
+time1 = 10.0
+time2 = 15.0
+time3 = 20.0
 
 [node name="Wallsop" parent="." index="0"]
 layer_0/tile_data = PackedInt32Array(589833, 131072, 2, 393228, 131072, 2, -131056, 0, 0)
@@ -258,3 +261,4 @@ position = Vector2(5759, -372)
 [connection signal="body_entered" from="Laser Cannon/Beam/BeamArea" to="Laser Cannon/Beam" method="_on_beam_area_body_entered"]
 
 [editable path="UI Layer/Pause Menu"]
+[editable path="UI Layer/Level Complete"]

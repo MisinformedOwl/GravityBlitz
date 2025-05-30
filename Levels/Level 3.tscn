@@ -1,10 +1,14 @@
-[gd_scene load_steps=2 format=3 uid="uid://bkf7ls0hw6ffi"]
+[gd_scene load_steps=3 format=3 uid="uid://bkf7ls0hw6ffi"]
 
 [ext_resource type="PackedScene" uid="uid://bdx77watf0xjr" path="res://Levels/MapContent.tscn" id="1_oj7gi"]
+[ext_resource type="PackedScene" uid="uid://voratnkrcpfd" path="res://UI/Quick Message.tscn" id="2_0ssty"]
 
 [node name="MapContent" instance=ExtResource("1_oj7gi")]
 LevelNum = 3
 LevelName = "Drift King"
+time1 = 10.0
+time2 = 15.0
+time3 = 20.0
 
 [node name="Wallsop" parent="." index="0"]
 layer_0/tile_data = PackedInt32Array(851973, 131072, 0, 917509, 131072, 2, 524291, 0, 0, 589827, 0, 2)
@@ -24,4 +28,16 @@ position = Vector2(897, 820)
 [node name="Camera2D" parent="." index="6"]
 position = Vector2(572, 1475)
 
+[node name="Control" parent="." index="9" instance=ExtResource("2_0ssty")]
+offset_left = 263.0
+offset_top = 1684.0
+offset_right = 743.0
+offset_bottom = 1891.0
+
+[node name="Label" parent="Control/MarginContainer" index="0"]
+text = "Be fast to get the 
+maximumstars"
+
 [editable path="UI Layer/Pause Menu"]
+[editable path="UI Layer/Level Complete"]
+[editable path="Control"]

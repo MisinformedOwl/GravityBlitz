@@ -13,6 +13,7 @@ signal death
 signal movedATile
 signal playerDying(String)
 signal goalReached
+signal timeStop
 
 var dying             : bool = false
 var currSpeed         : float
@@ -135,6 +136,7 @@ func setSpriteAnim():
 		sprite.play("default")
 
 func goalHit():
+	timeStop.emit()
 	lockdownAnims()
 	dying = true
 	animation.play("goalHit")

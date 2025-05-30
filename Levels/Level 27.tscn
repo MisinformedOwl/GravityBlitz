@@ -98,8 +98,12 @@ atlas = ExtResource("4_mwkjm")
 region = Rect2(5.33325, 13.1287, 2386.76, 261.128)
 
 [node name="MapContent" instance=ExtResource("1_arnbv")]
+position = Vector2(-3, 10)
 LevelNum = 27
 LevelName = "Push Through"
+time1 = 8.0
+time2 = 13.0
+time3 = 17.0
 
 [node name="Wallsop" parent="." index="0"]
 layer_0/tile_data = PackedInt32Array(393224, 0, 0, 393227, 131072, 0, 655379, 0, 2)
@@ -194,3 +198,4 @@ wait_time = 2.0
 
 [editable path="Button/Laser Cannon2"]
 [editable path="UI Layer/Pause Menu"]
+[editable path="UI Layer/Level Complete"]

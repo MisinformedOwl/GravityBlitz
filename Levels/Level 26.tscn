@@ -5,6 +5,9 @@
 [node name="MapContent" instance=ExtResource("1_jnpik")]
 LevelNum = 26
 LevelName = "Controlled Repulsion"
+time1 = 8.0
+time2 = 13.0
+time3 = 17.0
 
 [node name="Wallsop" parent="." index="0"]
 layer_0/tile_data = PackedInt32Array(262147, 0, 0, 589829, 131072, 0, 655365, 131072, 2, 327683, 0, 2)
@@ -22,3 +25,4 @@ position = Vector2(319, 1600)
 position = Vector2(960, 320)
 
 [editable path="UI Layer/Pause Menu"]
+[editable path="UI Layer/Level Complete"]

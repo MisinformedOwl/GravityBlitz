@@ -8,6 +8,9 @@
 [node name="MapContent" instance=ExtResource("1_gcgbc")]
 LevelNum = 38
 LevelName = "Take Your Pick"
+time1 = 10.0
+time2 = 15.0
+time3 = 20.0
 
 [node name="Wallsop" parent="." index="0"]
 layer_0/tile_data = PackedInt32Array(589830, 0, 0, 589826, 131072, 0)
@@ -199,3 +202,4 @@ layer_0/tile_data = PackedInt32Array(-1310773, 0, 0, -1245237, 0, 1, -1179701, 0
 [editable path="Portal Manager/Portal"]
 [editable path="Portal Manager/Portal2"]
 [editable path="UI Layer/Pause Menu"]
+[editable path="UI Layer/Level Complete"]
