@@ -17,6 +17,7 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 4
+mouse_filter = 1
 theme_override_styles/panel = SubResource("StyleBoxEmpty_hmc1b")
 script = ExtResource("1_s6s2k")
 
@@ -25,6 +26,7 @@ layout_mode = 2
 
 [node name="Button" type="Button" parent="VBoxContainer"]
 layout_mode = 2
+mouse_filter = 1
 theme_override_font_sizes/font_size = 50
 theme_override_styles/normal = ExtResource("1_sp2hm")
 text = "22"

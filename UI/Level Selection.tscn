@@ -52,6 +52,7 @@ theme_override_styles/panel = SubResource("StyleBoxEmpty_xauyi")
 [node name="GridContainer" type="GridContainer" parent="PanelContainer/VBoxContainer/MarginContainer/ScrollContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
+theme_override_constants/v_separation = 20
 columns = 5
 
 [connection signal="pressed" from="PanelContainer/VBoxContainer/Button" to="." method="_on_button_pressed"]
