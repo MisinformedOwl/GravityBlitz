@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 
 GameState="*res://GameState.gd"
 TransitionCover="*res://UI/Transition cover.tscn"
+AudioManager="*res://Music/Audio Manager.tscn"
 
 [display]
 

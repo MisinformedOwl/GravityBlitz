@@ -32,6 +32,8 @@ signal playerDeath
 signal updateChildren
 
 func _ready():
+	AudioManager.loadLevelMusic()
+	
 	#Set the times of the level
 	completeMenu.setLevelTimes(time1,time2,time3)
 	

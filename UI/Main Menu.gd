@@ -5,6 +5,7 @@ extends Control
 @onready var credits = $MarginContainer/VBoxContainer/Credits
 
 func _ready():
+	AudioManager.loadMenuMusic()
 	cont.connect("pressed", _on_continue_pressed)
 	level_select.connect("pressed", _on_level_select_pressed)
 	credits.connect("pressed", _on_credits_pressed)

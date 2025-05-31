@@ -56,10 +56,13 @@ func moveEyes():
 
 func moveFlame():
 	if currSpeed >= SPEEDTHRESHOLD:
+		AudioManager.playerSpeedUp()
+		
 		fire.visible = true
 		dir = velocity.angle()+PI/2
 		fire.rotation = dir
 	else:
+		AudioManager.playerStopped()
 		fire.visible = false
 
 func lockdownAnims():
