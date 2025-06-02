@@ -86,7 +86,6 @@ func laserDeath():
 func blackHoleDeath(pos):
 	if !dying:
 		moveCameraDeath("blackhole")
-		lockdownAnims()
 		animation.play("blackholeDeath")
 		set_physics_process(false)
 		var tween = create_tween()

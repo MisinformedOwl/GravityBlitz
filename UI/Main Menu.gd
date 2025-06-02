@@ -12,7 +12,10 @@ func _ready():
 	#Find furthest level.
 
 func _on_continue_pressed():
-	get_tree().change_scene_to_file("res://Levels/Level {0}.tscn".format([GameState.get_current_level()]))
+	if FileAccess.file_exists("res://Levels/Level {0}.tscn".format([GameState.get_current_level()])):
+		get_tree().change_scene_to_file("res://Levels/Level {0}.tscn".format([GameState.get_current_level()]))
+	else:
+		get_tree().change_scene_to_file("res://Levels/Level End.tscn")
 
 func _on_level_select_pressed():
 	get_tree().change_scene_to_file("res://UI/Level Selection.tscn")

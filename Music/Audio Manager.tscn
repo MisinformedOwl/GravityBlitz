@@ -11,6 +11,7 @@ script = ExtResource("1_pvehp")
 
 [node name="Main Menu Music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_dw6ef")
+autoplay = true
 bus = &"Music"
 
 [node name="Level Music" type="AudioStreamPlayer" parent="."]
@@ -21,3 +22,5 @@ bus = &"Music"
 stream = ExtResource("4_eh4gx")
 volume_db = -30.0
 bus = &"PlayerSpeedEffect"
+
+[node name="Level Music 2" type="AudioStreamPlayer" parent="."]

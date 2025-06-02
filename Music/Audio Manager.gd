@@ -1,9 +1,11 @@
 extends Node2D
 @onready var main_menu_music = $"Main Menu Music"
 @onready var level_music = $"Level Music"
+@onready var level_music_2 = $"Level Music 2"
 @onready var speed = $Speed
 
 var speedingUp : bool = false
+var streamerActive: int = 1
 
 func playerSpeedUp():
 	if not speedingUp:
@@ -18,12 +20,21 @@ func playerStopped():
 	speedingUp = false
 
 func loadMenuMusic():
-	main_menu_music.play()
-	level_music.stop()
-	speed.stop()
+	if not main_menu_music.playing:
+		SwapFade(level_music, main_menu_music)
+		speed.stop()
 
 func loadLevelMusic():
 	if not level_music.playing:
-		main_menu_music.stop()
-		level_music.play()
+		SwapFade(main_menu_music, level_music)
 		speed.stop()
+
+func SwapFade(streamerOut : AudioStreamPlayer, streamerIn : AudioStreamPlayer):
+	streamerIn.play()
+	streamerIn.volume_db = -30
+	var tween = create_tween()
+	tween.tween_property(streamerOut, "volume_db", -30, 2)
+	tween.set_parallel()
+	tween.tween_property(streamerIn, "volume_db", 0, 2)
+	await tween.finished
+	streamerOut.stop()

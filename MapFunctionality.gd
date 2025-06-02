@@ -161,5 +161,6 @@ func _on_continue_pressed():
 	_on_fade_out()
 
 func _log_time():
+	print((Time.get_ticks_msec()-startTime)/1000)
 	completeMenu.LevelWon((Time.get_ticks_msec() - startTime)/1000, LevelNum)
 	get_tree().paused = false # Pauses the fucking game when sending data.
