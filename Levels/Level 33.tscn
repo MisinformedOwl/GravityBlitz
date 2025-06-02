@@ -1,4 +1,4 @@
-[gd_scene load_steps=71 format=3 uid="uid://dfil11pjd7rb1"]
+[gd_scene load_steps=31 format=3 uid="uid://dfil11pjd7rb1"]
 
 [ext_resource type="PackedScene" uid="uid://bdx77watf0xjr" path="res://Levels/MapContent.tscn" id="1_ood38"]
 [ext_resource type="PackedScene" uid="uid://rkdcxfm37rba" path="res://Mechanics and Assets/black_hole.tscn" id="2_4uk4i"]
@@ -9,10 +9,8 @@
 [ext_resource type="Texture2D" uid="uid://nu8d4vjyq14b" path="res://Mechanics and Assets/Button.png" id="7_vm6ef"]
 [ext_resource type="Texture2D" uid="uid://dathje0bheshg" path="res://Mechanics and Assets/Wires off.png" id="8_xqssb"]
 [ext_resource type="Texture2D" uid="uid://cx40yyy4q2i3b" path="res://Mechanics and Assets/Wires on.png" id="9_spsth"]
-[ext_resource type="Script" path="res://Mechanics and Assets/Laser Cannon.gd" id="10_pls4q"]
-[ext_resource type="Texture2D" uid="uid://b13aetxs5t4sf" path="res://TempFiles/LaserCannon-Sheet.png" id="11_fsr47"]
+[ext_resource type="PackedScene" uid="uid://bqrq5ig1oqqrw" path="res://Mechanics and Assets/Laser Cannon.tscn" id="10_70epg"]
 [ext_resource type="Texture2D" uid="uid://cov7lbdvj0eg5" path="res://TempFiles/Energy Beam.png" id="12_ie2r5"]
-[ext_resource type="Script" path="res://Mechanics and Assets/Beam.gd" id="13_eam7p"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_d32b6"]
 resource_local_to_scene = true
@@ -91,140 +89,10 @@ sources/0 = SubResource("TileSetAtlasSource_wbpyx")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lrpk7"]
 size = Vector2(52, 31)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ltea2"]
-atlas = ExtResource("11_fsr47")
-region = Rect2(896, 128, 128, 128)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_rawcq"]
-atlas = ExtResource("11_fsr47")
-region = Rect2(0, 0, 128, 128)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_hn3en"]
-atlas = ExtResource("11_fsr47")
-region = Rect2(128, 0, 128, 128)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_p6277"]
-atlas = ExtResource("11_fsr47")
-region = Rect2(256, 0, 128, 128)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ddnbj"]
-atlas = ExtResource("11_fsr47")
-region = Rect2(384, 0, 128, 128)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_xuhal"]
-atlas = ExtResource("11_fsr47")
-region = Rect2(512, 0, 128, 128)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_phmm2"]
-atlas = ExtResource("11_fsr47")
-region = Rect2(640, 0, 128, 128)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_x4c0v"]
-atlas = ExtResource("11_fsr47")
-region = Rect2(768, 0, 128, 128)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_aeyjo"]
-atlas = ExtResource("11_fsr47")
-region = Rect2(896, 0, 128, 128)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_m2q4t"]
-atlas = ExtResource("11_fsr47")
-region = Rect2(0, 128, 128, 128)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_csj2o"]
-atlas = ExtResource("11_fsr47")
-region = Rect2(128, 128, 128, 128)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ixtao"]
-atlas = ExtResource("11_fsr47")
-region = Rect2(256, 128, 128, 128)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_k1554"]
-atlas = ExtResource("11_fsr47")
-region = Rect2(384, 128, 128, 128)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_bcx1e"]
-atlas = ExtResource("11_fsr47")
-region = Rect2(512, 128, 128, 128)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_u1h82"]
-atlas = ExtResource("11_fsr47")
-region = Rect2(640, 128, 128, 128)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_qecul"]
-atlas = ExtResource("11_fsr47")
-region = Rect2(768, 128, 128, 128)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_thvoh"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ltea2")
-}],
-"loop": true,
-"name": &"Off",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_rawcq")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_hn3en")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_p6277")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ddnbj")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_xuhal")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_phmm2")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_x4c0v")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_aeyjo")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_m2q4t")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_csj2o")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ixtao")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_k1554")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_bcx1e")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_u1h82")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_qecul")
-}],
-"loop": true,
-"name": &"On",
-"speed": 20.0
-}]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_3ggbb"]
-size = Vector2(66, 101)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_xaa6f"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_s288m"]
 resource_local_to_scene = true
 atlas = ExtResource("12_ie2r5")
 region = Rect2(0, 0, 256, 1018.12)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_8dple"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_bir0q"]
 atlas = ExtResource("7_vm6ef")
@@ -298,140 +166,10 @@ sources/1 = SubResource("TileSetAtlasSource_vwtyx")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ikt7u"]
 size = Vector2(52, 31)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_kdl2v"]
-atlas = ExtResource("11_fsr47")
-region = Rect2(896, 128, 128, 128)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_v2m0a"]
-atlas = ExtResource("11_fsr47")
-region = Rect2(0, 0, 128, 128)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_mgoci"]
-atlas = ExtResource("11_fsr47")
-region = Rect2(128, 0, 128, 128)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_yvo1u"]
-atlas = ExtResource("11_fsr47")
-region = Rect2(256, 0, 128, 128)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_0nw7s"]
-atlas = ExtResource("11_fsr47")
-region = Rect2(384, 0, 128, 128)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ch8om"]
-atlas = ExtResource("11_fsr47")
-region = Rect2(512, 0, 128, 128)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_s4mhu"]
-atlas = ExtResource("11_fsr47")
-region = Rect2(640, 0, 128, 128)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_d7v8d"]
-atlas = ExtResource("11_fsr47")
-region = Rect2(768, 0, 128, 128)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_sxmrp"]
-atlas = ExtResource("11_fsr47")
-region = Rect2(896, 0, 128, 128)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_0c4sd"]
-atlas = ExtResource("11_fsr47")
-region = Rect2(0, 128, 128, 128)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_hjidt"]
-atlas = ExtResource("11_fsr47")
-region = Rect2(128, 128, 128, 128)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_55340"]
-atlas = ExtResource("11_fsr47")
-region = Rect2(256, 128, 128, 128)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_be5sd"]
-atlas = ExtResource("11_fsr47")
-region = Rect2(384, 128, 128, 128)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_le0m7"]
-atlas = ExtResource("11_fsr47")
-region = Rect2(512, 128, 128, 128)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_oej6j"]
-atlas = ExtResource("11_fsr47")
-region = Rect2(640, 128, 128, 128)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_7720o"]
-atlas = ExtResource("11_fsr47")
-region = Rect2(768, 128, 128, 128)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_knbcy"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_kdl2v")
-}],
-"loop": true,
-"name": &"Off",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_v2m0a")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_mgoci")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_yvo1u")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_0nw7s")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ch8om")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_s4mhu")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_d7v8d")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_sxmrp")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_0c4sd")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_hjidt")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_55340")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_be5sd")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_le0m7")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_oej6j")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_7720o")
-}],
-"loop": true,
-"name": &"On",
-"speed": 20.0
-}]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_7c1sl"]
-size = Vector2(66, 101)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_btok2"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_k0uub"]
 resource_local_to_scene = true
 atlas = ExtResource("12_ie2r5")
 region = Rect2(0, 0, 256, 1018.12)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_gx2yb"]
 
 [node name="MapContent" instance=ExtResource("1_ood38")]
 LevelNum = 33
@@ -513,40 +251,14 @@ shape = SubResource("RectangleShape2D_lrpk7")
 [node name="Timer" type="Timer" parent="Button" index="3"]
 one_shot = true
 
-[node name="Laser Cannon" type="StaticBody2D" parent="Button" index="4"]
-z_index = 5
-z_as_relative = false
+[node name="Laser Cannon" parent="Button" index="4" instance=ExtResource("10_70epg")]
 position = Vector2(641, 93)
-script = ExtResource("10_pls4q")
 
-[node name="Sprite" type="AnimatedSprite2D" parent="Button/Laser Cannon" index="0"]
-texture_filter = 1
-position = Vector2(0, -29)
-sprite_frames = SubResource("SpriteFrames_thvoh")
-animation = &"On"
-frame_progress = 0.509841
+[node name="Beam" parent="Button/Laser Cannon" index="2"]
+texture = SubResource("AtlasTexture_s288m")
 
-[node name="Collision" type="CollisionShape2D" parent="Button/Laser Cannon" index="1"]
-position = Vector2(0, -43)
-shape = SubResource("RectangleShape2D_3ggbb")
-
-[node name="Beam" type="Sprite2D" parent="Button/Laser Cannon" index="2"]
-visible = false
-texture_repeat = 2
-scale = Vector2(0.255, 1)
-texture = SubResource("AtlasTexture_xaa6f")
-script = ExtResource("13_eam7p")
-
-[node name="BeamArea" type="Area2D" parent="Button/Laser Cannon/Beam" index="0"]
-collision_layer = 4
-collision_mask = 4
-
-[node name="BeamCollision" type="CollisionShape2D" parent="Button/Laser Cannon/Beam/BeamArea" index="0"]
-shape = SubResource("RectangleShape2D_8dple")
-
-[node name="Beamcast" type="RayCast2D" parent="Button/Laser Cannon" index="3"]
+[node name="Beamcast" parent="Button/Laser Cannon" index="3"]
 target_position = Vector2(0, 1500)
-collide_with_areas = true
 
 [node name="Button2" type="Area2D" parent="." index="15"]
 position = Vector2(11264, 2176)
@@ -574,49 +286,23 @@ shape = SubResource("RectangleShape2D_ikt7u")
 [node name="Timer" type="Timer" parent="Button2" index="3"]
 one_shot = true
 
-[node name="Laser Cannon" type="StaticBody2D" parent="Button2" index="4" groups=["Activatable"]]
-z_index = 5
-z_as_relative = false
-position = Vector2(-383, 93)
-script = ExtResource("10_pls4q")
+[node name="Laser Cannon" parent="Button2" index="4" instance=ExtResource("10_70epg")]
+position = Vector2(-383, 92.999)
 
-[node name="Sprite" type="AnimatedSprite2D" parent="Button2/Laser Cannon" index="0"]
-texture_filter = 1
-position = Vector2(0, -29)
-sprite_frames = SubResource("SpriteFrames_knbcy")
-animation = &"On"
-frame_progress = 0.509841
+[node name="Beam" parent="Button2/Laser Cannon" index="2"]
+texture = SubResource("AtlasTexture_k0uub")
 
-[node name="Collision" type="CollisionShape2D" parent="Button2/Laser Cannon" index="1"]
-position = Vector2(0, -43)
-shape = SubResource("RectangleShape2D_7c1sl")
-
-[node name="Beam" type="Sprite2D" parent="Button2/Laser Cannon" index="2"]
-visible = false
-texture_repeat = 2
-scale = Vector2(0.255, 1)
-texture = SubResource("AtlasTexture_btok2")
-script = ExtResource("13_eam7p")
-
-[node name="BeamArea" type="Area2D" parent="Button2/Laser Cannon/Beam" index="0"]
-collision_layer = 4
-collision_mask = 4
-
-[node name="BeamCollision" type="CollisionShape2D" parent="Button2/Laser Cannon/Beam/BeamArea" index="0"]
-shape = SubResource("RectangleShape2D_gx2yb")
-
-[node name="Beamcast" type="RayCast2D" parent="Button2/Laser Cannon" index="3"]
+[node name="Beamcast" parent="Button2/Laser Cannon" index="3"]
 target_position = Vector2(0, 1500)
-collide_with_areas = true
 
 [connection signal="body_entered" from="Breakable/Area2D" to="Breakable" method="_on_area_2d_body_entered"]
 [connection signal="timeout" from="Breakable/Timer" to="Breakable" method="_on_timer_timeout"]
 [connection signal="body_entered" from="Button" to="Button" method="_on_body_entered"]
 [connection signal="timeout" from="Button/Timer" to="Button" method="_on_timer_timeout"]
-[connection signal="body_entered" from="Button/Laser Cannon/Beam/BeamArea" to="Button/Laser Cannon/Beam" method="_on_beam_area_body_entered"]
 [connection signal="body_entered" from="Button2" to="Button2" method="_on_body_entered"]
 [connection signal="timeout" from="Button2/Timer" to="Button2" method="_on_timer_timeout"]
-[connection signal="body_entered" from="Button2/Laser Cannon/Beam/BeamArea" to="Button2/Laser Cannon/Beam" method="_on_beam_area_body_entered"]
 
+[editable path="Button/Laser Cannon"]
+[editable path="Button2/Laser Cannon"]
 [editable path="UI Layer/Pause Menu"]
 [editable path="UI Layer/Level Complete"]

@@ -23,6 +23,7 @@ func loadMenuMusic():
 	speed.stop()
 
 func loadLevelMusic():
-	main_menu_music.stop()
-	level_music.play()
-	speed.stop()
+	if not level_music.playing:
+		main_menu_music.stop()
+		level_music.play()
+		speed.stop()

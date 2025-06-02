@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Music/Audio Manager.gd" id="1_pvehp"]
 [ext_resource type="AudioStream" uid="uid://dka52vflw85w0" path="res://Music/Main_Menu_Blitz.mp3" id="2_dw6ef"]
-[ext_resource type="AudioStream" uid="uid://ospnturwttvt" path="res://Music/Track1Better.mp3" id="3_qrc1o"]
+[ext_resource type="AudioStream" uid="uid://2wpl2kph8p75" path="res://Music/Track1.mp3" id="3_ye2gt"]
 [ext_resource type="AudioStream" uid="uid://coq5h0wawn7f0" path="res://Music/Speed.wav" id="4_eh4gx"]
 
 [node name="AudioStreamPlayer2D" type="Node2D"]
@@ -14,7 +14,7 @@ stream = ExtResource("2_dw6ef")
 bus = &"Music"
 
 [node name="Level Music" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("3_qrc1o")
+stream = ExtResource("3_ye2gt")
 bus = &"Music"
 
 [node name="Speed" type="AudioStreamPlayer" parent="."]

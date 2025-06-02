@@ -12,7 +12,7 @@ dest_files=["res://.godot/imported/Main_Menu_Blitz.mp3-2d75cb2ef3105c424368f1fb8
 
 [params]
 
-loop=false
+loop=true
 loop_offset=0
 bpm=0
 beat_count=0
