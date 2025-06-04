@@ -1,7 +1,8 @@
-[gd_scene load_steps=21 format=3 uid="uid://vubxtnrlomnj"]
+[gd_scene load_steps=22 format=3 uid="uid://vubxtnrlomnj"]
 
 [ext_resource type="PackedScene" uid="uid://bdx77watf0xjr" path="res://Levels/MapContent.tscn" id="1_arnbv"]
 [ext_resource type="Script" path="res://Mechanics and Assets/breakable.gd" id="3_73b4j"]
+[ext_resource type="AudioStream" uid="uid://dwd7lc2vvokeb" path="res://Music/BreakObject.mp3" id="4_klya3"]
 [ext_resource type="Texture2D" uid="uid://cs551w6jo4ieu" path="res://Shaders/destructableTexture.png" id="4_mwkjm"]
 [ext_resource type="Script" path="res://Mechanics and Assets/button.gd" id="4_mxuty"]
 [ext_resource type="Texture2D" uid="uid://nu8d4vjyq14b" path="res://Mechanics and Assets/Button.png" id="5_3byde"]
@@ -135,6 +136,10 @@ texture = SubResource("AtlasTexture_b7fv3")
 [node name="Timer" type="Timer" parent="Breakable" index="2"]
 wait_time = 2.0
 
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Breakable" index="3"]
+stream = ExtResource("4_klya3")
+bus = &"SFX"
+
 [node name="Button" type="Area2D" parent="." index="8"]
 position = Vector2(1983, 1792)
 rotation = 3.14159
@@ -188,6 +193,10 @@ texture = SubResource("AtlasTexture_r0c0h")
 
 [node name="Timer" type="Timer" parent="Breakable2" index="2"]
 wait_time = 2.0
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Breakable2" index="3"]
+stream = ExtResource("4_klya3")
+bus = &"SFX"
 
 [connection signal="body_entered" from="Breakable/Area2D" to="Breakable" method="_on_area_2d_body_entered"]
 [connection signal="timeout" from="Breakable/Timer" to="Breakable" method="_on_timer_timeout"]

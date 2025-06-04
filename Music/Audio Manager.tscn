@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://dmxnyyqqdtnx1"]
+[gd_scene load_steps=7 format=3 uid="uid://dmxnyyqqdtnx1"]
 
 [ext_resource type="Script" path="res://Music/Audio Manager.gd" id="1_pvehp"]
 [ext_resource type="AudioStream" uid="uid://dka52vflw85w0" path="res://Music/Main_Menu_Blitz.mp3" id="2_dw6ef"]
 [ext_resource type="AudioStream" uid="uid://2wpl2kph8p75" path="res://Music/Track1.mp3" id="3_ye2gt"]
 [ext_resource type="AudioStream" uid="uid://coq5h0wawn7f0" path="res://Music/Speed.wav" id="4_eh4gx"]
 [ext_resource type="AudioStream" uid="uid://crey6p0e08fu3" path="res://Music/Track2.mp3" id="5_gyjd6"]
+[ext_resource type="AudioStream" uid="uid://d1v6ivkswuhkl" path="res://Music/Victory.mp3" id="6_057d3"]
 
 [node name="AudioStreamPlayer2D" type="Node2D"]
 process_mode = 3
@@ -30,5 +31,9 @@ stream = ExtResource("5_gyjd6")
 [node name="SwitchTimer" type="Timer" parent="."]
 wait_time = 120.0
 one_shot = true
+
+[node name="Victory" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_057d3")
+bus = &"Victory"
 
 [connection signal="timeout" from="SwitchTimer" to="." method="_on_switch_timer_timeout"]

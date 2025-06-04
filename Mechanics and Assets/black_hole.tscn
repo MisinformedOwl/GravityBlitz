@@ -1,7 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://rkdcxfm37rba"]
+[gd_scene load_steps=11 format=3 uid="uid://rkdcxfm37rba"]
 
 [ext_resource type="Script" path="res://Mechanics and Assets/Black Hole.gd" id="1_ulnlc"]
 [ext_resource type="Texture2D" uid="uid://cl7npy2d06b0s" path="res://Mechanics and Assets/BlackHole.png" id="2_pe1lt"]
+[ext_resource type="AudioStream" uid="uid://bwh23mhdfq2k1" path="res://Music/Black Hole.mp3" id="3_qghg3"]
+[ext_resource type="Texture2D" uid="uid://iyv3y1t0mosa" path="res://Mechanics and Assets/OrbitRing.png" id="4_dpp5d"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_t6cet"]
 radius = 41.65
@@ -57,6 +59,17 @@ texture_filter = 1
 scale = Vector2(1.36, 1.36)
 sprite_frames = SubResource("SpriteFrames_3dlak")
 animation = &"Default"
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_qghg3")
+autoplay = true
+max_distance = 1000.0
+bus = &"SFX"
+
+[node name="Horizon" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0)
+scale = Vector2(2.015, 2.015)
+texture = ExtResource("4_dpp5d")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

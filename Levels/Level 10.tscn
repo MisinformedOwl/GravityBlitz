@@ -1,8 +1,9 @@
-[gd_scene load_steps=20 format=3 uid="uid://3lledqiq42iw"]
+[gd_scene load_steps=21 format=3 uid="uid://3lledqiq42iw"]
 
 [ext_resource type="PackedScene" uid="uid://bdx77watf0xjr" path="res://Levels/MapContent.tscn" id="1_am6bx"]
 [ext_resource type="Script" path="res://Mechanics and Assets/breakable.gd" id="2_7ve3q"]
 [ext_resource type="Texture2D" uid="uid://utvgrp0w2cuo" path="res://Shaders/Level 7 shapes.png" id="3_4snup"]
+[ext_resource type="AudioStream" uid="uid://dwd7lc2vvokeb" path="res://Music/BreakObject.mp3" id="4_563e2"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_eytra"]
 atlas = ExtResource("3_4snup")
@@ -127,6 +128,10 @@ offset_bottom = 40.0
 [node name="Timer" type="Timer" parent="Queen" index="2"]
 wait_time = 2.0
 
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Queen" index="3"]
+stream = ExtResource("4_563e2")
+bus = &"SFX"
+
 [node name="King" type="StaticBody2D" parent="." index="8"]
 position = Vector2(703, 193)
 script = ExtResource("2_7ve3q")
@@ -141,6 +146,9 @@ texture = SubResource("AtlasTexture_sqikq")
 
 [node name="Timer" type="Timer" parent="King" index="2"]
 wait_time = 2.0
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="King" index="3"]
+stream = ExtResource("4_563e2")
 
 [node name="Knight" type="StaticBody2D" parent="." index="9"]
 position = Vector2(1086, 575)
@@ -157,6 +165,9 @@ texture = SubResource("AtlasTexture_fjxvg")
 [node name="Timer" type="Timer" parent="Knight" index="2"]
 wait_time = 2.0
 
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Knight" index="3"]
+stream = ExtResource("4_563e2")
+
 [node name="Bishop" type="StaticBody2D" parent="." index="10"]
 position = Vector2(833, 192)
 script = ExtResource("2_7ve3q")
@@ -171,6 +182,9 @@ texture = SubResource("AtlasTexture_r7iam")
 
 [node name="Timer" type="Timer" parent="Bishop" index="2"]
 wait_time = 2.0
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Bishop" index="3"]
+stream = ExtResource("4_563e2")
 
 [node name="Rook" type="StaticBody2D" parent="." index="11"]
 position = Vector2(1091, 956)
@@ -187,6 +201,9 @@ texture = SubResource("AtlasTexture_gg5a1")
 [node name="Timer" type="Timer" parent="Rook" index="2"]
 wait_time = 2.0
 
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Rook" index="3"]
+stream = ExtResource("4_563e2")
+
 [node name="Bishop2" type="StaticBody2D" parent="." index="12"]
 position = Vector2(575, 319)
 script = ExtResource("2_7ve3q")
@@ -201,6 +218,9 @@ texture = SubResource("AtlasTexture_0lva4")
 
 [node name="Timer" type="Timer" parent="Bishop2" index="2"]
 wait_time = 2.0
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Bishop2" index="3"]
+stream = ExtResource("4_563e2")
 
 [node name="Knight2" type="StaticBody2D" parent="." index="13"]
 position = Vector2(702, 565)
@@ -217,6 +237,9 @@ texture = SubResource("AtlasTexture_wcprl")
 [node name="Timer" type="Timer" parent="Knight2" index="2"]
 wait_time = 2.0
 
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Knight2" index="3"]
+stream = ExtResource("4_563e2")
+
 [node name="Rook2" type="StaticBody2D" parent="." index="14"]
 position = Vector2(192, 318)
 script = ExtResource("2_7ve3q")
@@ -231,6 +254,9 @@ texture = SubResource("AtlasTexture_lis3j")
 
 [node name="Timer" type="Timer" parent="Rook2" index="2"]
 wait_time = 2.0
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Rook2" index="3"]
+stream = ExtResource("4_563e2")
 
 [node name="Pawn1" type="StaticBody2D" parent="." index="15"]
 position = Vector2(190, 575)
@@ -247,6 +273,9 @@ texture = SubResource("AtlasTexture_fsb2h")
 [node name="Timer" type="Timer" parent="Pawn1" index="2"]
 wait_time = 2.0
 
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Pawn1" index="3"]
+stream = ExtResource("4_563e2")
+
 [node name="Pawn2" type="StaticBody2D" parent="." index="16"]
 position = Vector2(319, 447)
 script = ExtResource("2_7ve3q")
@@ -261,6 +290,9 @@ texture = SubResource("AtlasTexture_0bako")
 
 [node name="Timer" type="Timer" parent="Pawn2" index="2"]
 wait_time = 2.0
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Pawn2" index="3"]
+stream = ExtResource("4_563e2")
 
 [node name="Pawn3" type="StaticBody2D" parent="." index="17"]
 position = Vector2(451, 698)
@@ -277,6 +309,9 @@ texture = SubResource("AtlasTexture_ix1pw")
 [node name="Timer" type="Timer" parent="Pawn3" index="2"]
 wait_time = 2.0
 
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Pawn3" index="3"]
+stream = ExtResource("4_563e2")
+
 [node name="Pawn4" type="StaticBody2D" parent="." index="18"]
 position = Vector2(712, 698)
 script = ExtResource("2_7ve3q")
@@ -291,6 +326,9 @@ texture = SubResource("AtlasTexture_4rij6")
 
 [node name="Timer" type="Timer" parent="Pawn4" index="2"]
 wait_time = 2.0
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Pawn4" index="3"]
+stream = ExtResource("4_563e2")
 
 [node name="Pawn5" type="StaticBody2D" parent="." index="19"]
 position = Vector2(578, 575)
@@ -307,6 +345,9 @@ texture = SubResource("AtlasTexture_s0cbs")
 [node name="Timer" type="Timer" parent="Pawn5" index="2"]
 wait_time = 2.0
 
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Pawn5" index="3"]
+stream = ExtResource("4_563e2")
+
 [node name="Pawn6" type="StaticBody2D" parent="." index="20"]
 position = Vector2(964, 822)
 script = ExtResource("2_7ve3q")
@@ -321,6 +362,9 @@ texture = SubResource("AtlasTexture_iwi5l")
 
 [node name="Timer" type="Timer" parent="Pawn6" index="2"]
 wait_time = 2.0
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Pawn6" index="3"]
+stream = ExtResource("4_563e2")
 
 [node name="Pawn7" type="StaticBody2D" parent="." index="21"]
 position = Vector2(962, 693)
@@ -337,6 +381,9 @@ texture = SubResource("AtlasTexture_ejnxu")
 [node name="Timer" type="Timer" parent="Pawn7" index="2"]
 wait_time = 2.0
 
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Pawn7" index="3"]
+stream = ExtResource("4_563e2")
+
 [node name="Pawn8" type="StaticBody2D" parent="." index="22"]
 position = Vector2(832, 566)
 script = ExtResource("2_7ve3q")
@@ -351,6 +398,9 @@ texture = SubResource("AtlasTexture_s7a12")
 
 [node name="Timer" type="Timer" parent="Pawn8" index="2"]
 wait_time = 2.0
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Pawn8" index="3"]
+stream = ExtResource("4_563e2")
 
 [connection signal="body_entered" from="Queen/Area2D" to="Queen" method="_on_area_2d_body_entered"]
 [connection signal="timeout" from="Queen/Timer" to="Queen" method="_on_timer_timeout"]

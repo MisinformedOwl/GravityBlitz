@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://viw47ia0f51m"]
+[gd_scene load_steps=12 format=3 uid="uid://viw47ia0f51m"]
 
 [ext_resource type="PackedScene" uid="uid://bdx77watf0xjr" path="res://Levels/MapContent.tscn" id="1_1mr02"]
 [ext_resource type="PackedScene" uid="uid://coauejq0yl6qg" path="res://Mechanics and Assets/portal_manager.tscn" id="2_hpw5d"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://cdqoi4t7c3vmv" path="res://Mechanics and Assets/breakable.tscn" id="7_nh1wy"]
 [ext_resource type="Texture2D" uid="uid://cs551w6jo4ieu" path="res://Shaders/destructableTexture.png" id="8_vw6ls"]
 [ext_resource type="PackedScene" uid="uid://rkdcxfm37rba" path="res://Mechanics and Assets/black_hole.tscn" id="9_2g06p"]
+[ext_resource type="AudioStream" uid="uid://dwd7lc2vvokeb" path="res://Music/BreakObject.mp3" id="9_jio1x"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3h5ed"]
 resource_local_to_scene = true
@@ -109,6 +110,10 @@ position = Vector2(3522, 1408)
 
 [node name="Sprite2D" parent="Breakable" index="0"]
 texture = SubResource("AtlasTexture_3h5ed")
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="Breakable" index="4"]
+stream = ExtResource("9_jio1x")
+bus = &"SFX"
 
 [node name="Black Hole" parent="." index="14" instance=ExtResource("9_2g06p")]
 position = Vector2(577, 3640)

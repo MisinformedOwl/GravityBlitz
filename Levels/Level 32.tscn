@@ -1,9 +1,10 @@
-[gd_scene load_steps=31 format=3 uid="uid://de4ksbt1718r3"]
+[gd_scene load_steps=32 format=3 uid="uid://de4ksbt1718r3"]
 
 [ext_resource type="PackedScene" uid="uid://bdx77watf0xjr" path="res://Levels/MapContent.tscn" id="1_u4c6y"]
 [ext_resource type="PackedScene" uid="uid://rkdcxfm37rba" path="res://Mechanics and Assets/black_hole.tscn" id="2_xhnna"]
 [ext_resource type="Script" path="res://Mechanics and Assets/breakable.gd" id="3_vo0s8"]
 [ext_resource type="Texture2D" uid="uid://cs551w6jo4ieu" path="res://Shaders/destructableTexture.png" id="4_wt14w"]
+[ext_resource type="AudioStream" uid="uid://dwd7lc2vvokeb" path="res://Music/BreakObject.mp3" id="5_brnig"]
 [ext_resource type="Script" path="res://Mechanics and Assets/Laser Cannon.gd" id="5_ero6w"]
 [ext_resource type="Texture2D" uid="uid://b13aetxs5t4sf" path="res://TempFiles/LaserCannon-Sheet.png" id="6_33ay1"]
 [ext_resource type="Texture2D" uid="uid://cov7lbdvj0eg5" path="res://TempFiles/Energy Beam.png" id="7_sueux"]
@@ -156,7 +157,7 @@ region = Rect2(0, 0, 256, 1018.12)
 
 [node name="MapContent" instance=ExtResource("1_u4c6y")]
 LevelNum = 32
-LevelName = "Thinking with Black Holes"
+LevelName = "Basic Rocket Science"
 time1 = 10.0
 time2 = 15.0
 time3 = 20.0
@@ -194,6 +195,10 @@ texture = SubResource("AtlasTexture_1npfu")
 [node name="Timer" type="Timer" parent="Breakable" index="2"]
 wait_time = 2.0
 
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Breakable" index="3"]
+stream = ExtResource("5_brnig")
+bus = &"SFX"
+
 [node name="Breakable2" type="StaticBody2D" parent="." index="9"]
 position = Vector2(2113, -384)
 script = ExtResource("3_vo0s8")
@@ -208,6 +213,10 @@ texture = SubResource("AtlasTexture_iywdu")
 
 [node name="Timer" type="Timer" parent="Breakable2" index="2"]
 wait_time = 2.0
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Breakable2" index="3"]
+stream = ExtResource("5_brnig")
+bus = &"SFX"
 
 [node name="Laser Cannon" type="StaticBody2D" parent="." index="10"]
 z_index = 5

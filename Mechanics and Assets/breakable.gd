@@ -2,6 +2,7 @@ extends StaticBody2D
 
 @onready var sprite = $Sprite2D
 @onready var timer = $Timer
+@onready var audio = $AudioStreamPlayer
 
 var dying = false
 var shader = preload("res://Shaders/dissolve.gdshader")
@@ -30,6 +31,7 @@ func _ready():
 func _on_area_2d_body_entered(body):
 	if body.name == "Player" and dying == false:
 		if body.getspeedhit() >= body.SPEEDTHRESHOLD:
+			audio.play()
 			set_physics_process(true)
 			dying = true
 			var noise = NoiseTexture2D.new()

@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://c7wgu3tqx8yyh"]
+[gd_scene load_steps=8 format=3 uid="uid://c7wgu3tqx8yyh"]
 
 [ext_resource type="PackedScene" uid="uid://bdx77watf0xjr" path="res://Levels/MapContent.tscn" id="1_o82x0"]
 [ext_resource type="Script" path="res://Mechanics and Assets/breakable.gd" id="2_fpxk2"]
 [ext_resource type="Texture2D" uid="uid://cs551w6jo4ieu" path="res://Shaders/destructableTexture.png" id="3_88eim"]
+[ext_resource type="AudioStream" uid="uid://dwd7lc2vvokeb" path="res://Music/BreakObject.mp3" id="4_4v6rx"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_17tb6"]
 resource_local_to_scene = true
@@ -59,6 +60,10 @@ texture = SubResource("AtlasTexture_17tb6")
 [node name="Timer" type="Timer" parent="Breakable" index="2"]
 wait_time = 2.0
 
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Breakable" index="3"]
+stream = ExtResource("4_4v6rx")
+bus = &"SFX"
+
 [node name="Breakable2" type="StaticBody2D" parent="." index="8"]
 position = Vector2(256, 384)
 script = ExtResource("2_fpxk2")
@@ -73,6 +78,10 @@ texture = SubResource("AtlasTexture_s1e5x")
 
 [node name="Timer" type="Timer" parent="Breakable2" index="2"]
 wait_time = 2.0
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Breakable2" index="3"]
+stream = ExtResource("4_4v6rx")
+bus = &"SFX"
 
 [node name="Breakable3" type="StaticBody2D" parent="." index="9"]
 position = Vector2(256, 1398)
@@ -89,6 +98,10 @@ texture = SubResource("AtlasTexture_cagfy")
 
 [node name="Timer" type="Timer" parent="Breakable3" index="2"]
 wait_time = 2.0
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Breakable3" index="3"]
+stream = ExtResource("4_4v6rx")
+bus = &"SFX"
 
 [connection signal="body_entered" from="Breakable/Area2D" to="Breakable" method="_on_area_2d_body_entered"]
 [connection signal="timeout" from="Breakable/Timer" to="Breakable" method="_on_timer_timeout"]

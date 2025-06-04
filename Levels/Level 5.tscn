@@ -1,14 +1,14 @@
 [gd_scene load_steps=6 format=3 uid="uid://b6bn1nupjy0ha"]
 
 [ext_resource type="PackedScene" uid="uid://bdx77watf0xjr" path="res://Levels/MapContent.tscn" id="1_vopjq"]
-[ext_resource type="Script" path="res://Mechanics and Assets/breakable.gd" id="2_w1awy"]
 [ext_resource type="Texture2D" uid="uid://cs551w6jo4ieu" path="res://Shaders/destructableTexture.png" id="3_0m4y4"]
+[ext_resource type="PackedScene" uid="uid://cdqoi4t7c3vmv" path="res://Mechanics and Assets/breakable.tscn" id="3_vbo1n"]
 [ext_resource type="PackedScene" uid="uid://voratnkrcpfd" path="res://UI/Quick Message.tscn" id="4_d0uyt"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ydr8p"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_4ll8p"]
 resource_local_to_scene = true
 atlas = ExtResource("3_0m4y4")
-region = Rect2(5.33325, 13.1287, 1004.83, 261.128)
+region = Rect2(5, 309, 1014, 247)
 
 [node name="Level 5" instance=ExtResource("1_vopjq")]
 LevelNum = 5
@@ -26,23 +26,7 @@ layer_0/tile_data = PackedInt32Array(851976, 131072, 1, 786440, 131072, 1, 72090
 [node name="Goal" parent="." index="5"]
 position = Vector2(576, 65)
 
-[node name="Breakable" type="StaticBody2D" parent="." index="7"]
-position = Vector2(576, 317)
-scale = Vector2(2.38, 2.38)
-script = ExtResource("2_w1awy")
-
-[node name="Sprite2D" type="Sprite2D" parent="Breakable" index="0"]
-texture_repeat = 2
-position = Vector2(0, -2.02656e-06)
-scale = Vector2(0.375, 0.375)
-texture = SubResource("AtlasTexture_ydr8p")
-
-[node name="Area2D" type="Area2D" parent="Breakable" index="1"]
-
-[node name="Timer" type="Timer" parent="Breakable" index="2"]
-wait_time = 2.0
-
-[node name="Control" parent="." index="10" instance=ExtResource("4_d0uyt")]
+[node name="Control" parent="." index="9" instance=ExtResource("4_d0uyt")]
 offset_left = 475.0
 offset_top = 1091.0
 offset_right = 676.0
@@ -52,9 +36,14 @@ offset_bottom = 1226.0
 text = "Some things can be broken
 with enough speed"
 
-[connection signal="body_entered" from="Breakable/Area2D" to="Breakable" method="_on_area_2d_body_entered"]
-[connection signal="timeout" from="Breakable/Timer" to="Breakable" method="_on_timer_timeout"]
+[node name="Breakable" parent="." index="10" instance=ExtResource("3_vbo1n")]
+position = Vector2(575, 328)
+scale = Vector2(2.355, 2.355)
+
+[node name="Sprite2D" parent="Breakable" index="0"]
+texture = SubResource("AtlasTexture_4ll8p")
 
 [editable path="UI Layer/Pause Menu"]
 [editable path="UI Layer/Level Complete"]
 [editable path="Control"]
+[editable path="Breakable"]

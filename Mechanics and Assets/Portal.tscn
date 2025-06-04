@@ -1,7 +1,8 @@
-[gd_scene load_steps=11 format=3 uid="uid://ld18eqltmdx2"]
+[gd_scene load_steps=12 format=3 uid="uid://ld18eqltmdx2"]
 
 [ext_resource type="Script" path="res://Portal.gd" id="1_u05yd"]
 [ext_resource type="Texture2D" uid="uid://eu5as2yothoe" path="res://Mechanics and Assets/Portal.png" id="2_qu7if"]
+[ext_resource type="AudioStream" uid="uid://bi6s1o7ixnqr2" path="res://Music/Portal.mp3" id="3_2f6t6"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6e0uq"]
 atlas = ExtResource("2_qu7if")
@@ -72,6 +73,10 @@ position = Vector2(0, -76)
 
 [node name="Sickness" type="Timer" parent="."]
 one_shot = true
+
+[node name="TeleportSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_2f6t6")
+bus = &"SFX"
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="timeout" from="Sickness" to="." method="_on_timer_timeout"]

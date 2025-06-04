@@ -5,6 +5,7 @@ extends StaticBody2D
 @onready var beam = $Beam
 @export var Switch: bool = true
 @onready var beamcast = $Beamcast
+@onready var beamsound = $Beam/BeamSound
 
 @export var debugmode: bool = false
 

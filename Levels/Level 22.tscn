@@ -1,4 +1,4 @@
-[gd_scene load_steps=65 format=3 uid="uid://b18hcfuvqifba"]
+[gd_scene load_steps=66 format=3 uid="uid://b18hcfuvqifba"]
 
 [ext_resource type="PackedScene" uid="uid://bdx77watf0xjr" path="res://Levels/MapContent.tscn" id="1_e31i5"]
 [ext_resource type="Script" path="res://Mechanics and Assets/breakable.gd" id="4_42jux"]
@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://cx40yyy4q2i3b" path="res://Mechanics and Assets/Wires on.png" id="9_w6pff"]
 [ext_resource type="Script" path="res://Mechanics and Assets/Beam.gd" id="10_m5jo4"]
 [ext_resource type="PackedScene" uid="uid://bqrq5ig1oqqrw" path="res://Mechanics and Assets/Laser Cannon.tscn" id="10_yottp"]
+[ext_resource type="AudioStream" uid="uid://dwd7lc2vvokeb" path="res://Music/BreakObject.mp3" id="13_30xxj"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6hhkl"]
 atlas = ExtResource("7_koa8x")
@@ -563,6 +564,9 @@ texture = SubResource("AtlasTexture_1mebn")
 [node name="Timer" type="Timer" parent="Breakable" index="2"]
 wait_time = 2.0
 
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Breakable" index="3"]
+stream = ExtResource("13_30xxj")
+
 [node name="Breakable2" type="StaticBody2D" parent="." index="9"]
 position = Vector2(1597, 705)
 script = ExtResource("4_42jux")
@@ -577,6 +581,9 @@ texture = SubResource("AtlasTexture_fkt1u")
 
 [node name="Timer" type="Timer" parent="Breakable2" index="2"]
 wait_time = 2.0
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Breakable2" index="3"]
+stream = ExtResource("13_30xxj")
 
 [node name="Breakable3" type="StaticBody2D" parent="." index="10"]
 position = Vector2(1472, 830)
@@ -593,6 +600,9 @@ texture = SubResource("AtlasTexture_okady")
 [node name="Timer" type="Timer" parent="Breakable3" index="2"]
 wait_time = 2.0
 
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Breakable3" index="3"]
+stream = ExtResource("13_30xxj")
+
 [node name="Breakable4" type="StaticBody2D" parent="." index="11"]
 position = Vector2(1343, 960)
 script = ExtResource("4_42jux")
@@ -607,6 +617,9 @@ texture = SubResource("AtlasTexture_arps4")
 
 [node name="Timer" type="Timer" parent="Breakable4" index="2"]
 wait_time = 2.0
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Breakable4" index="3"]
+stream = ExtResource("13_30xxj")
 
 [node name="Breakable5" type="StaticBody2D" parent="." index="12"]
 position = Vector2(1217, 1088)
@@ -623,6 +636,9 @@ texture = SubResource("AtlasTexture_57x5d")
 [node name="Timer" type="Timer" parent="Breakable5" index="2"]
 wait_time = 2.0
 
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Breakable5" index="3"]
+stream = ExtResource("13_30xxj")
+
 [node name="Breakable6" type="StaticBody2D" parent="." index="13"]
 position = Vector2(1089, 1217)
 script = ExtResource("4_42jux")
@@ -637,6 +653,9 @@ texture = SubResource("AtlasTexture_vym8a")
 
 [node name="Timer" type="Timer" parent="Breakable6" index="2"]
 wait_time = 2.0
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Breakable6" index="3"]
+stream = ExtResource("13_30xxj")
 
 [node name="Breakable7" type="StaticBody2D" parent="." index="14"]
 position = Vector2(1473, 321)
@@ -653,6 +672,9 @@ texture = SubResource("AtlasTexture_e5880")
 [node name="Timer" type="Timer" parent="Breakable7" index="2"]
 wait_time = 2.0
 
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Breakable7" index="3"]
+stream = ExtResource("13_30xxj")
+
 [node name="Breakable8" type="StaticBody2D" parent="." index="15"]
 position = Vector2(1344, 449)
 script = ExtResource("4_42jux")
@@ -667,6 +689,9 @@ texture = SubResource("AtlasTexture_uc3c7")
 
 [node name="Timer" type="Timer" parent="Breakable8" index="2"]
 wait_time = 2.0
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Breakable8" index="3"]
+stream = ExtResource("13_30xxj")
 
 [node name="Breakable9" type="StaticBody2D" parent="." index="16"]
 position = Vector2(1729, 378)
@@ -683,6 +708,9 @@ texture = SubResource("AtlasTexture_p241n")
 [node name="Timer" type="Timer" parent="Breakable9" index="2"]
 wait_time = 2.0
 
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Breakable9" index="3"]
+stream = ExtResource("13_30xxj")
+
 [node name="Breakable10" type="StaticBody2D" parent="." index="17"]
 position = Vector2(1216, 576)
 script = ExtResource("4_42jux")
@@ -697,6 +725,9 @@ texture = SubResource("AtlasTexture_ars66")
 
 [node name="Timer" type="Timer" parent="Breakable10" index="2"]
 wait_time = 2.0
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Breakable10" index="3"]
+stream = ExtResource("13_30xxj")
 
 [node name="Breakable11" type="StaticBody2D" parent="." index="18"]
 position = Vector2(1088, 704)
@@ -713,6 +744,9 @@ texture = SubResource("AtlasTexture_ghrdx")
 [node name="Timer" type="Timer" parent="Breakable11" index="2"]
 wait_time = 2.0
 
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Breakable11" index="3"]
+stream = ExtResource("13_30xxj")
+
 [node name="Breakable12" type="StaticBody2D" parent="." index="19"]
 position = Vector2(960, 831)
 script = ExtResource("4_42jux")
@@ -727,6 +761,9 @@ texture = SubResource("AtlasTexture_7v37o")
 
 [node name="Timer" type="Timer" parent="Breakable12" index="2"]
 wait_time = 2.0
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Breakable12" index="3"]
+stream = ExtResource("13_30xxj")
 
 [node name="Breakable13" type="StaticBody2D" parent="." index="20"]
 position = Vector2(832, 960)
@@ -743,6 +780,9 @@ texture = SubResource("AtlasTexture_j8ob3")
 [node name="Timer" type="Timer" parent="Breakable13" index="2"]
 wait_time = 2.0
 
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Breakable13" index="3"]
+stream = ExtResource("13_30xxj")
+
 [node name="Breakable14" type="StaticBody2D" parent="." index="21"]
 position = Vector2(703, 1088)
 script = ExtResource("4_42jux")
@@ -757,6 +797,10 @@ texture = SubResource("AtlasTexture_mr7e2")
 
 [node name="Timer" type="Timer" parent="Breakable14" index="2"]
 wait_time = 2.0
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Breakable14" index="3"]
+stream = ExtResource("13_30xxj")
+bus = &"SFX"
 
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
 [connection signal="timeout" from="Area2D/Timer" to="Area2D" method="_on_timer_timeout"]

@@ -138,6 +138,7 @@ func setSpriteAnim():
 		sprite.play("default")
 
 func goalHit():
+	AudioManager.playVictory()
 	timeStop.emit()
 	lockdownAnims()
 	dying = true

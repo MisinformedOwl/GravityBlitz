@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://bxpyjkjp47lit"]
+[gd_scene load_steps=30 format=3 uid="uid://bxpyjkjp47lit"]
 
 [ext_resource type="PackedScene" uid="uid://bdx77watf0xjr" path="res://Levels/MapContent.tscn" id="1_p68ib"]
 [ext_resource type="PackedScene" uid="uid://qrpd88843g6" path="res://Mechanics and Assets/pitmap.tscn" id="2_8glr2"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://bqrq5ig1oqqrw" path="res://Mechanics and Assets/Laser Cannon.tscn" id="7_kf0ma"]
 [ext_resource type="Script" path="res://Mechanics and Assets/breakable.gd" id="8_d0res"]
 [ext_resource type="Texture2D" uid="uid://cs551w6jo4ieu" path="res://Shaders/destructableTexture.png" id="9_quyx3"]
+[ext_resource type="AudioStream" uid="uid://dwd7lc2vvokeb" path="res://Music/BreakObject.mp3" id="10_6gcyd"]
 [ext_resource type="Texture2D" uid="uid://cov7lbdvj0eg5" path="res://TempFiles/Energy Beam.png" id="12_yr5r8"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6hhkl"]
@@ -261,6 +262,10 @@ texture = SubResource("AtlasTexture_jaiyh")
 
 [node name="Timer" type="Timer" parent="Breakable3" index="2"]
 wait_time = 2.0
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Breakable3" index="3"]
+stream = ExtResource("10_6gcyd")
+bus = &"SFX"
 
 [node name="Button3" type="Area2D" parent="." index="13"]
 position = Vector2(10112, -193)

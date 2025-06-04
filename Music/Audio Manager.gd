@@ -4,6 +4,7 @@ extends Node2D
 @onready var level_music_2 = $"Level Music 2"
 @onready var speed = $Speed
 @onready var timer = $SwitchTimer
+@onready var victory = $Victory
 
 var music = [preload("res://Music/Track1.mp3"), preload("res://Music/Track2.mp3"), preload("res://Music/Track3.mp3")]
 var trackNumber = 1
@@ -20,6 +21,7 @@ func tickLevelCount():
 	levelNumberTracker +=1
 	if levelNumberTracker > 3 or currentStreamer.is_in_group("Menu"):
 		loadLevelMusic()
+		levelNumberTracker = 0
 
 func playerSpeedUp():
 	if not speedingUp:
@@ -66,6 +68,9 @@ func nextTrack(streamer: AudioStreamPlayer):
 	if trackNumber >= len(music):
 		trackNumber = 0
 	streamer.stream = music[trackNumber]
+
+func playVictory():
+	victory.play()
 
 func _on_switch_timer_timeout():
 	loadLevelMusic()

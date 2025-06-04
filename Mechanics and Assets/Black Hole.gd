@@ -4,6 +4,7 @@ var playerInGrav: bool = false
 var player: CharacterBody2D
 @export var gravMult: float = 1.0
 @onready var sprite = $AnimatedSprite2D
+@onready var horizon = $Horizon
 
 func _ready():
 	sprite.play("Default")
@@ -20,8 +21,12 @@ func _physics_process(_delta):
 func _on_area_2d_body_entered(body):
 	if body.name == "Player":
 		player = body
+		var tween = create_tween()
+		tween.tween_property(horizon, "modulate", Color(1,1,1,0.5),0.5)
 		set_physics_process(true)
 
 func _on_area_2d_body_exited(body):
 	if body.name == "Player":
+		var tween = create_tween()
+		tween.tween_property(horizon, "modulate", Color(1,1,1,0),0.5)
 		set_physics_process(false)

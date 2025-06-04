@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://dbhfq7nwdcsvw"]
+[gd_scene load_steps=25 format=3 uid="uid://dbhfq7nwdcsvw"]
 
 [ext_resource type="PackedScene" uid="uid://bdx77watf0xjr" path="res://Levels/MapContent.tscn" id="1_60uib"]
 [ext_resource type="Script" path="res://Mechanics and Assets/button.gd" id="2_v8rd2"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://dathje0bheshg" path="res://Mechanics and Assets/Wires off.png" id="4_504m3"]
 [ext_resource type="Texture2D" uid="uid://cx40yyy4q2i3b" path="res://Mechanics and Assets/Wires on.png" id="5_ucyly"]
 [ext_resource type="PackedScene" uid="uid://bqrq5ig1oqqrw" path="res://Mechanics and Assets/Laser Cannon.tscn" id="6_k5cto"]
+[ext_resource type="Texture2D" uid="uid://cov7lbdvj0eg5" path="res://TempFiles/Energy Beam.png" id="7_4e80g"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6hhkl"]
 atlas = ExtResource("3_c827w")
@@ -78,6 +79,11 @@ sources/0 = SubResource("TileSetAtlasSource_wbpyx")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lrpk7"]
 size = Vector2(52, 31)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qkgbd"]
+resource_local_to_scene = true
+atlas = ExtResource("7_4e80g")
+region = Rect2(0, 0, 256, 1018.12)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_lvybm"]
 atlas = ExtResource("3_c827w")
@@ -203,6 +209,9 @@ one_shot = true
 position = Vector2(-509, 803)
 rotation = -3.14159
 
+[node name="Beam" parent="Button/Laser Cannon" index="2"]
+texture = SubResource("AtlasTexture_qkgbd")
+
 [node name="Button2" type="Area2D" parent="." index="8"]
 position = Vector2(128, 1088)
 rotation = -1.5708
@@ -242,5 +251,6 @@ rotation = 3.14159
 [connection signal="body_entered" from="Button2" to="Button2" method="_on_body_entered"]
 [connection signal="timeout" from="Button2/Timer" to="Button2" method="_on_timer_timeout"]
 
+[editable path="Button/Laser Cannon"]
 [editable path="UI Layer/Pause Menu"]
 [editable path="UI Layer/Level Complete"]

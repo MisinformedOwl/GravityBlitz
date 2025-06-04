@@ -6,6 +6,7 @@ extends Area2D
 @onready var sprite : AnimatedSprite2D = $AnimatedSprite2D
 @onready var portalOutput : Marker2D = $Marker2D
 @onready var sickness = $Sickness
+@onready var teleport_sound = $TeleportSound
 
 var partner : Portal
 var player
@@ -16,6 +17,7 @@ func _ready():
 
 func _on_body_entered(body):
 	if body.name == "Player" and body.TPSickness == false:
+		teleport_sound.play()
 		body.position = partner.portalOutput.global_position
 		changeVelocity(body)
 		body.TPSickness = true

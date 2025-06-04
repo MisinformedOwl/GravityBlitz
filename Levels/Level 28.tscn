@@ -1,10 +1,11 @@
-[gd_scene load_steps=31 format=3 uid="uid://ckiton5sqtbse"]
+[gd_scene load_steps=32 format=3 uid="uid://ckiton5sqtbse"]
 
 [ext_resource type="PackedScene" uid="uid://bdx77watf0xjr" path="res://Levels/MapContent.tscn" id="1_dntbq"]
 [ext_resource type="PackedScene" uid="uid://qrpd88843g6" path="res://Mechanics and Assets/pitmap.tscn" id="2_flclr"]
 [ext_resource type="Script" path="res://Mechanics and Assets/breakable.gd" id="3_w6vtw"]
 [ext_resource type="Texture2D" uid="uid://cs551w6jo4ieu" path="res://Shaders/destructableTexture.png" id="4_ahd87"]
 [ext_resource type="Script" path="res://Mechanics and Assets/Laser Cannon.gd" id="5_4yxmb"]
+[ext_resource type="AudioStream" uid="uid://dwd7lc2vvokeb" path="res://Music/BreakObject.mp3" id="5_yxpr7"]
 [ext_resource type="Texture2D" uid="uid://b13aetxs5t4sf" path="res://TempFiles/LaserCannon-Sheet.png" id="6_de4wy"]
 [ext_resource type="Texture2D" uid="uid://cov7lbdvj0eg5" path="res://TempFiles/Energy Beam.png" id="7_lxiie"]
 [ext_resource type="Script" path="res://Mechanics and Assets/Beam.gd" id="8_gccu2"]
@@ -197,6 +198,10 @@ texture = SubResource("AtlasTexture_o2tjn")
 [node name="Timer" type="Timer" parent="Breakable" index="2"]
 wait_time = 2.0
 
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Breakable" index="3"]
+stream = ExtResource("5_yxpr7")
+bus = &"SFX"
+
 [node name="Laser Cannon" type="StaticBody2D" parent="." index="9"]
 z_index = 5
 z_as_relative = false
@@ -247,6 +252,10 @@ texture = SubResource("AtlasTexture_wgre3")
 
 [node name="Timer" type="Timer" parent="Breakable2" index="2"]
 wait_time = 2.0
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Breakable2" index="3"]
+stream = ExtResource("5_yxpr7")
+bus = &"SFX"
 
 [connection signal="body_entered" from="Breakable/Area2D" to="Breakable" method="_on_area_2d_body_entered"]
 [connection signal="timeout" from="Breakable/Timer" to="Breakable" method="_on_timer_timeout"]

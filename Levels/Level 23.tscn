@@ -1,15 +1,17 @@
-[gd_scene load_steps=23 format=3 uid="uid://dbla484qsakgv"]
+[gd_scene load_steps=27 format=3 uid="uid://dbla484qsakgv"]
 
 [ext_resource type="PackedScene" uid="uid://bdx77watf0xjr" path="res://Levels/MapContent.tscn" id="1_e31i5"]
 [ext_resource type="PackedScene" uid="uid://qrpd88843g6" path="res://Mechanics and Assets/pitmap.tscn" id="2_ffeb8"]
 [ext_resource type="Texture2D" uid="uid://ckeepeo0r3rgw" path="res://Mechanics and Assets/pit.png" id="3_6c4kl"]
 [ext_resource type="Script" path="res://Mechanics and Assets/breakable.gd" id="4_42jux"]
 [ext_resource type="Texture2D" uid="uid://cs551w6jo4ieu" path="res://Shaders/destructableTexture.png" id="5_7xw0s"]
+[ext_resource type="AudioStream" uid="uid://dwd7lc2vvokeb" path="res://Music/BreakObject.mp3" id="6_xauwg"]
 [ext_resource type="Script" path="res://Mechanics and Assets/button.gd" id="6_xiyw8"]
 [ext_resource type="Texture2D" uid="uid://nu8d4vjyq14b" path="res://Mechanics and Assets/Button.png" id="7_koa8x"]
 [ext_resource type="Texture2D" uid="uid://dathje0bheshg" path="res://Mechanics and Assets/Wires off.png" id="8_wjp7x"]
 [ext_resource type="Texture2D" uid="uid://cx40yyy4q2i3b" path="res://Mechanics and Assets/Wires on.png" id="9_w6pff"]
 [ext_resource type="PackedScene" uid="uid://bqrq5ig1oqqrw" path="res://Mechanics and Assets/Laser Cannon.tscn" id="10_yottp"]
+[ext_resource type="Texture2D" uid="uid://cov7lbdvj0eg5" path="res://TempFiles/Energy Beam.png" id="12_57h8u"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_aiekl"]
 texture = ExtResource("3_6c4kl")
@@ -42,7 +44,7 @@ texture_region_size = Vector2i(128, 128)
 2:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 2:2/0/physics_layer_0/angular_velocity = 0.0
 
-[sub_resource type="TileSet" id="TileSet_3fkc8"]
+[sub_resource type="TileSet" id="TileSet_4uvmp"]
 resource_local_to_scene = true
 tile_size = Vector2i(128, 128)
 physics_layer_0/collision_layer = 2
@@ -131,6 +133,16 @@ sources/0 = SubResource("TileSetAtlasSource_wbpyx")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lrpk7"]
 size = Vector2(52, 31)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_oe01s"]
+resource_local_to_scene = true
+atlas = ExtResource("12_57h8u")
+region = Rect2(0, 0, 256, 1018.12)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o1vr3"]
+resource_local_to_scene = true
+atlas = ExtResource("12_57h8u")
+region = Rect2(0, 0, 256, 1018.12)
+
 [node name="MapContent" instance=ExtResource("1_e31i5")]
 position = Vector2(4, 11)
 LevelNum = 23
@@ -158,7 +170,7 @@ position = Vector2(576, 321)
 moving = true
 
 [node name="Pitmap" parent="." index="7" instance=ExtResource("2_ffeb8")]
-tile_set = SubResource("TileSet_3fkc8")
+tile_set = SubResource("TileSet_4uvmp")
 layer_0/tile_data = PackedInt32Array(720907, 65536, 0, 720904, 65536, 0, 786440, 65536, 1, 720906, 65536, 0, 655373, 65536, 0, 720909, 65536, 1)
 
 [node name="Breakable" type="StaticBody2D" parent="." index="8"]
@@ -175,6 +187,10 @@ texture = SubResource("AtlasTexture_p6mpr")
 [node name="Timer" type="Timer" parent="Breakable" index="2"]
 wait_time = 2.0
 
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Breakable" index="3"]
+stream = ExtResource("6_xauwg")
+bus = &"SFX"
+
 [node name="Breakable2" type="StaticBody2D" parent="." index="9"]
 position = Vector2(-447, 1467)
 script = ExtResource("4_42jux")
@@ -189,6 +205,10 @@ texture = SubResource("AtlasTexture_vdfi8")
 
 [node name="Timer" type="Timer" parent="Breakable2" index="2"]
 wait_time = 2.0
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Breakable2" index="3"]
+stream = ExtResource("6_xauwg")
+bus = &"SFX"
 
 [node name="Button" type="Area2D" parent="." index="10"]
 position = Vector2(1983, 1280)
@@ -219,6 +239,9 @@ one_shot = true
 position = Vector2(-1052, -447)
 rotation = 1.5708
 
+[node name="Beam" parent="Button/Laser Cannon" index="2"]
+texture = SubResource("AtlasTexture_oe01s")
+
 [node name="Button2" type="Area2D" parent="." index="11"]
 position = Vector2(-768, 1472)
 rotation = -1.5708
@@ -248,6 +271,9 @@ one_shot = true
 [node name="Laser Cannon" parent="Button2" index="4" instance=ExtResource("10_yottp")]
 position = Vector2(768, 989)
 
+[node name="Beam" parent="Button2/Laser Cannon" index="2"]
+texture = SubResource("AtlasTexture_o1vr3")
+
 [connection signal="body_entered" from="Breakable/Area2D" to="Breakable" method="_on_area_2d_body_entered"]
 [connection signal="timeout" from="Breakable/Timer" to="Breakable" method="_on_timer_timeout"]
 [connection signal="body_entered" from="Breakable2/Area2D" to="Breakable2" method="_on_area_2d_body_entered"]
@@ -257,5 +283,7 @@ position = Vector2(768, 989)
 [connection signal="body_entered" from="Button2" to="Button2" method="_on_body_entered"]
 [connection signal="timeout" from="Button2/Timer" to="Button2" method="_on_timer_timeout"]
 
+[editable path="Button/Laser Cannon"]
+[editable path="Button2/Laser Cannon"]
 [editable path="UI Layer/Pause Menu"]
 [editable path="UI Layer/Level Complete"]

@@ -16,8 +16,6 @@ func _ready():
 			disable = true
 		grid.add_child(b)
 		b.setup(x, GameState.get_stars(x), disable)
-		
-		var style = buttonStyle
 		b.button.pressed.connect(_levelSelected.bind(b.button))
 
 func _levelSelected(button : Button):

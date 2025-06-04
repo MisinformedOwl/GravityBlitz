@@ -1,9 +1,10 @@
-[gd_scene load_steps=31 format=3 uid="uid://dfil11pjd7rb1"]
+[gd_scene load_steps=32 format=3 uid="uid://dfil11pjd7rb1"]
 
 [ext_resource type="PackedScene" uid="uid://bdx77watf0xjr" path="res://Levels/MapContent.tscn" id="1_ood38"]
 [ext_resource type="PackedScene" uid="uid://rkdcxfm37rba" path="res://Mechanics and Assets/black_hole.tscn" id="2_4uk4i"]
 [ext_resource type="Script" path="res://Mechanics and Assets/breakable.gd" id="3_qaidk"]
 [ext_resource type="Texture2D" uid="uid://cs551w6jo4ieu" path="res://Shaders/destructableTexture.png" id="4_fgukv"]
+[ext_resource type="AudioStream" uid="uid://dwd7lc2vvokeb" path="res://Music/BreakObject.mp3" id="5_8dapo"]
 [ext_resource type="PackedScene" uid="uid://qrpd88843g6" path="res://Mechanics and Assets/pitmap.tscn" id="5_jel10"]
 [ext_resource type="Script" path="res://Mechanics and Assets/button.gd" id="6_5hm0n"]
 [ext_resource type="Texture2D" uid="uid://nu8d4vjyq14b" path="res://Mechanics and Assets/Button.png" id="7_vm6ef"]
@@ -222,6 +223,10 @@ texture = SubResource("AtlasTexture_d32b6")
 
 [node name="Timer" type="Timer" parent="Breakable" index="2"]
 wait_time = 2.0
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Breakable" index="3"]
+stream = ExtResource("5_8dapo")
+bus = &"SFX"
 
 [node name="Pitmap" parent="." index="12" instance=ExtResource("5_jel10")]
 layer_0/tile_data = PackedInt32Array(327739, 65536, 0, 393275, 65536, 1, 458811, 65536, 2, 327740, 65536, 0, 393276, 65536, 1, 458812, 65536, 2, 393281, 65536, 0, 393282, 65536, 0, 393283, 65536, 0, 393284, 65536, 0, 458820, 65536, 1, 524356, 65536, 2, 852034, 65536, 0, 852035, 65536, 0, 786496, 65536, 0, 852032, 65536, 1, 917568, 65536, 1, 983104, 65536, 1, 1048640, 65536, 2, 720957, 65536, 0, 786493, 65536, 1)
