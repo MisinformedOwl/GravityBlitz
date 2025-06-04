@@ -3,9 +3,23 @@ extends Node2D
 @onready var level_music = $"Level Music"
 @onready var level_music_2 = $"Level Music 2"
 @onready var speed = $Speed
+@onready var timer = $SwitchTimer
+
+var music = [preload("res://Music/Track1.mp3"), preload("res://Music/Track2.mp3"), preload("res://Music/Track3.mp3")]
+var trackNumber = 1
+var levelNumberTracker = 0
+
+var currentStreamer : AudioStreamPlayer
 
 var speedingUp : bool = false
-var streamerActive: int = 1
+
+func _ready():
+	currentStreamer = main_menu_music
+
+func tickLevelCount():
+	levelNumberTracker +=1
+	if levelNumberTracker > 3 or currentStreamer.is_in_group("Menu"):
+		loadLevelMusic()
 
 func playerSpeedUp():
 	if not speedingUp:
@@ -20,16 +34,20 @@ func playerStopped():
 	speedingUp = false
 
 func loadMenuMusic():
+	timer.stop()
 	if not main_menu_music.playing:
-		SwapFade(level_music, main_menu_music)
+		SwapFade(currentStreamer, main_menu_music)
 		speed.stop()
 
 func loadLevelMusic():
-	if not level_music.playing:
-		SwapFade(main_menu_music, level_music)
-		speed.stop()
+	if level_music.playing:
+		SwapFade(currentStreamer, level_music_2)
+	else:
+		SwapFade(currentStreamer, level_music)
+	speed.stop()
 
 func SwapFade(streamerOut : AudioStreamPlayer, streamerIn : AudioStreamPlayer):
+	timer.start()
 	streamerIn.play()
 	streamerIn.volume_db = -30
 	var tween = create_tween()
@@ -37,4 +55,17 @@ func SwapFade(streamerOut : AudioStreamPlayer, streamerIn : AudioStreamPlayer):
 	tween.set_parallel()
 	tween.tween_property(streamerIn, "volume_db", 0, 2)
 	await tween.finished
+	if streamerOut.is_in_group("LevelMusic"):
+		nextTrack(streamerOut)
+		pass
 	streamerOut.stop()
+	currentStreamer = streamerIn
+
+func nextTrack(streamer: AudioStreamPlayer):
+	trackNumber+=1
+	if trackNumber >= len(music):
+		trackNumber = 0
+	streamer.stream = music[trackNumber]
+
+func _on_switch_timer_timeout():
+	loadLevelMusic()
