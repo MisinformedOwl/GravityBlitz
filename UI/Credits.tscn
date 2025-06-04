@@ -57,7 +57,10 @@ Engine
 Godot 4.2.2
 
 Art
-Aseprite v1"
+Aseprite v1
+
+Audio
+BandLab"
 horizontal_alignment = 1
 
 [node name="Button" type="Button" parent="PanelContainer"]

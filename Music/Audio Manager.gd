@@ -74,3 +74,10 @@ func playVictory():
 
 func _on_switch_timer_timeout():
 	loadLevelMusic()
+
+func dimMusic():
+	AudioServer.set_bus_volume_db(2,-30)
+
+
+func undimMusic():
+	AudioServer.set_bus_volume_db(2,-15)

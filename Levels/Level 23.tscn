@@ -44,7 +44,7 @@ texture_region_size = Vector2i(128, 128)
 2:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 2:2/0/physics_layer_0/angular_velocity = 0.0
 
-[sub_resource type="TileSet" id="TileSet_4uvmp"]
+[sub_resource type="TileSet" id="TileSet_lmu2h"]
 resource_local_to_scene = true
 tile_size = Vector2i(128, 128)
 physics_layer_0/collision_layer = 2
@@ -170,7 +170,7 @@ position = Vector2(576, 321)
 moving = true
 
 [node name="Pitmap" parent="." index="7" instance=ExtResource("2_ffeb8")]
-tile_set = SubResource("TileSet_4uvmp")
+tile_set = SubResource("TileSet_lmu2h")
 layer_0/tile_data = PackedInt32Array(720907, 65536, 0, 720904, 65536, 0, 786440, 65536, 1, 720906, 65536, 0, 655373, 65536, 0, 720909, 65536, 1)
 
 [node name="Breakable" type="StaticBody2D" parent="." index="8"]

@@ -6,7 +6,6 @@ extends Control
 var fullstar  = preload("res://UI/StarFull.png")
 var emptystar = preload("res://UI/StarEmpty.png")
 
-var CurrLevel: int = 0
 var times = []
 
 func setLevelTimes(time1 : float,time2 : float,time3 : float):
@@ -16,6 +15,7 @@ func setLevelTimes(time1 : float,time2 : float,time3 : float):
 
 func LevelWon(timeTaken: float, CurrLevel: int):
 	var starCount = 0
+	AudioManager.dimMusic()
 	get_tree().paused = true
 	for s : TextureRect in [star3, star2, star1]:
 		var timeForStar = times.pop_front()
@@ -27,7 +27,6 @@ func LevelWon(timeTaken: float, CurrLevel: int):
 		s.pivot_offset = s.texture.get_size() / 2
 		var tween = create_tween()
 		tween.tween_property(s, "scale", Vector2(0,0), 0) # Why the fuck can i not just set fucking scale, what is this bullshit.
-	
 	if starCount > GameState.get_stars(CurrLevel):
 		GameState.update_progress(CurrLevel, starCount)
 	
@@ -37,8 +36,10 @@ func LevelWon(timeTaken: float, CurrLevel: int):
 		await tween.finished
 
 func _on_main_menu_pressed():
+	AudioManager.undimMusic()
 	get_tree().paused = false
 	get_tree().change_scene_to_file("res://UI/Main Menu.tscn")
 
 func _on_continue_pressed():
+	AudioManager.undimMusic()
 	get_tree().paused = false

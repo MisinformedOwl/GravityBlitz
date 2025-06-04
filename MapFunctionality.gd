@@ -128,6 +128,7 @@ func reload():
 	get_tree().reload_current_scene()
 
 func _on_texture_button_pressed():
+	AudioManager.dimMusic()
 	get_tree().paused = true
 	pause_menu.visible = true
 
