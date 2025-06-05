@@ -1,0 +1,200 @@
+[gd_scene load_steps=18 format=3 uid="uid://deo7o504b1t15"]
+
+[ext_resource type="PackedScene" uid="uid://bdx77watf0xjr" path="res://Levels/MapContent.tscn" id="1_ptsp8"]
+[ext_resource type="PackedScene" uid="uid://rkdcxfm37rba" path="res://Mechanics and Assets/black_hole.tscn" id="2_62ak4"]
+[ext_resource type="PackedScene" uid="uid://bqrq5ig1oqqrw" path="res://Mechanics and Assets/Laser Cannon.tscn" id="3_qa0w4"]
+[ext_resource type="Texture2D" uid="uid://cov7lbdvj0eg5" path="res://TempFiles/Energy Beam.png" id="4_xikd3"]
+[ext_resource type="PackedScene" uid="uid://qrpd88843g6" path="res://Mechanics and Assets/pitmap.tscn" id="5_0he6t"]
+[ext_resource type="PackedScene" uid="uid://coauejq0yl6qg" path="res://Mechanics and Assets/portal_manager.tscn" id="6_qg5nd"]
+[ext_resource type="PackedScene" uid="uid://cdqoi4t7c3vmv" path="res://Mechanics and Assets/breakable.tscn" id="7_0q1o0"]
+[ext_resource type="PackedScene" uid="uid://ld18eqltmdx2" path="res://Mechanics and Assets/Portal.tscn" id="7_repq8"]
+[ext_resource type="Texture2D" uid="uid://cs551w6jo4ieu" path="res://Shaders/destructableTexture.png" id="8_ndtmg"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iah8k"]
+resource_local_to_scene = true
+atlas = ExtResource("4_xikd3")
+region = Rect2(0, 0, 256, 1018.12)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p4r8v"]
+resource_local_to_scene = true
+atlas = ExtResource("4_xikd3")
+region = Rect2(0, 0, 256, 1018.12)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c8vt3"]
+resource_local_to_scene = true
+atlas = ExtResource("8_ndtmg")
+region = Rect2(325.818, 15.2956, 102.712, 970.06)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4n8pb"]
+resource_local_to_scene = true
+atlas = ExtResource("8_ndtmg")
+region = Rect2(744.529, 12.7048, 84.168, 970.06)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8jkfl"]
+resource_local_to_scene = true
+atlas = ExtResource("8_ndtmg")
+region = Rect2(280.898, 13.1287, 473.617, 261.128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ursg7"]
+resource_local_to_scene = true
+atlas = ExtResource("4_xikd3")
+region = Rect2(0, 0, 256, 1018.12)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xykh1"]
+resource_local_to_scene = true
+atlas = ExtResource("4_xikd3")
+region = Rect2(0, 0, 256, 1018.12)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ld5hl"]
+resource_local_to_scene = true
+atlas = ExtResource("8_ndtmg")
+region = Rect2(332.254, 326.548, 350.933, 345.227)
+
+[node name="MapContent" instance=ExtResource("1_ptsp8")]
+LevelNum = 44
+LevelName = "Close Calls"
+time1 = 45.0
+time2 = 55.0
+time3 = 65.0
+
+[node name="Floor" parent="." index="1"]
+layer_0/tile_data = PackedInt32Array(-327676, 0, 0, -262140, 0, 0, -196604, 0, 0, -131068, 0, 0, -65532, 0, 0, 4, 0, 0, 65540, 0, 0, 131076, 0, 0, 196612, 0, 0, 262148, 0, 0, 327684, 0, 0, 393220, 0, 0, -327675, 0, 0, 131077, 0, 0, 327685, 0, 0, 393221, 0, 0, -327674, 0, 0, 131078, 0, 0, 327686, 0, 0, 393222, 0, 0, -327673, 0, 0, -262137, 0, 0, -196601, 0, 0, -131065, 0, 0, -65529, 0, 0, 7, 0, 0, 65543, 0, 0, 131079, 0, 0, 196615, 0, 0, 262151, 0, 0, 327687, 0, 0, 393223, 0, 0, -327672, 0, 0, 131080, 0, 0, 327688, 0, 0, 393224, 0, 0, -327671, 0, 0, 131081, 0, 0, 327689, 0, 0, 393225, 0, 0, -327670, 0, 0, -262134, 0, 0, -196598, 0, 0, -131062, 0, 0, -65526, 0, 0, 10, 0, 0, 65546, 0, 0, 131082, 0, 0, 196618, 0, 0, 262154, 0, 0, 327690, 0, 0, 393226, 0, 0, 524285, 0, 0, 589821, 0, 0, 655357, 0, 0, 720893, 0, 0, 786429, 0, 0, 851965, 0, 0, 917501, 0, 0, 983037, 0, 0, 1048573, 0, 0, 1114109, 0, 0, 1179645, 0, 0, 1245181, 0, 0, 1310717, 0, 0, 524286, 0, 0, 589822, 0, 0, 655358, 0, 0, 720894, 0, 0, 786430, 0, 0, 851966, 0, 0, 917502, 0, 0, 983038, 0, 0, 1048574, 0, 0, 1114110, 0, 0, 1179646, 0, 0, 1245182, 0, 0, 1310718, 0, 0, 524287, 0, 0, 1310719, 0, 0, 458752, 0, 0, 524288, 0, 0, 589824, 0, 0, 655360, 0, 0, 720896, 0, 0, 786432, 0, 0, 851968, 0, 0, 917504, 0, 0, 983040, 0, 0, 1048576, 0, 0, 1114112, 0, 0, 1179648, 0, 0, 1245184, 0, 0, 458753, 0, 0, 524289, 0, 0, 589825, 0, 0, 458754, 0, 0, 524290, 0, 0, 589826, 0, 0, 655362, 0, 0, 720898, 0, 0, 786434, 0, 0, 851970, 0, 0, 917506, 0, 0, 983042, 0, 0, 1048578, 0, 0, 1114114, 0, 0, 1179650, 0, 0, 1245186, 0, 0, 458755, 0, 0, 524291, 0, 0, 589827, 0, 0, 655363, 0, 0, 720899, 0, 0, 786435, 0, 0, 851971, 0, 0, 917507, 0, 0, 983043, 0, 0, 1048579, 0, 0, 1114115, 0, 0, 1179651, 0, 0, 1245187, 0, 0, 458756, 0, 0, 524292, 0, 0, 589828, 0, 0, 655364, 0, 0, 720900, 0, 0, 786436, 0, 0, 851972, 0, 0, 917508, 0, 0, 983044, 0, 0, 1048580, 0, 0, 1114116, 0, 0, 1179652, 0, 0, 1245188, 0, 0, 458757, 0, 0, 524293, 0, 0, 589829, 0, 0, 655365, 0, 0, 720901, 0, 0, 786437, 0, 0, 851973, 0, 0, 917509, 0, 0, 983045, 0, 0, 1048581, 0, 0, 1114117, 0, 0, 1179653, 0, 0, 1245189, 0, 0, 458758, 0, 0, 524294, 0, 0, 589830, 0, 0, 655366, 0, 0, 720902, 0, 0, 786438, 0, 0, 851974, 0, 0, 917510, 0, 0, 983046, 0, 0, 1048582, 0, 0, 1114118, 0, 0, 1179654, 0, 0, 1245190, 0, 0, 458759, 0, 0, 524295, 0, 0, 589831, 0, 0, 655367, 0, 0, 720903, 0, 0, 786439, 0, 0, 851975, 0, 0, 917511, 0, 0, 983047, 0, 0, 1048583, 0, 0, 1114119, 0, 0, 1179655, 0, 0, 1245191, 0, 0, 458760, 0, 0, 524296, 0, 0, 589832, 0, 0, 655368, 0, 0, 720904, 0, 0, 786440, 0, 0, 851976, 0, 0, 917512, 0, 0, 983048, 0, 0, 1048584, 0, 0, 1114120, 0, 0, 1179656, 0, 0, 1245192, 0, 0, 458761, 0, 0, 524297, 0, 0, 589833, 0, 0, 655369, 0, 0, 720905, 0, 0, 786441, 0, 0, 851977, 0, 0, 917513, 0, 0, 983049, 0, 0, 1048585, 0, 0, 1114121, 0, 0, 1179657, 0, 0, 1245193, 0, 0, 458762, 0, 0, 524298, 0, 0, 589834, 0, 0, 655370, 0, 0, 720906, 0, 0, 786442, 0, 0, 851978, 0, 0, 917514, 0, 0, 983050, 0, 0, 1048586, 0, 0, 1114122, 0, 0, 1179658, 0, 0, 1245194, 0, 0, -262147, 0, 0, -196611, 0, 0, -131075, 0, 0, -65539, 0, 0, -3, 0, 0, 65533, 0, 0, 131069, 0, 0, 196605, 0, 0, 262141, 0, 0, 327677, 0, 0, 393213, 0, 0, 458749, 0, 0, -262146, 0, 0, -196610, 0, 0, -131074, 0, 0, -65538, 0, 0, -2, 0, 0, 65534, 0, 0, 131070, 0, 0, 196606, 0, 0, 262142, 0, 0, 327678, 0, 0, 393214, 0, 0, 458750, 0, 0, -262145, 0, 0, -196609, 0, 0, -131073, 0, 0, -65537, 0, 0, -1, 0, 0, 65535, 0, 0, 131071, 0, 0, 196607, 0, 0, 262143, 0, 0, 327679, 0, 0, 393215, 0, 0, 458751, 0, 0, -327680, 0, 0, -262144, 0, 0, -196608, 0, 0, -131072, 0, 0, -65536, 0, 0, 0, 0, 0, 65536, 0, 0, 131072, 0, 0, 196608, 0, 0, 262144, 0, 0, 327680, 0, 0, 393216, 0, 0, -327679, 0, 0, -262143, 0, 0, -196607, 0, 0, -131071, 0, 0, -65535, 0, 0, 1, 0, 0, 65537, 0, 0, 131073, 0, 0, 196609, 0, 0, 262145, 0, 0, 327681, 0, 0, 393217, 0, 0, -327678, 0, 0, -262142, 0, 0, -196606, 0, 0, -131070, 0, 0, -65534, 0, 0, 2, 0, 0, 65538, 0, 0, 131074, 0, 0, 196610, 0, 0, 262146, 0, 0, 327682, 0, 0, 393218, 0, 0, -327677, 0, 0, -262141, 0, 0, -196605, 0, 0, -131069, 0, 0, -65533, 0, 0, 3, 0, 0, 65539, 0, 0, 131075, 0, 0, 196611, 0, 0, 262147, 0, 0, 327683, 0, 0, 393219, 0, 0, 1245183, 0, 0, -131067, 0, 0, -131066, 0, 0, -131064, 0, 0, -131063, 0, 0, -65531, 0, 0, -65530, 0, 0, -65528, 0, 0, -65527, 0, 0, 65541, 0, 0, 65542, 0, 0, 65544, 0, 0, 65545, 0, 0, 262149, 0, 0, 262150, 0, 0, 262152, 0, 0, 262153, 0, 0, -262139, 0, 0, -262138, 0, 0, -262136, 0, 0, -262135, 0, 0, 655361, 0, 0)
+
+[node name="Wall" parent="." index="3"]
+layer_0/tile_data = PackedInt32Array(-327683, 65536, 0, -327682, 65536, 0, -327681, 65536, 0, -393216, 65536, 0, -393215, 65536, 0, -393214, 65536, 0, -393213, 65536, 0, -393212, 65536, 0, -393211, 65536, 0, -393210, 65536, 0, -393209, 65536, 0, -393208, 65536, 0, -393207, 65536, 0, -393206, 65536, 0, -327669, 131072, 1, -262133, 131072, 1, -196597, 131072, 1, -131061, 131072, 1, -65525, 131072, 1, 11, 131072, 1, 65547, 131072, 1, 131083, 131072, 1, 196619, 131072, 1, 262155, 131072, 1, 327691, 131072, 1, 393227, 131072, 1, 458763, 131072, 1, 524299, 131072, 1, 589835, 131072, 1, 655371, 131072, 1, 720907, 131072, 1, 786443, 131072, 1, 851979, 131072, 1, 917515, 131072, 1, 983051, 131072, 1, 1048587, 131072, 1, 1114123, 131072, 1, 1179659, 131072, 1, 1245195, 131072, 1, 1376253, 65536, 2, 1376254, 65536, 2, 1376255, 65536, 2, 1310720, 65536, 2, 1310721, 65536, 2, 1310722, 65536, 2, 1310723, 65536, 2, 1310724, 65536, 2, 1310725, 65536, 2, 1310726, 65536, 2, 1310727, 65536, 2, 1310728, 65536, 2, 1310729, 65536, 2, 1310730, 65536, 2, -262148, 0, 1, -196612, 0, 1, -131076, 0, 1, -65540, 0, 1, -4, 0, 1, 65532, 0, 1, 131068, 0, 1, 196604, 0, 1, 262140, 0, 1, 327676, 0, 1, 393212, 0, 1, 458748, 0, 1, 524284, 0, 1, 589820, 0, 1, 655356, 0, 1, 720892, 0, 1, 786428, 0, 1, 851964, 0, 1, 917500, 0, 1, 983036, 0, 1, 1048572, 0, 1, 1114108, 0, 1, 1179644, 0, 1, 1245180, 0, 1, 1310716, 0, 1, -327684, 0, 0, -393205, 131072, 0, 1310731, 131072, 2, 1376252, 0, 2)
+
+[node name="Player" parent="." index="4"]
+position = Vector2(313, 2496)
+
+[node name="Goal" parent="." index="5"]
+position = Vector2(705, 2493)
+
+[node name="Camera2D" parent="." index="6"]
+position = Vector2(498, 963)
+moving = true
+
+[node name="Black Hole" parent="." index="9" instance=ExtResource("2_62ak4")]
+position = Vector2(511, 898)
+scale = Vector2(1.8, 1.8)
+gravMult = 0.6
+
+[node name="Laser Cannon" parent="." index="10" instance=ExtResource("3_qa0w4")]
+position = Vector2(511, 2467)
+rotation = 3.14159
+
+[node name="Beam" parent="Laser Cannon" index="2"]
+texture = SubResource("AtlasTexture_iah8k")
+
+[node name="Beamcast" parent="Laser Cannon" index="3"]
+target_position = Vector2(0, 3200)
+
+[node name="Laser Cannon2" parent="." index="11" instance=ExtResource("3_qa0w4")]
+position = Vector2(-291, 898)
+rotation = -1.5708
+
+[node name="Beam" parent="Laser Cannon2" index="2"]
+texture = SubResource("AtlasTexture_p4r8v")
+
+[node name="Beamcast" parent="Laser Cannon2" index="3"]
+target_position = Vector2(0, 1800)
+
+[node name="Pitmap" parent="." index="12" instance=ExtResource("5_0he6t")]
+layer_0/tile_data = PackedInt32Array(720897, 0, 0, 786433, 0, 1, 851969, 0, 1, 917505, 0, 1, 983041, 0, 1, 1048577, 0, 1, 1114113, 0, 1, 1179649, 0, 1, 1245185, 0, 1, 589823, 0, 0, 655359, 0, 1, 720895, 0, 1, 786431, 0, 1, 851967, 0, 1, 917503, 0, 1, 983039, 0, 1, 1048575, 0, 1, 1114111, 0, 1, 1179647, 0, 1, -196603, 0, 0, -196602, 131072, 0, -196599, 131072, 0, 9, 131072, 0, 6, 131072, 0, 8, 0, 0, 5, 0, 0, -196600, 0, 0, 196613, 0, 0, 196616, 0, 0, 196617, 131072, 0, 196614, 131072, 0)
+
+[node name="Portal Manager" parent="." index="13" instance=ExtResource("6_qg5nd")]
+
+[node name="Portal" parent="Portal Manager" index="0"]
+position = Vector2(-413, 1022)
+rotation = 1.5708
+
+[node name="Portal2" parent="Portal Manager" index="1"]
+position = Vector2(263, -665)
+rotation = 3.14159
+
+[node name="Portal3" parent="Portal Manager" index="2" instance=ExtResource("7_repq8")]
+modulate = Color(1, 1, 0, 1)
+position = Vector2(-411, 738)
+rotation = 1.5708
+portalCode = 1
+
+[node name="Portal4" parent="Portal Manager" index="3" instance=ExtResource("7_repq8")]
+modulate = Color(1, 1, 0, 1)
+position = Vector2(1436, 767)
+rotation = -1.5708
+portalCode = 1
+
+[node name="Portal5" parent="Portal Manager" index="4" instance=ExtResource("7_repq8")]
+modulate = Color(1, 0.419608, 0, 1)
+position = Vector2(704, -668)
+rotation = 3.14159
+portalCode = 2
+
+[node name="Portal6" parent="Portal Manager" index="5" instance=ExtResource("7_repq8")]
+modulate = Color(1, 0.419608, 0, 1)
+position = Vector2(1432, 1144)
+rotation = -1.5708
+portalCode = 2
+
+[node name="Breakable" parent="." index="14" instance=ExtResource("7_0q1o0")]
+position = Vector2(261, 491)
+
+[node name="Breakable2" parent="." index="15" instance=ExtResource("7_0q1o0")]
+position = Vector2(138, -93)
+scale = Vector2(2.96, 2.96)
+
+[node name="Sprite2D" parent="Breakable2" index="0"]
+texture = SubResource("AtlasTexture_c8vt3")
+
+[node name="Breakable3" parent="." index="16" instance=ExtResource("7_0q1o0")]
+position = Vector2(-148, 255)
+scale = Vector2(3.235, 3.235)
+
+[node name="Sprite2D" parent="Breakable3" index="0"]
+texture = SubResource("AtlasTexture_4n8pb")
+
+[node name="Breakable4" parent="." index="17" instance=ExtResource("7_0q1o0")]
+position = Vector2(-8, -284)
+
+[node name="Sprite2D" parent="Breakable4" index="0"]
+texture = SubResource("AtlasTexture_8jkfl")
+
+[node name="Laser Cannon3" parent="." index="18" instance=ExtResource("3_qa0w4")]
+position = Vector2(1315, 1280)
+rotation = 1.5708
+
+[node name="Beam" parent="Laser Cannon3" index="2"]
+texture = SubResource("AtlasTexture_ursg7")
+
+[node name="Beamcast" parent="Laser Cannon3" index="3"]
+target_position = Vector2(0, 1800)
+
+[node name="Laser Cannon4" parent="." index="19" instance=ExtResource("3_qa0w4")]
+position = Vector2(896, 2467)
+rotation = 3.14159
+
+[node name="Beam" parent="Laser Cannon4" index="2"]
+texture = SubResource("AtlasTexture_xykh1")
+
+[node name="Beamcast" parent="Laser Cannon4" index="3"]
+target_position = Vector2(0, 3200)
+
+[node name="Breakable5" parent="." index="20" instance=ExtResource("7_0q1o0")]
+position = Vector2(896, 1280)
+
+[node name="Sprite2D" parent="Breakable5" index="0"]
+texture = SubResource("AtlasTexture_ld5hl")
+
+[editable path="UI Layer/Pause Menu"]
+[editable path="UI Layer/Level Complete"]
+[editable path="Black Hole"]
+[editable path="Laser Cannon"]
+[editable path="Laser Cannon2"]
+[editable path="Portal Manager"]
+[editable path="Portal Manager/Portal"]
+[editable path="Portal Manager/Portal2"]
+[editable path="Breakable2"]
+[editable path="Breakable3"]
+[editable path="Breakable4"]
+[editable path="Laser Cannon3"]
+[editable path="Laser Cannon4"]
+[editable path="Breakable5"]

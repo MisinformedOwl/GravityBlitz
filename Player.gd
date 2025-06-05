@@ -22,6 +22,7 @@ var speedHit          : float = 0
 var speed             : float = 0.0
 var dir               : float = 0
 var TPSickness        : bool = false
+var friction          : bool = true
 
 var tileChecker       : Vector2 = Vector2(0,0)
 
@@ -104,7 +105,8 @@ func moveCameraDeath(cause: String):
 	playerDying.emit(cause)
 
 func _physics_process(delta):
-	velocity -= velocity/200
+	if friction:
+		velocity -= velocity/200
 	var collision = move_and_collide(velocity*delta)
 	if collision:
 		speedHit = currSpeed

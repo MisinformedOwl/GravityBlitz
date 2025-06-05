@@ -11,12 +11,15 @@ extends Area2D
 var partner : Portal
 var player
 
+signal portalled
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	sprite.play("default")
 
 func _on_body_entered(body):
 	if body.name == "Player" and body.TPSickness == false:
+		portalled.emit()
 		teleport_sound.play()
 		body.position = partner.portalOutput.global_position
 		changeVelocity(body)
