@@ -226,9 +226,7 @@ script = ExtResource("1_wwdp2")
 modulate = Color(1, 1, 1, 0)
 z_index = 4
 sprite_frames = SubResource("SpriteFrames_kl2rr")
-animation = &"8"
-frame = 2
-frame_progress = 0.567551
+animation = &"1"
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 3.0

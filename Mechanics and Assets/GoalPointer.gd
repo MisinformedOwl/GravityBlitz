@@ -15,7 +15,7 @@ func _process(_delta):
 	dir = player.position.direction_to(goal.position)
 	position = Vector2(dir.x*200, dir.y*300)
 	var angle = rad_to_deg(atan2(dir.y, dir.x))
-	angle = round(fmod(angle + 495, 360)/45)
+	angle = max(round(fmod(angle + 495, 360)/45),1)
 	animation.play("%d" % angle)
 
 func reveal():
