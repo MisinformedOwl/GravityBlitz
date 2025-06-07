@@ -80,4 +80,4 @@ func dimMusic():
 
 
 func undimMusic():
-	AudioServer.set_bus_volume_db(2,-15)
+	AudioServer.set_bus_volume_db(2,-20)

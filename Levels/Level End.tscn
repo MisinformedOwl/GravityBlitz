@@ -47,8 +47,11 @@ horizontal_alignment = 1
 layout_mode = 2
 size_flags_vertical = 0
 theme_override_font_sizes/font_size = 40
-text = "You have completed the game."
+text = "You have completed the game.
+
+If you'd like me to make more content please tell me with a positive rating on the App Store!"
 horizontal_alignment = 1
+autowrap_mode = 2
 
 [node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2

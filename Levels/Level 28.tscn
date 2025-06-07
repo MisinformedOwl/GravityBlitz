@@ -1,166 +1,34 @@
-[gd_scene load_steps=32 format=3 uid="uid://ckiton5sqtbse"]
+[gd_scene load_steps=11 format=3 uid="uid://ckiton5sqtbse"]
 
 [ext_resource type="PackedScene" uid="uid://bdx77watf0xjr" path="res://Levels/MapContent.tscn" id="1_dntbq"]
 [ext_resource type="PackedScene" uid="uid://qrpd88843g6" path="res://Mechanics and Assets/pitmap.tscn" id="2_flclr"]
 [ext_resource type="Script" path="res://Mechanics and Assets/breakable.gd" id="3_w6vtw"]
 [ext_resource type="Texture2D" uid="uid://cs551w6jo4ieu" path="res://Shaders/destructableTexture.png" id="4_ahd87"]
-[ext_resource type="Script" path="res://Mechanics and Assets/Laser Cannon.gd" id="5_4yxmb"]
 [ext_resource type="AudioStream" uid="uid://dwd7lc2vvokeb" path="res://Music/BreakObject.mp3" id="5_yxpr7"]
-[ext_resource type="Texture2D" uid="uid://b13aetxs5t4sf" path="res://TempFiles/LaserCannon-Sheet.png" id="6_de4wy"]
+[ext_resource type="PackedScene" uid="uid://bqrq5ig1oqqrw" path="res://Mechanics and Assets/Laser Cannon.tscn" id="6_ym135"]
 [ext_resource type="Texture2D" uid="uid://cov7lbdvj0eg5" path="res://TempFiles/Energy Beam.png" id="7_lxiie"]
-[ext_resource type="Script" path="res://Mechanics and Assets/Beam.gd" id="8_gccu2"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_o2tjn"]
 resource_local_to_scene = true
 atlas = ExtResource("4_ahd87")
 region = Rect2(2.54546, 13.1287, 1018.18, 261.128)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ltea2"]
-atlas = ExtResource("6_de4wy")
-region = Rect2(896, 128, 128, 128)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_rawcq"]
-atlas = ExtResource("6_de4wy")
-region = Rect2(0, 0, 128, 128)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_hn3en"]
-atlas = ExtResource("6_de4wy")
-region = Rect2(128, 0, 128, 128)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_p6277"]
-atlas = ExtResource("6_de4wy")
-region = Rect2(256, 0, 128, 128)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ddnbj"]
-atlas = ExtResource("6_de4wy")
-region = Rect2(384, 0, 128, 128)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_xuhal"]
-atlas = ExtResource("6_de4wy")
-region = Rect2(512, 0, 128, 128)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_phmm2"]
-atlas = ExtResource("6_de4wy")
-region = Rect2(640, 0, 128, 128)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_x4c0v"]
-atlas = ExtResource("6_de4wy")
-region = Rect2(768, 0, 128, 128)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_aeyjo"]
-atlas = ExtResource("6_de4wy")
-region = Rect2(896, 0, 128, 128)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_m2q4t"]
-atlas = ExtResource("6_de4wy")
-region = Rect2(0, 128, 128, 128)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_csj2o"]
-atlas = ExtResource("6_de4wy")
-region = Rect2(128, 128, 128, 128)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ixtao"]
-atlas = ExtResource("6_de4wy")
-region = Rect2(256, 128, 128, 128)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_k1554"]
-atlas = ExtResource("6_de4wy")
-region = Rect2(384, 128, 128, 128)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_bcx1e"]
-atlas = ExtResource("6_de4wy")
-region = Rect2(512, 128, 128, 128)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_u1h82"]
-atlas = ExtResource("6_de4wy")
-region = Rect2(640, 128, 128, 128)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_qecul"]
-atlas = ExtResource("6_de4wy")
-region = Rect2(768, 128, 128, 128)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_thvoh"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ltea2")
-}],
-"loop": true,
-"name": &"Off",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_rawcq")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_hn3en")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_p6277")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ddnbj")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_xuhal")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_phmm2")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_x4c0v")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_aeyjo")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_m2q4t")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_csj2o")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ixtao")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_k1554")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_bcx1e")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_u1h82")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_qecul")
-}],
-"loop": true,
-"name": &"On",
-"speed": 20.0
-}]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_3ggbb"]
-size = Vector2(66, 101)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_mqrw1"]
-resource_local_to_scene = true
-atlas = ExtResource("7_lxiie")
-region = Rect2(0, 0, 256, 1018.12)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_8dple"]
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_wgre3"]
 resource_local_to_scene = true
 atlas = ExtResource("4_ahd87")
 region = Rect2(1.06582, 13.1287, 1021.78, 261.128)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_icr6r"]
+resource_local_to_scene = true
+atlas = ExtResource("7_lxiie")
+region = Rect2(0, 0, 256, 1018.12)
+
 [node name="MapContent" instance=ExtResource("1_dntbq")]
 LevelNum = 28
 LevelName = "Long Distance Control"
-time1 = 10.0
-time2 = 15.0
-time3 = 20.0
+time1 = 20.0
+time2 = 25.0
+time3 = 30.0
 
 [node name="Wallsop" parent="." index="0"]
 layer_0/tile_data = PackedInt32Array(-2359264, 131072, 0, -2359289, 0, 0, -1048544, 131072, 2, -655353, 0, 0)
@@ -202,43 +70,7 @@ wait_time = 2.0
 stream = ExtResource("5_yxpr7")
 bus = &"SFX"
 
-[node name="Laser Cannon" type="StaticBody2D" parent="." index="9"]
-z_index = 5
-z_as_relative = false
-position = Vector2(349, -5056)
-rotation = -1.5708
-script = ExtResource("5_4yxmb")
-
-[node name="Sprite" type="AnimatedSprite2D" parent="Laser Cannon" index="0"]
-texture_filter = 1
-position = Vector2(0, -29)
-sprite_frames = SubResource("SpriteFrames_thvoh")
-animation = &"On"
-frame_progress = 0.509841
-
-[node name="Collision" type="CollisionShape2D" parent="Laser Cannon" index="1"]
-position = Vector2(0, -43)
-shape = SubResource("RectangleShape2D_3ggbb")
-
-[node name="Beam" type="Sprite2D" parent="Laser Cannon" index="2"]
-visible = false
-texture_repeat = 2
-scale = Vector2(0.255, 1)
-texture = SubResource("AtlasTexture_mqrw1")
-script = ExtResource("8_gccu2")
-
-[node name="BeamArea" type="Area2D" parent="Laser Cannon/Beam" index="0"]
-collision_layer = 4
-collision_mask = 4
-
-[node name="BeamCollision" type="CollisionShape2D" parent="Laser Cannon/Beam/BeamArea" index="0"]
-shape = SubResource("RectangleShape2D_8dple")
-
-[node name="Beamcast" type="RayCast2D" parent="Laser Cannon" index="3"]
-target_position = Vector2(0, 4550)
-collide_with_areas = true
-
-[node name="Breakable2" type="StaticBody2D" parent="." index="10"]
+[node name="Breakable2" type="StaticBody2D" parent="." index="9"]
 position = Vector2(576, -3505)
 script = ExtResource("3_w6vtw")
 
@@ -257,11 +89,21 @@ wait_time = 2.0
 stream = ExtResource("5_yxpr7")
 bus = &"SFX"
 
+[node name="Laser Cannon" parent="." index="12" instance=ExtResource("6_ym135")]
+position = Vector2(349, -5056)
+rotation = -1.5708
+
+[node name="Beam" parent="Laser Cannon" index="2"]
+texture = SubResource("AtlasTexture_icr6r")
+
+[node name="Beamcast" parent="Laser Cannon" index="3"]
+target_position = Vector2(0, 4600)
+
 [connection signal="body_entered" from="Breakable/Area2D" to="Breakable" method="_on_area_2d_body_entered"]
 [connection signal="timeout" from="Breakable/Timer" to="Breakable" method="_on_timer_timeout"]
-[connection signal="body_entered" from="Laser Cannon/Beam/BeamArea" to="Laser Cannon/Beam" method="_on_beam_area_body_entered"]
 [connection signal="body_entered" from="Breakable2/Area2D" to="Breakable2" method="_on_area_2d_body_entered"]
 [connection signal="timeout" from="Breakable2/Timer" to="Breakable2" method="_on_timer_timeout"]
 
 [editable path="UI Layer/Pause Menu"]
 [editable path="UI Layer/Level Complete"]
+[editable path="Laser Cannon"]

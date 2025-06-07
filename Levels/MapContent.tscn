@@ -1,8 +1,9 @@
-[gd_scene load_steps=21 format=3 uid="uid://bdx77watf0xjr"]
+[gd_scene load_steps=22 format=3 uid="uid://bdx77watf0xjr"]
 
 [ext_resource type="Script" path="res://MapFunctionality.gd" id="1_b6gcc"]
 [ext_resource type="Texture2D" uid="uid://w0iyv6rny0cm" path="res://tiles.png" id="2_2r5pm"]
 [ext_resource type="Texture2D" uid="uid://h3yqj77a7w7d" path="res://wallsop.png" id="2_wlkwx"]
+[ext_resource type="Script" path="res://Mechanics and Assets/Floor.gd" id="4_kqhrc"]
 [ext_resource type="PackedScene" uid="uid://sg4dhjdag5ec" path="res://Mechanics and Assets/gravitation.tscn" id="5_jdh6f"]
 [ext_resource type="Texture2D" uid="uid://c8dpnbvh1m4f7" path="res://walls.png" id="7_gxqib"]
 [ext_resource type="PackedScene" uid="uid://citts2xpwqa2h" path="res://Mechanics and Assets/Player.tscn" id="8_j4p1d"]
@@ -137,6 +138,7 @@ texture_filter = 1
 tile_set = SubResource("TileSet_tb8ws")
 format = 2
 layer_0/z_index = -1
+script = ExtResource("4_kqhrc")
 
 [node name="Gravitation" parent="." instance=ExtResource("5_jdh6f")]
 visible = false

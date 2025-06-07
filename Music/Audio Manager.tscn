@@ -27,6 +27,7 @@ bus = &"PlayerSpeedEffect"
 
 [node name="Level Music 2" type="AudioStreamPlayer" parent="." groups=["LevelMusic"]]
 stream = ExtResource("5_gyjd6")
+bus = &"Music"
 
 [node name="SwitchTimer" type="Timer" parent="."]
 wait_time = 120.0

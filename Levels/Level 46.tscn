@@ -4,6 +4,8 @@
 [ext_resource type="PackedScene" uid="uid://qrpd88843g6" path="res://Mechanics and Assets/pitmap.tscn" id="2_eda3j"]
 
 [node name="MapContent" instance=ExtResource("1_jin25")]
+LevelNum = 46
+LevelName = "Tight Rope"
 time1 = 20.0
 time2 = 25.0
 time3 = 30.0

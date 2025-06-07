@@ -9,7 +9,7 @@ func _on_button_pressed():
 	get_tree().change_scene_to_file("res://UI/Main Menu.tscn")
 
 func _ready():
-	for x in range(1,81):
+	for x in range(1,51):
 		var disable = false
 		var b = buttonObj.instantiate()
 		if x >= GameState.get_current_level():
